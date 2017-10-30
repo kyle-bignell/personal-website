@@ -1,0 +1,80 @@
+#navigation-home
+{
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  width: 60%;
+  height: 10%;
+}
+
+#navigation-pages
+{
+  position: absolute;
+  top: 2.5%;
+  left: 25%;
+  width: 50%;
+  height: 10%;
+}
+
+#navigation-home .navigation-node
+{
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  top: 0%;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#navigation-pages .navigation-node
+{
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  top: 0%;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.navigation-link:link, .navigation-link:visited
+{
+  color: #ffffff;
+  text-decoration: none;
+  cursor: auto;
+}
+
+.navigation-link:link:active, .navigation-link:visited:active
+{
+  color: #ffffff;
+}
+
+.navigation-link:link:hover, .navigation-link:visited:hover
+{
+  color: #ffffff;
+  text-decoration: underline;;
+}
+
+#navigation-about
+{
+  left: 0%;
+}
+
+#navigation-projects
+{
+  left: 20%;
+}
+
+#navigation-experience
+{
+  left: 40%;
+}
+
+#navigation-cv
+{
+  left: 60%;
+}
+
+#navigation-contact
+{
+  left: 80%;
+}

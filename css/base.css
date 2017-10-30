@@ -1,0 +1,24 @@
+@font-face
+{
+    font-family: geosans;
+    src: url(../assets/fonts/geosans.ttf);
+}
+
+html
+{
+  width: 100%;
+  height: 100%;
+  background-color: #252525;
+  background-image: url("../assets/img/background.png");
+  background-repeat: repeat;;
+  overflow: hidden;;
+  font-family: "geosans", sans-serif;
+  color: #ffffff;
+}
+
+body
+{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
