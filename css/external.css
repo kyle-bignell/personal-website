@@ -1,37 +1,31 @@
 #external
 {
-  position: absolute;
-  top: 1.5%;
-  right: 0.5%;
-  width: 7%;
-  height: 5%;
-}
-
-.external-node
-{
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0%;
-  text-align: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 65px;
 }
 
 #external-linkedin
 {
-  left: 0%;
+    position: absolute;
+    right: 35px;
 }
 
 #external-linkedin-image
 {
-  height: 100%;
+    width: 30px;
+    height: 30px;
 }
 
 #external-bitbucket
 {
-  left: 50%;
+    position: absolute;
+    right: 0px;
 }
 
 #external-bitbucket-image
 {
-  height: 100%;
+    width: 30px;
+    height: 30px;
 }
