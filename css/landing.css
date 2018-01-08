@@ -30,7 +30,7 @@
     height: 200px;
 }
 
-#landing-text-title
+#landing-text-name
 {
     position: absolute;
     top: 15%;
@@ -39,10 +39,10 @@
     font-weight: bold;;
 }
 
-#landing-text-body
+#landing-text-role
 {
     position: absolute;
     top: 70%;
     left: 0%;
-    font-size: 2em;
+    font-size: 2.75em;
 }

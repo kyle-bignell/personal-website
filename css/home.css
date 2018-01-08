@@ -1,57 +1,58 @@
 #home-link:link, #home-link:visited
 {
-  color: #ffffff;
-  text-decoration: none;
-  cursor: auto;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #home-link:link:active, #home-link:visited:active
 {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 #home
 {
-  position: absolute;
-  top: 1.55%;
-  left: 1%;
-  width: 12.5%;
-  height: 5%;
+    position: absolute;
+    top: 17px;
+    left: 15px;
+    width: 200px;
+    height: 50px;
 }
 
 #home:hover *
 {
-  text-decoration: underline;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #home-content
 {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 #home-image
 {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 15%;
-  height: 100%;
-  text-align: center;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 15%;
+    height: 100%;
+    text-align: center;
 }
 
 #home-image-data
 {
-  height: 100%;
+    height: 100%;
 }
 
 #home-text
 {
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  width: 70%;
-  height: 60%;
-  font-size: 1.25em;
-  margin-left: 5%;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 70%;
+    height: 60%;
+    font-size: 1.75em;
+    margin-left: 5%;
 }
