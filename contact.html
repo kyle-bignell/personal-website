@@ -48,7 +48,10 @@
             <a class="navigation-link" href="index.html">Home</a>
         </div>
         <div id="navigation-projects" class="navigation-node">
-            <a class="navigation-link" href="projects.html">Projects</a>
+            <a class="navigation-link" href="professional_projects.html">Professional Projects</a>
+        </div>
+        <div id="navigation-projects" class="navigation-node">
+            <a class="navigation-link" href="side_projects.html">Side Projects</a>
         </div>
         <div id="navigation-cv" class="navigation-node">
             <a class="navigation-link" href="cv.html">CV</a>
@@ -59,7 +62,20 @@
     </div>
 
     <div id="content">
+        <div id="contact">
+            <form action="contact.php" onsubmit="return validate()" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name...">
 
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your email...">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Message..." style="height:200px"></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </div>
 
     <div id="footer">
