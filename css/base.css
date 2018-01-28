@@ -6,19 +6,44 @@
 
 html
 {
-  width: 100%;
-  height: 100%;
-  background-color: #252525;
-  background-image: url("../assets/images/background.png");
-  background-repeat: repeat;;
-  overflow: hidden;;
-  font-family: "geosans", sans-serif;
-  color: #ffffff;
+    width: 100%;
+    height: 100%;
+    background-color: #252525;
+    background-image: url("../assets/images/background.png");
+    background-repeat: repeat;;
+    overflow: hidden;;
+    font-family: sans-serif;
+    color: #dddddd;
 }
 
 body
 {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+    width: 1200px;
+    height: 100%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content
+{
+    width: 1200px;
+    min-height: 400px;
+    background-color: rgb(34, 34, 34);
+}
+
+#footer
+{
+    width: 1180px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background-color: rgb(6, 6, 6);
+}
+
+
+#footer a
+{
+    color: #eeeeee;
+    text-decoration: none;
 }

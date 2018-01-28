@@ -1,65 +1,38 @@
 #navigation
 {
-  position: absolute;
-  left: 50%;
-  width: 800px;
-  height: 100px;
-  transform: translate(-50%, 0%);
+    width: 1200px;
+    height: 35px;
+    background-color: #3d3d3d;
+    margin-top: 45px;
+    border-top: 1px solid #4f4f4f;
+    border-bottom: 1px solid #4f4f4f;
+    font-family: "geosans", sans-serif;
 }
 
-#navigation.navigation-bottom
+.navigation-node
 {
-    top: 80%;
-}
-
-#navigation.navigation-top
-{
-    top: 20px;
-}
-
-#navigation .navigation-node
-{
-  position: absolute;
-  width: 25%;
-  height: 100%;
-  top: 0%;
-  text-align: center;
-  font-size: 2em;
-}
-
-#navigation-about
-{
-  left: 0%;
-}
-
-#navigation-projects
-{
-  left: 25%;
-}
-
-#navigation-cv
-{
-  left: 50%;
-}
-
-#navigation-contact
-{
-  left: 75%;
+    display: inline-block;
+    width: 296px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 1.5em;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .navigation-link:link, .navigation-link:visited
 {
-  color: #ffffff;
-  text-decoration: none;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .navigation-link:link:active, .navigation-link:visited:active
 {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 .navigation-link:link:hover, .navigation-link:visited:hover
 {
-  color: #ffffff;
-  text-decoration: underline;;
+    color: #ffffff;
+    text-decoration: underline;;
 }
