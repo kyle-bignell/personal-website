@@ -16,14 +16,20 @@
 
 #contact-response
 {
-    width: 600px;
-    font-size: 1.5em;
-    padding: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    background-color: #f2f2f2;
+    width: 500px;
+    font-size: 1.35em;
+    padding-top: 65px;
+    padding-bottom: 65px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    border: 2px solid #cccccc;
+}
+
+#contact-response-header
+{
+    margin-bottom: 75px;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 input[type=text], select, textarea

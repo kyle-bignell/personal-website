@@ -20,15 +20,7 @@
     <?php include "php/navigation.php" ?>
 
     <div id="content">
-        <div id="contact">
-            <form action="contact.php" onsubmit="return validate()" method="post">
-                <input type="text" id="name" name="name" placeholder="Name">
-                <input type="text" id="email" name="email" placeholder="Email">
-                <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
-
-                <input type="submit" value="Send">
-            </form>
-        </div>
+        <?php include "php/contact.php" ?>
     </div>
 
     <?php include "php/footer.php" ?>
