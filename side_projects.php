@@ -19,7 +19,25 @@
     <?php include "php/navigation.php" ?>
 
     <div id="content">
+        <div class="project">
+            Self Defence Classes Near Me
+        </div>
 
+        <div class="project">
+            Flocking
+        </div>
+
+        <div class="project">
+            Media Server
+        </div>
+
+        <div class="project">
+            Wernie's Big Adventure
+        </div>
+
+        <div class="project">
+            Astavoid
+        </div>
     </div>
 
     <?php include "php/footer.php" ?>
