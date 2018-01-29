@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/page_contact.css">
 
     <title>Kyle Bignell - Software Engineer | Contact</title>
 </head>
@@ -21,16 +22,11 @@
     <div id="content">
         <div id="contact">
             <form action="contact.php" onsubmit="return validate()" method="post">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name...">
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input type="text" id="email" name="email" placeholder="Email">
+                <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
 
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="Your email...">
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Message..." style="height:200px"></textarea>
-
-                <input type="submit" value="Submit">
+                <input type="submit" value="Send">
             </form>
         </div>
     </div>
