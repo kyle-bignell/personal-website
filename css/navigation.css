@@ -34,5 +34,16 @@
 .navigation-link:link:hover, .navigation-link:visited:hover
 {
     color: #ffffff;
-    text-decoration: underline;;
+    text-decoration: underline;
+}
+
+.active-navigation-node
+{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.inactive-navigation-node
+{
+    text-decoration: none;
 }

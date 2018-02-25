@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/navigation.css">
 
-    <title>Kyle Bignell - Software Engineer</title>
+    <title>Kyle Bignell - Senior Software Engineer: Technical Lead</title>
 </head>
 
 <body>

@@ -10,7 +10,10 @@
                         Kyle Bignell
                     </div>
                     <div id="title-text-role">
-                        Software Engineer
+                        Senior Software Engineer
+                    </div>
+                    <div id="title-text-subrole">
+                        Technical Lead
                     </div>
                 </div>
             </div>

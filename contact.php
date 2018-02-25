@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/navigation.css">
     <link rel="stylesheet" href="css/page_contact.css">
 
-    <title>Kyle Bignell - Software Engineer | Contact</title>
+    <title>Kyle Bignell - Senior Software Engineer: Technical Lead | Contact</title>
 </head>
 
 <body>
