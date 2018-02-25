@@ -85,6 +85,9 @@
     else
     {
         echo '
+            <div id="contact-title">
+                Send me a message
+            </div>
             <div id="contact">
                 <form action="contact.php" onsubmit="return validate()" method="post">
                     <input type="text" id="name" name="name" placeholder="Name">

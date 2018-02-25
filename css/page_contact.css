@@ -4,6 +4,17 @@
     padding-bottom: 35px;
 }
 
+#contact-title
+{
+    width: 500px;
+    font-size: 1.75em;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    text-align: center;
+}
+
 #contact
 {
     width: 500px;
@@ -54,7 +65,7 @@ input[type=submit]
     border: 1px solid #000000;
     border-radius: 4px;
     cursor: pointer;
-    background-color: #797979;
+    background-color: #dddddd;
 }
 
 input[type=submit]:hover

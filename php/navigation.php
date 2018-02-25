@@ -16,7 +16,7 @@
                 <a class="navigation-link" href="index.php">Home</a>
             </div>
             <div id="navigation-projects" class="navigation-node ' . $professionalProjectsActiveClass . '">
-                <a class="navigation-link" href="professional_projects.php">Professional Projects</a>
+                <a class="navigation-link" href="professional_projects.php">Professional Experience</a>
             </div>
             <div id="navigation-projects" class="navigation-node ' . $sideProjectsActiveClass . '">
                 <a class="navigation-link" href="side_projects.php">Side Projects</a>
