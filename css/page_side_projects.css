@@ -1,0 +1,24 @@
+#content
+{
+    height: 700px;
+}
+
+#projects-menu
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+}
+
+#projects-menu ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#projects-data
+{
+    display: inline-block;
+    vertical-align: top;
+}

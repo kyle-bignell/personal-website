@@ -1,0 +1,56 @@
+#content
+{
+
+}
+
+#experience-menu
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+}
+
+#experience-menu ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#experience-data
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 995px;
+}
+
+.experience-section
+{
+
+}
+
+.experience-section-title
+{
+    display: inline-block;
+}
+
+.experience-section-time
+{
+    display: inline-block;
+    float: right;
+}
+
+.experience-section-company
+{
+
+}
+
+.experience-subsection
+{
+
+}
+
+.experience-subsection-title
+{
+
+}
