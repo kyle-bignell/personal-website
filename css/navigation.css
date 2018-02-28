@@ -1,12 +1,15 @@
 #navigation
 {
     width: 1200px;
-    height: 35px;
+    height: 45px;
+    line-height: 40px;
     background-color: #3d3d3d;
     margin-top: 45px;
-    border-top: 1px solid #4f4f4f;
-    border-bottom: 1px solid #4f4f4f;
+    border-top: 4px solid #4f4f4f;
+    border-bottom: 4px solid #4f4f4f;
     font-family: "geosans", sans-serif;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .navigation-node
