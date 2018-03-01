@@ -26,25 +26,25 @@
                     <div class="experience-menu-company">Senior Software Engineer</div>
                     Red7
                     <ul class="experience-menu-child-list">
-                        <li>- Responsibilities</li>
-                        <li>- Framework</li>
-                        <li>- Continuous Deployment</li>
-                        <li>- Skype Bot</li>
-                        <li class="experience-menu-child-list-bottom">- Tools</li>
+                        <a href="#sse-red7-responsibilities"><li>- Responsibilities</li></a>
+                        <a href="#sse-red7-framework"><li>- Framework</li></a>
+                        <a href="#sse-red7-continuous-deployment"><li>- Continuous Deployment</li></a>
+                        <a href="#sse-red7-skype-bot"><li>- Skype Bot</li></a>
+                        <a href="#sse-red7-tools"><li class="experience-menu-child-list-bottom">- Tools</li></a>
                     </ul>
                 </li>
                 <li>
                     <div class="experience-menu-company">Software Engineer</div>
                     Red7
                     <ul class="experience-menu-child-list">
-                        <li class="experience-menu-child-list-bottom">- Responsibilities</li>
+                        <a href="#se-red7-responsibilities"><li class="experience-menu-child-list-bottom">- Responsibilities</li></a>
                     </ul>
                 </li>
                 <li>
                     <div class="experience-menu-company">Junior Software Engineer</div>
                     CCFE
                     <ul class="experience-menu-child-list">
-                        <li class="experience-menu-child-list-bottom">- Responsibilities</li>
+                        <a href="#jse-ccfe-responsibilities"><li class="experience-menu-child-list-bottom">- Responsibilities</li></a>
                     </ul>
                 </li>
             </ul>
@@ -61,27 +61,27 @@
                     Red7 Mobile (a part of Scientific Games Corporation)
                 </div>
                 <div class="experience-subsection">
-                    <div class="experience-subsection-title">
+                    <div id="sse-red7-responsibilities" class="experience-subsection-title">
                         Responsibilities
                     </div>
                 </div>
                 <div class="experience-subsection">
-                    <div class="experience-subsection-title">
+                    <div id="sse-red7-framework" class="experience-subsection-title">
                         Framework
                     </div>
                 </div>
                 <div class="experience-subsection">
-                    <div class="experience-subsection-title">
+                    <div id="sse-red7-continuous-deployment" class="experience-subsection-title">
                         Continuous Deployment
                     </div>
                 </div>
                 <div class="experience-subsection">
-                    <div class="experience-subsection-title">
+                    <div id="sse-red7-skype-bot" class="experience-subsection-title">
                         Skype Bot
                     </div>
                 </div>
                 <div class="experience-subsection">
-                    <div class="experience-subsection-title">
+                    <div id="sse-red7-tools" class="experience-subsection-title">
                         Tools
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                     Red7 Mobile (a part of Scientific Games Corporation)
                 </div>
                 <div class="experience-subsection">
-                    <div class="experience-subsection-title">
+                    <div id="se-red7-responsibilities" class="experience-subsection-title">
                         Responsibilities
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                     Culham Centre for Fusion Energy
                 </div>
                 <div class="experience-subsection">
-                    <div class="experience-subsection-title">
+                    <div id="jse-ccfe-responsibilities" class="experience-subsection-title">
                         Responsibilities
                     </div>
                 </div>
