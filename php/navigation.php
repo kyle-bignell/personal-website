@@ -6,7 +6,7 @@
 
     $indexActiveClass = ($page == "index.php") ? "active-navigation-node" : "inactive-navigation-node";
     $professionalExperienceActiveClass = ($page == "professional_experience.php") ? "active-navigation-node" : "inactive-navigation-node";
-    $sideProjectsActiveClass = ($page == "side_projects.php") ? "active-navigation-node" : "inactive-navigation-node";
+    $projectsActiveClass = ($page == "projects.php") ? "active-navigation-node" : "inactive-navigation-node";
     $cvActiveClass = ($page == "cv.php") ? "active-navigation-node" : "inactive-navigation-node";
     $contactActiveClass = ($page == "contact.php") ? "active-navigation-node" : "inactive-navigation-node";
 
@@ -18,8 +18,8 @@
             <div id="navigation-projects" class="navigation-node ' . $professionalExperienceActiveClass . '">
                 <a class="navigation-link" href="professional_experience.php">Professional Experience</a>
             </div>
-            <div id="navigation-projects" class="navigation-node ' . $sideProjectsActiveClass . '">
-                <a class="navigation-link" href="side_projects.php">Side Projects</a>
+            <div id="navigation-projects" class="navigation-node ' . $projectsActiveClass . '">
+                <a class="navigation-link" href="projects.php">Projects</a>
             </div>
             <div id="navigation-cv" class="navigation-node ' . $cvActiveClass . '">
                 <a class="navigation-link" href="cv.php">CV</a>
