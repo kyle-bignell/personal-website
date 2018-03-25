@@ -1,0 +1,46 @@
+#footer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.85em;
+    color: #aaa;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+
+#footer-left
+{
+    display: inline-block;
+    float: left;
+    margin-left: 25px;
+}
+
+#footer-right
+{
+    display: inline-block;
+    float: right;
+    margin-right: 25px;
+    vertical-align: middle;
+}
+
+.footer-right-link
+{
+    text-decoration: none;
+}
+
+.footer-right-image
+{
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    filter: grayscale(1);
+}
+
+.footer-right-image:hover
+{
+    filter: none;
+}
