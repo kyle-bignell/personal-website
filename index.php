@@ -4,37 +4,69 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="shortcut icon" type="image/png" href="assets/images/kyle-bignell.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
 
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/navigation.css">
     <link rel="stylesheet" href="css/page_index.css">
+    <link rel="stylesheet" href="css/footer.css">
 
     <title>Kyle Bignell - Senior Software Engineer: Technical Lead</title>
 </head>
 
 <body>
-    <?php include "php/header.php" ?>
-
     <?php include "php/navigation.php" ?>
 
+    <div id="header">
+        <div id="title">
+            <div id="title-image">
+                <img id="title-image-data" src="assets/images/kyle-bignell-2.png" alt="Picture of Kyle Bignell"/>
+            </div>
+            <div id="title-text">
+                <div id="title-text-name">
+                    Kyle Bignell
+                </div>
+                <div id="title-text-role">
+                    Senior Software Engineer
+                </div>
+                <div id="title-text-subrole">
+                    Technical Lead
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="content">
-        <p>
-            Self directed, competent and flexible software engineer who quickly adapts to business requirements in a fast-paced digital environments.
-        </p>
+        <div id="about">
+            <div class="content-title">
+                About
+            </div>
+            <p>
+                Self directed, competent and flexible software engineer who quickly adapts to business requirements in a fast-paced digital environments.
+            </p>
 
-        <p>
-            Confident team leader with good project management skills and strong interpersonal qualities. Supports teams throughout the stages of the development lifecycle (e.g. planning, development, QA, UAT) to deliver valuable products in a timely manner. Ensures to understand the needs of all involved parties and effectively communicates them across teams and internal stakeholders to set out a clear and unified direction, that aligns with business goals, for all stages of development projects.
-        </p>
+            <p>
+                Confident team leader with good project management skills and strong interpersonal qualities. Supports teams throughout the stages of the development lifecycle (e.g. planning, development, QA, UAT) to deliver valuable products in a timely manner. Ensures to understand the needs of all involved parties and effectively communicates them across teams and internal stakeholders to set out a clear and unified direction, that aligns with business goals, for all stages of development projects.
+            </p>
+        </div>
 
-        <p>
-            Organises both self and team to develop common understanding of project goals so as to identify, prioritise and delegate work in order to deliver high quality results to deadlines while implementing a beneficial blend of Agile/SCRUM and Waterfall methodologies. Thinks on his feet to effectively manage changes whilst suggesting solutions as he reports on progress and issues to mitigate risks and prevent problems from reoccurring.
-        </p>
-
-        <p>
-            Employs analytical and lateral thinking alongside technical ability to streamline processes by automating or optimising them to create time for other valuable work to take place. Believes strongly in the need for well thought out and purposeful UX to ensure adoption of any solutions supplied to users.
-        </p>
+        <div id="accounts">
+            <div class="content-title">
+                Contact
+            </div>
+            <div class="accounts-row">
+                <a class="accounts-link" href="https://www.linkedin.com/in/kyle-bignell-52592785/" target="_blank">
+                    <img class="accounts-image" src="assets/icons/linkedin.png" alt="LinkedIn Icon"/>
+                    LinkedIn
+                </a>
+            </div>
+            <div class="accounts-row">
+                <a class="accounts-link" href="https://bitbucket.org/kyle_bignell/" target="_blank">
+                    <img class="accounts-image" src="assets/icons/bitbucket.png" alt="BitBucket Icon"/>
+                    BitBucket
+                </a>
+            </div>
+        </div>
     </div>
 
     <?php include "php/footer.php" ?>

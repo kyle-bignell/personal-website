@@ -1,5 +1,118 @@
+#header
+{
+    background-color: #f5f8fa;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#title
+{
+    display: inline-block;
+    font-family: "geosans", sans-serif;
+    text-align: left;
+}
+
+#title-image
+{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    margin: 0;
+}
+
+#title-image-data
+{
+    width: 150px;
+    height: 150px;
+}
+
+#title-text
+{
+    display: inline-block;
+    width: 365px;
+    height: 150px;
+    padding: 0;
+    margin: 0;
+    margin-left: 25px;
+    vertical-align: top;
+}
+
+#title-text-name
+{
+    font-size: 3.5em;
+    font-weight: bold;;
+}
+
+#title-text-role
+{
+    font-size: 2.25em;
+}
+
+#title-text-subrole
+{
+    font-size: 1.85em;
+}
+
 #content
 {
-    height: 700px;
-    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.content-title
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #3a4145;
+    margin-bottom: 20px;
+}
+
+#about
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 450px;
+    margin-top: 35px;
+    margin-right: 35px;
+    text-align: left;
+}
+
+#accounts
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 120px;
+    margin-top: 35px;
+    text-align: left;
+}
+
+.accounts-row
+{
+    margin-top: 10px;
+}
+
+.accounts-link
+{
+    text-decoration: none;
+    font-weight: bold;
+    color: #2e2e2e;
+    filter: grayscale(0.8);
+}
+
+.accounts-link:hover
+{
+    color: #01818e;
+    filter: none;
+}
+
+.accounts-image
+{
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
 }
