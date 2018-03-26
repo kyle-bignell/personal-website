@@ -4,6 +4,12 @@
     src: url(../assets/fonts/geosans.ttf);
 }
 
+@font-face
+{
+    font-family: Roboto;
+    src: url(../assets/fonts/Roboto/Roboto-Regular.ttf);
+}
+
 html
 {
     width: 100%;
