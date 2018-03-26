@@ -55,7 +55,7 @@
                 Contact
             </div>
             <div class="accounts-row">
-                <a class="accounts-link" href="https://www.linkedin.com/in/kyle-bignell-52592785/" target="_blank">
+                <a class="accounts-link" href="https://www.linkedin.com/in/kyle-bignell/" target="_blank">
                     <img class="accounts-image" src="assets/icons/linkedin.png" alt="LinkedIn Icon"/>
                     LinkedIn
                 </a>
@@ -64,6 +64,12 @@
                 <a class="accounts-link" href="https://bitbucket.org/kyle_bignell/" target="_blank">
                     <img class="accounts-image" src="assets/icons/bitbucket.png" alt="BitBucket Icon"/>
                     BitBucket
+                </a>
+            </div>
+            <div class="accounts-row">
+                <a class="accounts-link" href="mailto:kyle.bignell@gmail.com" target="_blank">
+                    <img class="accounts-image" src="assets/icons/email.png" alt="BitBucket Icon"/>
+                    Email
                 </a>
             </div>
         </div>

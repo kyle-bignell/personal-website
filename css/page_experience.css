@@ -1,6 +1,6 @@
 #header
 {
-    background-color: #f5f8fa;
+    background-color: #e6eff5;
     border-bottom: 1px solid rgba(0,0,0,.125);
     padding-top: 30px;
     padding-bottom: 30px;
@@ -22,11 +22,11 @@
     margin-right: auto;
     width: 750px;
     padding-top: 60px;
-    font-family: "Roboto", sans-serif;
 }
 
 .experience-entry
 {
+    border-radius: 2px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.32), 0 2px 10px 0 rgba(0,0,0,0.24);
     margin-bottom: 60px;
 }

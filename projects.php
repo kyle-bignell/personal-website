@@ -17,128 +17,70 @@
 <body>
     <?php include "php/navigation.php" ?>
 
-    <div id="content">
-        <div id="projects-menu">
-            <ul class="projects-menu-list">
-                <a href="#project-self-defence-classes-near-me"><li>Self Defence Classes Near Me</li></a>
-                <a href="#project-flocking"><li>Flocking</li></a>
-                <a href="#project-media-server"><li>Media Server</li></a>
-                <a href="#project-wernies-bog-adventure"><li>Wernie's Big Adventure</li></a>
-                <a href="#project-astavoid"><li>Astavoid</li></a>
-                <a href="#project-starcraft-ai"><li>StarCraft AI</li></a>
-            </ul>
+    <div id="header">
+        <div id="title">
+            Projects
         </div>
-        <div id="projects-data">
-            <div class="projects-section">
-                <div id="project-self-defence-classes-near-me" class="projects-section-title">
-                    Self Defence Classes Near Me
-                </div>
-                <div class="projects-section-time">
-                    2017
-                </div>
-                <div class="projects-section-notes">
-                    PHP, JavaScript, MySQL, Google Places & Maps APIs
-                </div>
-                <div class="projects-subsection">
-                    <div class="projects-subsection-title">
-                        Descrption
-                    </div>
-                </div>
-            </div>
+    </div>
 
-            <hr class="projects-separator"/>
-
-            <div class="projects-section">
-                <div id="project-flocking" class="projects-section-title">
+    <div id="content">
+        <div class="projects-entry">
+            <img class="projects-entry-image" alt="Flocking"/>
+            <div class="projects-entry-content">
+                <div class="projects-entry-title">
                     Flocking
                 </div>
-                <div class="projects-section-time">
-                    2017
-                </div>
-                <div class="projects-section-notes">
-                    TypeScript, Phaser
-                </div>
-                <div class="projects-subsection">
-                    <div class="projects-subsection-title">
-                        Descrption
-                    </div>
-                </div>
+                TypeScript, Phaser
             </div>
+        </div>
 
-            <hr class="projects-separator"/>
-
-            <div class="projects-section">
-                <div id="project-media-server" class="projects-section-title">
-                    Media Server
+        <div class="projects-entry">
+            <img class="projects-entry-image" alt="Self Defence Classes Near Me"/>
+            <div class="projects-entry-content">
+                <div class="projects-entry-title">
+                    Self Defence Classes Near Me
                 </div>
-                <div class="projects-section-time">
-                    2017
-                </div>
-                <div class="projects-section-notes">
-                    Linux, Plex, Wake On Lan
-                </div>
-                <div class="projects-subsection">
-                    <div class="projects-subsection-title">
-                        Descrption
-                    </div>
-                </div>
+                PHP, JavaScript, MySQL, Google Places & Maps APIs
             </div>
+        </div>
 
-            <hr class="projects-separator"/>
+        <div class="projects-entry">
+            <img class="projects-entry-image" alt="Neston Developments"/>
+            <div class="projects-entry-content">
+                <div class="projects-entry-title">
+                    Neston Developments
+                </div>
+                PHP, JavaScript
+            </div>
+        </div>
 
-            <div class="projects-section">
-                <div id="project-wernies-bog-adventure" class="projects-section-title">
+        <div class="projects-entry">
+            <img class="projects-entry-image" alt="Wernie's Big Adventure"/>
+            <div class="projects-entry-content">
+                <div class="projects-entry-title">
                     Wernie's Big Adventure
                 </div>
-                <div class="projects-section-time">
-                    2017
-                </div>
-                <div class="projects-section-notes">
-                    Unity, Game Jam
-                </div>
-                <div class="projects-subsection">
-                    <div class="projects-subsection-title">
-                        Role Descrption
-                    </div>
-                </div>
+                Unity, Game Jam
             </div>
+        </div>
 
-            <hr class="projects-separator"/>
-
-            <div class="projects-section">
-                <div id="project-astavoid" class="projects-section-title">
+        <div class="projects-entry">
+            <img class="projects-entry-image" alt="Astavoid"/>
+            <div class="projects-entry-content">
+                <div class="projects-entry-title">
                     Astavoid
                 </div>
-                <div class="projects-section-time">
-                    2015
-                </div>
-                <div class="projects-section-notes">
-                    Unity, Game Jam
-                </div>
-                <div class="projects-subsection">
-                    <div class="projects-subsection-title">
-                        Descrption
-                    </div>
-                </div>
+                Unity, Game Jam
             </div>
+        </div>
 
-            <hr class="projects-separator"/>
-
-            <div class="projects-section">
-                <div id="project-starcraft-ai" class="projects-section-title">
+        <div class="projects-entry">
+            <img class="projects-entry-image" alt="Astavoid"/>
+            <div class="projects-entry-content">
+                <div class="projects-entry-title">
                     StarCraft AI
                 </div>
-                <div class="projects-section-time">
-                    2015
-                </div>
-                <div class="projects-section-notes">
-                    AI, C#, Visual Studio
-                </div>
-                <div class="projects-subsection">
-                    <div class="projects-subsection-title">
-                        Descrption
-                    </div>
-                </div>
+                AI, C#
             </div>
         </div>
     </div>

@@ -1,3 +1,21 @@
+#header
+{
+    background-color: #e6eff5;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#title
+{
+    display: inline-block;
+    text-align: left;
+    font-family: "geosans", sans-serif;
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
 #content
 {
     padding-top: 35px;

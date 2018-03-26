@@ -1,6 +1,6 @@
 #header
 {
-    background-color: #f5f8fa;
+    background-color: #e6eff5;
     border-bottom: 1px solid rgba(0,0,0,.125);
     padding-top: 50px;
     padding-bottom: 50px;
@@ -113,7 +113,8 @@
 .accounts-image
 {
     width: 25px;
-    height: 25px;
+    height: 100%;
     margin-right: 8px;
     vertical-align: middle;
+    object-fit: cover;
 }

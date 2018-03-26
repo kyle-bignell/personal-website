@@ -6,32 +6,30 @@
     background-color: rgb(255, 255, 255);
     color: #2e2e2e;
     border-bottom: 1px solid rgba(0,0,0,.125);
-    font-family: "geosans", sans-serif;
+    font-weight: bold;
 }
 
 #navigation-left
 {
     display: inline-block;
     float: left;
-    margin-left: 10px;
 }
 
 #navigation-right
 {
     display: inline-block;
     float: right;
-    margin-right: 25px;
 }
 
 .navigation-node
 {
     display: inline-block;
-    height: 35px;
-    line-height: 35px;
-    font-size: 1.5em;
+    height: 45px;
+    line-height: 45px;
+    font-size: 1em;
     text-align: center;
-    vertical-align: middle;
-    margin-left: 15px;
+    margin-left: 14px;
+    margin-right: 14px;
 }
 
 .navigation-link:link, .navigation-link:visited
@@ -53,7 +51,6 @@
 
 .active-navigation-node
 {
-    font-weight: bold;
     text-decoration: underline;
 }
 

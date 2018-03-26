@@ -19,6 +19,12 @@
 <body>
     <?php include "php/navigation.php" ?>
 
+    <div id="header">
+        <div id="title">
+            CV
+        </div>
+    </div>
+
     <div id="content">
 
     </div>
