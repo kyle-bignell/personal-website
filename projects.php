@@ -25,7 +25,7 @@
 
     <div id="content">
         <div class="projects-entry">
-            <img class="projects-entry-image" alt="Flocking"/>
+            <img class="projects-entry-image" src="assets/images/projects/flocking.png" alt="Flocking"/>
             <div class="projects-entry-content">
                 <div class="projects-entry-title">
                     Flocking
@@ -35,7 +35,7 @@
         </div>
 
         <div class="projects-entry">
-            <img class="projects-entry-image" alt="Self Defence Classes Near Me"/>
+            <img class="projects-entry-image" src="assets/images/projects/sdcnm.png" alt="Self Defence Classes Near Me"/>
             <div class="projects-entry-content">
                 <div class="projects-entry-title">
                     Self Defence Classes Near Me
@@ -45,17 +45,17 @@
         </div>
 
         <div class="projects-entry">
-            <img class="projects-entry-image" alt="Neston Developments"/>
+            <img class="projects-entry-image" src="assets/images/projects/neston_gardens.png" alt="Neston Gardens"/>
             <div class="projects-entry-content">
                 <div class="projects-entry-title">
-                    Neston Developments
+                    Neston Gardens
                 </div>
                 PHP, JavaScript
             </div>
         </div>
 
         <div class="projects-entry">
-            <img class="projects-entry-image" alt="Wernie's Big Adventure"/>
+            <img class="projects-entry-image" src="assets/images/projects/wba.png" alt="Wernie's Big Adventure"/>
             <div class="projects-entry-content">
                 <div class="projects-entry-title">
                     Wernie's Big Adventure
@@ -65,7 +65,7 @@
         </div>
 
         <div class="projects-entry">
-            <img class="projects-entry-image" alt="Astavoid"/>
+            <img class="projects-entry-image" src="assets/images/projects/astavoid.png" alt="Astavoid"/>
             <div class="projects-entry-content">
                 <div class="projects-entry-title">
                     Astavoid
@@ -75,7 +75,7 @@
         </div>
 
         <div class="projects-entry">
-            <img class="projects-entry-image" alt="Astavoid"/>
+            <img class="projects-entry-image" src="assets/images/projects/starcraft_ai.png" alt="StarCraft AI"/>
             <div class="projects-entry-content">
                 <div class="projects-entry-title">
                     StarCraft AI
