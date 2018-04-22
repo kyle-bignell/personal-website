@@ -1,9 +1,9 @@
 #header
 {
-    background-color: #e6eff5;
-    border-bottom: 1px solid rgba(0,0,0,.125);
-    padding-top: 50px;
-    padding-bottom: 50px;
+    background-color: #d4e7f4;
+    border-bottom: 1px solid rgba(0,0,0,.25);
+    padding-top: 15px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -17,16 +17,16 @@
 #title-image
 {
     display: inline-block;
-    width: 150px;
-    height: 150px;
-    padding: 0;
+    width: 125px;
+    height: 125px;
+    padding: 12.5px 0px 0px 12.5px;
     margin: 0;
 }
 
 #title-image-data
 {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
 }
 
 #title-text
@@ -66,10 +66,10 @@
 
 .content-title
 {
-    font-size: 1.5em;
+    font-size: 1.75rem;
     font-weight: bold;
     color: #3a4145;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 #about
@@ -78,7 +78,7 @@
     vertical-align: top;
     width: 450px;
     margin-top: 35px;
-    margin-right: 35px;
+    margin-right: 50px;
     text-align: left;
 }
 
@@ -89,6 +89,7 @@
     width: 120px;
     margin-top: 35px;
     text-align: left;
+    font-size: 1.15em;
 }
 
 .accounts-row
@@ -101,13 +102,12 @@
     text-decoration: none;
     font-weight: bold;
     color: #2e2e2e;
-    filter: grayscale(0.8);
+    filter: none;
 }
 
 .accounts-link:hover
 {
     color: #01818e;
-    filter: none;
 }
 
 .accounts-image

@@ -9,5 +9,8 @@
         <a class="footer-right-link" href="https://bitbucket.org/kyle_bignell/" target="_blank">
             <img class="footer-right-image" src="assets/icons/bitbucket.png" alt="BitBucket Icon"/>
         </a>
+        <a class="footer-right-link" href="mailto:kyle.bignell@gmail.com" target="_blank">
+            <img class="footer-right-image" src="assets/icons/email.png" alt="BitBucket Icon"/>
+        </a>
     </div>
 </div>
