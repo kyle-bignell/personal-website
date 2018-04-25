@@ -68,6 +68,11 @@
     font-weight: bold;
 }
 
+.experience-entry-content
+{
+    padding: 15px;
+}
+
 .experience-entry-footer
 {
     background-color: rgba(0, 0, 0, 0.025);

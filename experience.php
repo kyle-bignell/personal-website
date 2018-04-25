@@ -36,11 +36,9 @@
                     </div>
                 </div>
                 <hr/>
-                Responsibilities<br/>
-                Framework<br/>
-                Continuous Deployment<br/>
-                Skype Bot<br/>
-                Tools<br/>
+                <div class="experience-entry-content">
+                    Working as a technical leader alongside game development responsibilities, helping to lead 15+ developers to produce high quality HTML5/JavaScript games while supporting management and encouraging growth in team members.
+                </div>
             </div>
             <div class="experience-entry-footer">
                 Jan 2017 - Present | Bristol, Somserset
@@ -59,7 +57,9 @@
                     </div>
                 </div>
                 <hr/>
-                Responsibilities<br/>
+                <div class="experience-entry-content">
+                    Developing HTML5/JavaScript games for the gambling industry, predominantly slot and table games.
+                </div>
             </div>
             <div class="experience-entry-footer">
                 May 2015 - Dec 2016 | Bristol, Somserset
@@ -78,7 +78,9 @@
                     </div>
                 </div>
                 <hr/>
-                Responsibilities<br/>
+                <div class="experience-entry-content">
+                    Helping to maintain and develop software that supports the research of scientists working both at the site and remotely around the world.
+                </div>
             </div>
             <div class="experience-entry-footer">
                 Jul 2013 - Jun 2014 | Culham, Oxfordshire
