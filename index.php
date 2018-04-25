@@ -42,11 +42,7 @@
                 About
             </div>
             <p>
-                Self directed, competent and flexible software engineer who quickly adapts to business requirements in a fast-paced digital environments.
-            </p>
-
-            <p>
-                Confident team leader with good project management skills and strong interpersonal qualities. Supports teams throughout the stages of the development lifecycle (e.g. planning, development, QA, UAT) to deliver valuable products in a timely manner. Ensures to understand the needs of all involved parties and effectively communicates them across teams and internal stakeholders to set out a clear and unified direction, that aligns with business goals, for all stages of development projects.
+                Self directed, competent and flexible software engineer who quickly adapts to business requirements in a fast-paced digital environments. Confident team leader with good project management skills and strong interpersonal qualities.
             </p>
         </div>
 
