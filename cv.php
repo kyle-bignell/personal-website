@@ -14,6 +14,16 @@
     <script src="js/pdfobject.min.js"></script>
 
     <title>Kyle Bignell - Senior Software Engineer: Technical Lead | CV</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-106748379-3');
+    </script>
 </head>
 
 <body>
