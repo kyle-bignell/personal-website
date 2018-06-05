@@ -10,9 +10,13 @@
 ?>
 <div id="navigation">
     <div id="navigation-left">
-        <div id="navigation-about" class="navigation-node">
+        <div id="navigation-about" class="navigation-node-home">
             <a class="navigation-link" href="index.php">KYLE BIGNELL</a>
         </div>
+    </div>
+
+    <div id="navigation-right-menu">
+        <img id="navigation-right-menu-icon" src="assets/icons/menu-button.png"/>
     </div>
 
     <div id="navigation-right">

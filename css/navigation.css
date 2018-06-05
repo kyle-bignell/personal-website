@@ -1,7 +1,6 @@
 #navigation
 {
     width: 100%;
-    height: 45px;
     background-color: rgb(255, 255, 255);
     color: #2e2e2e;
     border-bottom: 1px solid rgba(0,0,0,.25);
@@ -11,21 +10,73 @@
 #navigation-left
 {
     display: inline-block;
-    float: left;
+    height: 45px;
 }
 
-#navigation-right
+@media (max-width: 475px)
 {
-    display: inline-block;
-    float: right;
+    #navigation-right-menu
+    {
+        display: inline-block;
+        float: right;
+    }
+
+    #navigation-right
+    {
+        display: none;
+        clear: both;
+    }
+
+    .navigation-node
+    {
+        height: 55px;
+        line-height: 55px;
+        font-size: 1em;
+        text-align: left;
+        padding-left: 15px;
+        border-top: 1px solid rgba(0,0,0,.2);
+    }
 }
 
-.navigation-node
+@media (min-width: 476px)
+{
+    #navigation-right-menu
+    {
+        display: none;
+    }
+
+    #navigation-right
+    {
+        display: inline-block;
+        float: right;
+    }
+
+    .navigation-node
+    {
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        font-size: 1em;
+        text-align: center;
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+}
+
+#navigation-right-menu-icon
+{
+    width: 28px;
+    height: 30px;
+    margin-top: 7px;
+    margin-right: 10px;
+}
+
+.navigation-node-home
 {
     display: inline-block;
     height: 45px;
     line-height: 45px;
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
     margin-left: 14px;
     margin-right: 14px;
