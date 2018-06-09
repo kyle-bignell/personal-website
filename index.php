@@ -14,7 +14,7 @@
 
     <script src="js/navigation.js"></script>
 
-    <title>Kyle Bignell - Senior Software Engineer: Technical Lead</title>
+    <title>Kyle Bignell - Senior Developer: Technical Lead</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -40,7 +40,7 @@
                     Kyle Bignell
                 </div>
                 <div id="title-text-role">
-                    Senior Software Engineer
+                    Senior Developer
                 </div>
                 <div id="title-text-subrole">
                     Technical Lead
@@ -52,7 +52,7 @@
     <div id="content">
         <div id="about">
             <div class="content-title">
-                About
+                About me
             </div>
             <p>
                 Self directed, competent and flexible software engineer who quickly adapts to business requirements in a fast-paced digital environments. Confident team leader with good project management skills and strong interpersonal qualities.

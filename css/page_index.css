@@ -1,26 +1,110 @@
 #header
 {
-    background-color: #d4e7f4;
+    background-color: #4b4b4b;
+    color: white;
     border-bottom: 1px solid rgba(0,0,0,.25);
     padding-top: 15px;
     padding-bottom: 10px;
     text-align: center;
 }
 
+@media (max-width: 475px)
+{
+    #title-image
+    {
+        display: block;
+        margin: auto;
+        padding: 0;
+    }
+
+    #title-text
+    {
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+
+    #about
+    {
+        display: block;
+        width: 90%;
+        margin: auto;
+    }
+
+    #accounts
+    {
+        display: block;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 35px;
+    }
+
+    .accounts-row
+    {
+        display: inline-block;
+        margin-right: 18px;
+    }
+
+    .accounts-image
+    {
+        margin-right: 4px;
+    }
+}
+
+@media (min-width: 476px)
+{
+    #title-image
+    {
+        display: inline-block;
+        margin: 0;
+        padding: 12.5px 12.5px 0px 12.5px;
+    }
+
+    #title-text
+    {
+        display: inline-block;
+        margin: 0;
+        text-align: left;
+    }
+
+    #about
+    {
+        display: inline-block;
+        vertical-align: top;
+        width: 65%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    #accounts
+    {
+        display: inline-block;
+        vertical-align: top;
+        width: 35%;
+        float: right;
+        padding: 20px;
+    }
+
+    .accounts-row
+    {
+        display: block;
+    }
+
+    .accounts-image
+    {
+        margin-right: 8px;
+    }
+}
+
 #title
 {
-    display: inline-block;
     font-family: "geosans", sans-serif;
-    text-align: left;
 }
 
 #title-image
 {
-    display: inline-block;
     width: 125px;
     height: 125px;
-    padding: 12.5px 0px 0px 12.5px;
-    margin: 0;
 }
 
 #title-image-data
@@ -31,10 +115,8 @@
 
 #title-text
 {
-    display: inline-block;
     height: 150px;
     padding: 0;
-    margin: 0;
     vertical-align: top;
 }
 
@@ -67,26 +149,22 @@
     font-size: 1.75rem;
     font-weight: bold;
     color: #3a4145;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 #about
 {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 35px;
-    margin-right: 50px;
     text-align: left;
+    margin-top: 20px;
+    box-sizing: border-box;
 }
 
 #accounts
 {
-    display: inline-block;
-    vertical-align: top;
-    width: 120px;
-    margin-top: 35px;
+    margin-top: 20px;
     text-align: left;
     font-size: 1.15em;
+    box-sizing: border-box;
 }
 
 .accounts-row
@@ -100,6 +178,7 @@
     font-weight: bold;
     color: #2e2e2e;
     filter: none;
+    padding-top: 4px;
 }
 
 .accounts-link:hover
@@ -111,7 +190,7 @@
 {
     width: 25px;
     height: 100%;
-    margin-right: 8px;
+    margin-top: -4px;
     vertical-align: middle;
     object-fit: cover;
 }
