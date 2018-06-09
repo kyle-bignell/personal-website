@@ -20,20 +20,8 @@
     </div>
 
     <div id="navigation-right">
-        <a class="navigation-link" href="experience.php">
-            <div id="navigation-projects" class="navigation-node <?php echo $experienceActiveClass ?>">
-                EXPERIENCE
-            </div>
-        </a>
-        <a class="navigation-link" href="projects.php">
-            <div id="navigation-projects" class="navigation-node <?php echo $projectsActiveClass ?>">
-                PROJECTS
-            </div>
-        </a>
-        <a class="navigation-link" href="cv.php">
-            <div id="navigation-cv" class="navigation-node <?php echo $cvActiveClass ?>">
-                CV
-            </div>
-        </a>
+        <a class="navigation-link" href="experience.php"><div id="navigation-projects" class="navigation-node <?php echo $experienceActiveClass ?>">EXPERIENCE</div></a>
+        <a class="navigation-link" href="projects.php"><div id="navigation-projects" class="navigation-node <?php echo $projectsActiveClass ?>">PROJECTS</div></a>
+        <a class="navigation-link" href="cv.php"><div id="navigation-cv" class="navigation-node <?php echo $cvActiveClass ?>">CV</div></a>
     </div>
 </div>
