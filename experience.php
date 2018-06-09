@@ -14,7 +14,7 @@
 
     <script src="js/navigation.js"></script>
 
-    <title>Kyle Bignell - Senior Software Engineer: Technical Lead | Projects</title>
+    <title>Kyle Bignell - Senior Developer: Technical Lead | Projects</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -40,12 +40,36 @@
         <div class="experience-entry">
             <div class="experience-entry-content">
                 <div class="experience-entry-header">
-                    <img class="experience-entry-header-logo" src="assets/images/red7_logo.png" alt="Red7 Logo" />
-                    <div class="experience-entry-header-name">
-                        Red7 Mobile
+                    <img class="experience-entry-header-logo" src="assets/images/future_logo.png" alt="Future Logo" />
+                    <div class="experience-entry-header-text">
+                        <div class="experience-entry-header-name">
+                            Future
+                        </div>
+                        <div class="experience-entry-header-role">
+                            Senior Developer
+                        </div>
                     </div>
-                    <div class="experience-entry-header-role">
-                        Senior Software Engineer - Technical Lead
+                </div>
+                <hr/>
+                <div class="experience-entry-content">
+                    Working as a senior developer in the platform and advertising teams to help supply engaging and valuable content.
+                </div>
+            </div>
+            <div class="experience-entry-footer">
+                May 2018 - Present | Bath, Somserset
+            </div>
+        </div>
+        <div class="experience-entry">
+            <div class="experience-entry-content">
+                <div class="experience-entry-header">
+                    <img class="experience-entry-header-logo" src="assets/images/red7_logo.png" alt="Red7 Logo" />
+                    <div class="experience-entry-header-text">
+                        <div class="experience-entry-header-name">
+                            Red7 Mobile
+                        </div>
+                        <div class="experience-entry-header-role">
+                            Senior Developer - Technical Lead
+                        </div>
                     </div>
                 </div>
                 <hr/>
@@ -54,7 +78,7 @@
                 </div>
             </div>
             <div class="experience-entry-footer">
-                Jan 2017 - Present | Bristol, Somserset
+                Jan 2017 - May 2018 | Bristol, Somserset
             </div>
         </div>
 
@@ -62,11 +86,13 @@
             <div class="experience-entry-content">
                 <div class="experience-entry-header">
                     <img class="experience-entry-header-logo" src="assets/images/red7_logo.png" alt="Red7 Logo" />
-                    <div class="experience-entry-header-name">
-                        Red7 Mobile
-                    </div>
-                    <div class="experience-entry-header-role">
-                        Software Engineer
+                    <div class="experience-entry-header-text">
+                        <div class="experience-entry-header-name">
+                            Red7 Mobile
+                        </div>
+                        <div class="experience-entry-header-role">
+                            Developer
+                        </div>
                     </div>
                 </div>
                 <hr/>
@@ -83,11 +109,13 @@
             <div class="experience-entry-content">
                 <div class="experience-entry-header">
                     <img class="experience-entry-header-logo" src="assets/images/ccfe_logo.png" alt="CCFE Logo" />
-                    <div class="experience-entry-header-name">
-                        Culham Centre for Fusion Energy
-                    </div>
-                    <div class="experience-entry-header-role">
-                        Junior Software Engineer
+                    <div class="experience-entry-header-text">
+                        <div class="experience-entry-header-name">
+                            Culham Centre for Fusion Energy
+                        </div>
+                        <div class="experience-entry-header-role">
+                            Junior Developer
+                        </div>
                     </div>
                 </div>
                 <hr/>

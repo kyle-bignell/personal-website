@@ -14,7 +14,7 @@
 
     <script src="js/navigation.js"></script>
 
-    <title>Kyle Bignell - Senior Software Engineer: Technical Lead | Projects</title>
+    <title>Kyle Bignell - Senior Developer: Technical Lead | Projects</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
