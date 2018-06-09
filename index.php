@@ -55,7 +55,7 @@
                 About me
             </div>
             <p>
-                Self directed, competent and flexible software engineer who quickly adapts to business requirements in a fast-paced digital environments. Confident team leader with good project management skills and strong interpersonal qualities.
+                Self directed, competent and flexible software engineer who quickly adapts to business requirements in fast-paced digital environments. Confident team leader with good project management skills and strong interpersonal qualities.
             </p>
         </div>
 
