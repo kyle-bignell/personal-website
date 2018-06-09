@@ -1,3 +1,35 @@
+@media (max-width: 700px)
+{
+    #content
+    {
+        width: 80%;
+    }
+
+    .projects-entry
+    {
+        display: block;
+        max-width: 375px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 701px)
+{
+    #content
+    {
+        width: 90%;
+    }
+
+    .projects-entry
+    {
+        display: inline-block;
+        width: 46%;
+        margin-left: 2%;
+        margin-right: 2%;
+        float: left;
+    }
+}
+
 #header
 {
     background-color: #4b4b4b;
@@ -21,23 +53,18 @@
 {
     margin-left: auto;
     margin-right: auto;
-    width: 970px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .projects-entry
 {
-    width: 440px;
+    box-sizing: border-box;
     height: 350px;
     border-radius: 2px;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5), 0 2px 10px 0 rgba(0,0,0,0.5);
-    display: inline-block;
-    margin: 20px;
     margin-bottom: 30px;
     padding: 1px;
-    vertical-align: top;
-    position: relative;
 }
 
 .projects-entry-image
@@ -63,26 +90,26 @@
 
 .projects-entry-description
 {
-
+    height: 75px;
 }
 
 .projects-entry-footer
 {
-    width: 430px;
-    position: absolute;
+    width: 95%;
     bottom: 0px;
 }
 
 .projects-entry-link-wrapper
 {
     display: inline-block;
+    float: left;
     text-align: center;
+    width: 50%;
 }
 
-.projects-entry-link-image
+.projects-entry-link-wrapper a
 {
-    width: 100px;
-    height: 60px;
-    object-fit: cover;
-    margin-right: -30px;
+    font-size: 1.2rem;
+    line-height: 30px;
+    color: black;
 }
