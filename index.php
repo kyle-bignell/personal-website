@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/icons/favicon_v2.png"/>
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/navigation.css">
@@ -55,7 +55,10 @@
                 About me
             </div>
             <p>
-                Self directed, competent and flexible software engineer who quickly adapts to business requirements in fast-paced digital environments. Confident team leader with good project management skills and strong interpersonal qualities.
+                I'm a software developer currently specialising in web technologies. I find it rewarding to bring order and clear direction to hectic situations that occur within software development projects. I use this to ensure that my team and I can focus on what we do best, producing great software.
+            </p>
+            <p>
+                In my spare time I love to hack away on side projects, either to pursure my own interests or in collaboration with others. Check out my projects page to see what I've been working on.
             </p>
         </div>
 
