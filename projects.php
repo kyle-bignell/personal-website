@@ -14,7 +14,7 @@
 
     <script src="js/navigation.js"></script>
 
-    <title>Kyle Bignell - Senior Developer: Technical Lead | Projects</title>
+    <title>Kyle Bignell - Technical Lead | Projects</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="projects-entry-link-wrapper">
                         <a class="projects-entry-link" href="http://flocking.kyle-bignell.co.uk" target="_blank">
-                            Go To Project
+                            Visit Project
                         </a>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="projects-entry-link-wrapper">
                         <a class="projects-entry-link" href="http://skype-bot.kyle-bignell.co.uk/" target="_blank">
-                            Go To Project
+                            Visit Project
                         </a>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     </div>
                     <div class="projects-entry-link-wrapper">
                         <a class="projects-entry-link" href="http://selfdefenceclassesnearme.co.uk/" target="_blank">
-                            Go To Project
+                            Visit Project
                         </a>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="projects-entry-link-wrapper">
                         <a class="projects-entry-link" href="http://www.neston-developments.co.uk/" target="_blank">
-                            Go To Project
+                            Visit Project
                         </a>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="projects-entry-link-wrapper">
                         <a class="projects-entry-link" href="https://kyle-bignell.itch.io/wernies-big-adventure" target="_blank">
-                            Go To Project
+                            Visit Project
                         </a>
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                     </div>
                     <div class="projects-entry-link-wrapper">
                         <a class="projects-entry-link" href="https://play.google.com/store/apps/details?id=com.KyleBignell.Astavoid&hl=en_GB" target="_blank">
-                            Go To Project
+                            Visit Project
                         </a>
                     </div>
                 </div>

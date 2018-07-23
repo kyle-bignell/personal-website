@@ -9,6 +9,37 @@
     text-align: center;
 }
 
+@media (max-width: 585px)
+{
+    .experience-entry-header-logo
+    {
+        height: 65px;
+        line-height: 65px;
+        width: 100%;
+        object-fit: contain;
+        margin-bottom: 25px !important;
+    }
+
+    .experience-entry-header-role
+    {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 586px)
+{
+    .experience-entry-header-logo
+    {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .experience-entry-header-role
+    {
+        font-size: 1.15em;
+    }
+}
+
 #title
 {
     display: inline-block;
@@ -49,8 +80,6 @@
 {
     display: inline-block;
     vertical-align: top;
-    height: 50px;
-    line-height: 50px;
     margin-right: 15px;
     margin-bottom: 15px;
 }
@@ -70,7 +99,6 @@
 .experience-entry-header-role
 {
     line-height: 40px;
-    font-size: 1.15em;
     font-weight: bold;
 }
 

@@ -14,7 +14,7 @@
 
     <script src="js/navigation.js"></script>
 
-    <title>Kyle Bignell - Senior Developer: Technical Lead</title>
+    <title>Kyle Bignell - Technical Lead</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -55,10 +55,13 @@
                 About me
             </div>
             <p>
-                I'm a software developer currently specialising in web technologies. I find it rewarding to bring order and clear direction to hectic situations that occur within software development projects. I use this to ensure that my team and I can focus on what we do best, producing great software.
+                I'm a software developer currently specialising in web technologies. I bring order and clear direction to the ever changing situations that occur within every software development projects. I do this to ensure that my team and I can focus on what we do best, producing great software.
             </p>
             <p>
-                In my spare time I love to hack away on side projects, either to pursure my own interests or in collaboration with others. Check out my projects page to see what I've been working on.
+                Outside of work I keep fit pacticing Wing Chun Kung Fu. After studying for 2 years I now help run the class occassionally, helping other beginners on their journey into the world of martial arts.
+            </p>
+            <p>
+                In my spare time I like to work on my side projects, check out what I am working on over on my <a href="projects.php">projects page</a>.
             </p>
         </div>
 
