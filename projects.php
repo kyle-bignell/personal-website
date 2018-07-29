@@ -49,7 +49,7 @@
                 <div class="projects-entry-footer">
                     <hr/>
                     <div class="projects-entry-link-wrapper">
-                        <a class="projects-entry-link" href="projects/flocking.php" target="_blank">
+                        <a class="projects-entry-link" href="projects/flocking.php">
                             More Info
                         </a>
                     </div>
@@ -60,6 +60,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="projects-spacer">
         </div>
 
         <div class="projects-entry">
@@ -74,7 +77,7 @@
                 <div class="projects-entry-footer">
                     <hr/>
                     <div class="projects-entry-link-wrapper">
-                        <a class="projects-entry-link" href="projects/skypeBot.php" target="_blank">
+                        <a class="projects-entry-link" href="projects/skypeBot.php">
                             More Info
                         </a>
                     </div>
@@ -85,6 +88,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="projects-spacer">
         </div>
 
         <div class="projects-entry">
@@ -99,7 +105,7 @@
                 <div class="projects-entry-footer">
                     <hr/>
                     <div class="projects-entry-link-wrapper">
-                        <a class="projects-entry-link" href="projects/selfDefenceClassesNearMe.php" target="_blank">
+                        <a class="projects-entry-link" href="projects/selfDefenceClassesNearMe.php">
                             More Info
                         </a>
                     </div>
@@ -110,6 +116,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="projects-spacer">
         </div>
 
         <div class="projects-entry">
@@ -124,7 +133,7 @@
                 <div class="projects-entry-footer">
                     <hr/>
                     <div class="projects-entry-link-wrapper">
-                        <a class="projects-entry-link" href="projects/nestonGardens.php" target="_blank">
+                        <a class="projects-entry-link" href="projects/nestonGardens.php">
                             More Info
                         </a>
                     </div>
@@ -135,6 +144,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="projects-spacer">
         </div>
 
         <div class="projects-entry">
@@ -149,7 +161,7 @@
                 <div class="projects-entry-footer">
                     <hr/>
                     <div class="projects-entry-link-wrapper">
-                        <a class="projects-entry-link" href="projects/werniesBigAdventure.php" target="_blank">
+                        <a class="projects-entry-link" href="projects/werniesBigAdventure.php">
                             More Info
                         </a>
                     </div>
@@ -160,6 +172,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="projects-spacer">
         </div>
 
         <div class="projects-entry">
@@ -174,7 +189,7 @@
                 <div class="projects-entry-footer">
                     <hr/>
                     <div class="projects-entry-link-wrapper">
-                        <a class="projects-entry-link" href="projects/astavoid.php" target="_blank">
+                        <a class="projects-entry-link" href="projects/astavoid.php">
                             More Info
                         </a>
                     </div>
@@ -185,6 +200,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="projects-spacer">
         </div>
 
         <div class="projects-entry">
@@ -199,7 +217,7 @@
                 <div class="projects-entry-footer">
                     <hr/>
                     <div class="projects-entry-link-wrapper">
-                        <a class="projects-entry-link" href="projects/starCraftAI.php" target="_blank">
+                        <a class="projects-entry-link" href="projects/starCraftAI.php">
                             More Info
                         </a>
                     </div>
@@ -207,7 +225,8 @@
             </div>
         </div>
 
-        <div style="clear: both"></div>
+        <div class="projects-spacer">
+        </div>
     </div>
 
     <?php include "php/footer.php" ?>

@@ -55,13 +55,10 @@
                 About me
             </div>
             <p>
-                I'm a software developer currently specialising in web technologies. I bring order and clear direction to the ever changing situations that occur within every software development projects. I do this to ensure that my team and I can focus on what we do best, producing great software.
+                I'm a software developer currently specialising in web technologies, bringing order and clear direction to the ever changing environments of software development projects. This ensures that my team can focus on what we do best, producing great software.
             </p>
             <p>
-                Outside of work I keep fit pacticing Wing Chun Kung Fu. After studying for 2 years I now help run the class occassionally, helping other beginners on their journey into the world of martial arts.
-            </p>
-            <p>
-                In my spare time I like to work on my side projects, check out what I am working on over on my <a href="projects.php">projects page</a>.
+                Check out what I am working on over on my <a href="projects.php">projects page</a>.
             </p>
         </div>
 

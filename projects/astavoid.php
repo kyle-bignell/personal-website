@@ -14,7 +14,7 @@
 
     <script src="../js/navigation.js"></script>
 
-    <title>Kyle Bignell - Technical Lead</title>
+    <title>Kyle Bignell - Technical Lead | Project: Astavoid</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -32,7 +32,7 @@
 
     <div id="header">
         <div id="title">
-            Astavoid
+            Project: Astavoid
         </div>
     </div>
 
