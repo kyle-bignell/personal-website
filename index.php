@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" CONTENT="Kyle Bignell technical lead portfolio">
 
-    <link rel="shortcut icon" type="image/png" href="assets/icons/favicon_v2.png"/>
+    <link rel="canonical" href="http://www.kyle-bignell.co.uk/"/>
+
+    <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/navigation.css">
@@ -40,9 +43,6 @@
                     Kyle Bignell
                 </div>
                 <div id="title-text-role">
-                    Senior Developer
-                </div>
-                <div id="title-text-subrole">
                     Technical Lead
                 </div>
             </div>
@@ -55,10 +55,13 @@
                 About me
             </div>
             <p>
-                I'm a software developer currently specialising in web technologies, bringing order and clear direction to the ever changing environments of software development projects. This ensures that my team can focus on what we do best, producing great software.
+                I'm a software developer currently specialising in web technologies. As a technical lead I bring order and clear direction to complex software development projects which ensures that my team and I can focus on what we do best, delivering valuable software to the business.
             </p>
             <p>
-                Check out what I am working on over on my <a href="projects.php">projects page</a>.
+                Find out more about my current and previous roles over on my <a href="experience.php">experience page</a>.
+            </p>
+            <p>
+                Check out other things I am working on my <a href="projects.php">projects page</a>.
             </p>
         </div>
 

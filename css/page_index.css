@@ -58,7 +58,7 @@
     {
         display: inline-block;
         margin: 0;
-        padding: 12.5px 12.5px 0px 12.5px;
+        padding: 0px 12.5px 0px 12.5px;
     }
 
     #title-text
@@ -105,8 +105,8 @@
 
 #title-image
 {
-    width: 125px;
-    height: 125px;
+    width: 130px;
+    height: 130px;
 }
 
 #title-image-data
@@ -119,8 +119,8 @@
 
 #title-text
 {
-    height: 150px;
-    padding: 0;
+    height: 120px;
+    padding-top: 10px;
     vertical-align: top;
 }
 
@@ -133,11 +133,6 @@
 #title-text-role
 {
     font-size: 2.25em;
-}
-
-#title-text-subrole
-{
-    font-size: 1.85em;
 }
 
 #content

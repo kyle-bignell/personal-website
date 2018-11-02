@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" CONTENT="Kyle Bignell technical lead Self Defence Classes Near Me project">
 
-    <link rel="shortcut icon" type="image/png" href="../assets/icons/favicon_v2.png"/>
+    <link rel="canonical" href="http://www.kyle-bignell.co.uk/projects/self-defence-classes-near-me.php"/>
+
+    <link rel="shortcut icon" type="image/png" href="../assets/icons/favicon.png"/>
 
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/navigation.css">
@@ -14,7 +17,7 @@
 
     <script src="../js/navigation.js"></script>
 
-    <title>Kyle Bignell - Technical Lead | Project: Neston Gardens</title>
+    <title>Kyle Bignell - Technical Lead | Project: Self Defence Classes Near Me</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -32,7 +35,7 @@
 
     <div id="header">
         <div id="title">
-            Project: Neston Gardens
+            Project: Self Defence Classes Near Me
         </div>
     </div>
 

@@ -57,7 +57,6 @@
 {
     max-width: 375px;
     box-sizing: border-box;
-    min-height: 350px;
     border-radius: 2px;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5), 0 2px 10px 0 rgba(0,0,0,0.5);
     margin-left: auto;
@@ -76,7 +75,6 @@
 .projects-entry-content
 {
     font-size: 1em;
-    padding: 5px 10px;
 }
 
 .projects-entry-title
@@ -84,35 +82,39 @@
     font-size: 1.35em;
     font-weight: bold;
     color: #4b4b4b;
-    margin-bottom: 10px;
+    margin: 5px 10px;
 }
 
 .projects-entry-description
 {
     height: 70px;
+    margin: 5px 10px;
 }
 
 .projects-entry-footer
 {
-    width: 98%;
-    bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
 }
 
-.projects-entry-link-wrapper
+.projects-entry-link
 {
-    display: inline-block;
-    float: left;
+    color: #606060;
+    text-decoration: none;
+}
+
+.projects-entry-link-content
+{
     text-align: center;
-    width: 50%;
+    font-size: 1.2rem;
+    line-height: 40px;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.33);
 }
 
-.projects-entry-link-wrapper a
+.projects-entry-link-content:hover
 {
-    font-size: 1.2rem;
-    line-height: 30px;
-    color: black;
+    color: #000000;
+    background-color: #d9d9d9;
 }
 
 .projects-spacer
