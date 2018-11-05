@@ -1,0 +1,124 @@
+@media (max-width: 700px)
+{
+    #project-image
+    {
+        width: 80%;
+        margin: 30px auto;
+    }
+
+    #project-link-wrapper
+    {
+        width: 80%;
+        margin: 30px auto;
+    }
+
+    #project-technologies
+    {
+        width: 80%;
+        margin: 30px auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #project-description
+    {
+        width: 80%;
+        margin: 30px auto;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 701px)
+{
+    #project-image
+    {
+        width: 50%;
+        max-width: 450px;
+        margin: 30px auto;
+    }
+
+    #project-link-wrapper
+    {
+        width: 50%;
+        max-width: 440px;
+        margin: 30px auto;
+    }
+
+    #project-technologies
+    {
+        width: 50%;
+        max-width: 440px;
+        margin: 30px auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #project-description
+    {
+        width: 50%;
+        max-width: 430px;
+        margin: 30px auto;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+}
+
+#header
+{
+    background-color: #4b4b4b;
+    color: white;
+    border-top: 2px solid rgba(255, 130, 0, 1);
+    border-bottom: 2px solid rgba(255, 130, 0, 1);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#title
+{
+    display: inline-block;
+    text-align: center;
+    font-family: "geosans", sans-serif;
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+#project-image img
+{
+    width: 100%;
+    border-radius: 3px;
+}
+
+#project-link
+{
+    color: black;
+}
+
+#project-link:hover
+{
+    color: #ffffff;
+}
+
+#project-link-copy
+{
+    padding: 10px 0;
+    text-align: center;
+    background-color: #dedede;
+    border-radius: 3px;
+    font-size: 1.5em;
+}
+
+#project-link-copy:hover
+{
+    background-color: #999999;
+}
+
+.project-technology
+{
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    background-color: #eeeeee;
+}

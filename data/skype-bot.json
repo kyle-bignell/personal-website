@@ -1,0 +1,14 @@
+{
+    "description": "Kyle Bignell technical lead Skype Bot project",
+    "canonical": "http://www.kyle-bignell.co.uk/projects/skype-bot.php",
+    "title": "Kyle Bignell - Technical Lead | Project: Skype Bot",
+    "content":
+    {
+        "title": "Project: Skype Bot",
+        "image_alt": "Skype Bot",
+        "image_src": "../assets/images/projects/skype.png",
+        "link": "http://skype-bot.kyle-bignell.co.uk/",
+        "technologies": ["NodeJS", "Skype API", "IPC", "Linux"],
+        "description": "Facilitates game deployment server management and handles restart announcements."
+    }
+}
