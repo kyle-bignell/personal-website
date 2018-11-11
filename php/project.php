@@ -1,5 +1,5 @@
 <?php
-    $project_raw_data = file_get_contents('../data/' . $data . ".json");
+    $project_raw_data = file_get_contents('../data/' . $data . '.json');
     $project_data = json_decode($project_raw_data, TRUE);
 ?>
 
