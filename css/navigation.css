@@ -95,7 +95,7 @@
 .navigation-link:link:hover, .navigation-link:visited:hover
 {
     color: #2e2e2e;
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 .active-navigation-node

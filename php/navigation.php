@@ -27,8 +27,8 @@
     </div>
 
     <div id="navigation-right">
-        <a class="navigation-link" href="<?= $relativePath ?>experience.php"><div id="navigation-projects" class="navigation-node <?php echo $experienceActiveClass ?>">EXPERIENCE</div></a>
-        <a class="navigation-link" href="<?= $relativePath ?>projects.php"><div id="navigation-projects" class="navigation-node <?php echo $projectsActiveClass ?>">PROJECTS</div></a>
-        <a class="navigation-link" href="<?= $relativePath ?>cv.php"><div id="navigation-cv" class="navigation-node <?php echo $cvActiveClass ?>">CV</div></a>
+        <div id="navigation-projects" class="navigation-node <?php echo $experienceActiveClass ?>"><a class="navigation-link" href="<?= $relativePath ?>experience.php">EXPERIENCE</a></div>
+        <div id="navigation-projects" class="navigation-node <?php echo $projectsActiveClass ?>"><a class="navigation-link" href="<?= $relativePath ?>projects.php">PROJECTS</a></div>
+        <div id="navigation-cv" class="navigation-node <?php echo $cvActiveClass ?>"><a class="navigation-link" href="<?= $relativePath ?>cv.php">CV</a></div>
     </div>
 </div>

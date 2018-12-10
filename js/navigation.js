@@ -1,4 +1,4 @@
-window.onload = function()
+window.addEventListener("load", function()
 {
     document.getElementById("navigation-right-menu-icon").addEventListener("click", function()
     {
@@ -14,4 +14,4 @@ window.onload = function()
             navRight.style.display = "block";
         }
     });
-}
+});

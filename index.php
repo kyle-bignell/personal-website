@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="css/page_index.css">
     <link rel="stylesheet" href="css/footer.css">
 
-    <script src="js/navigation.js"></script>
+    <script async src="js/navigation.js"></script>
+    <script async src="js/explore.js"></script>
 
     <title>Kyle Bignell - Technical Lead</title>
 
@@ -88,6 +89,14 @@
                 </a>
             </div>
         </div>
+    </div>
+
+    <div id="explore-toggle">
+        Explore
+    </div>
+
+    <div id="explore">
+
     </div>
 
     <?php include "php/footer.php" ?>
