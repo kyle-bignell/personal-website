@@ -74,34 +74,83 @@ function setupExplore()
         },
         scene: {
             preload: preload,
-            create: create
+            create: create,
+            update: update
         },
         parent: "explore"
     };
 
     var game = new Phaser.Game(config);
+    var rocket;
+    var particlesEmitterLeft;
+    var particlesEmitterRight;
 
-    function preload ()
+    function preload()
     {
         this.load.path = 'assets/explore/';
 
         this.load.image('rocket', 'rocket.png');
+        this.load.image('fire', 'fire.png');
     }
 
-    function create ()
+    function create()
     {
-        this.physics.world.setBounds(0, 0, 1000, 680);
+        var graphics = this.add.graphics();
+        graphics.fillGradientStyle(0x000000, 0x000000, 0x0000ff, 0x0000ff);
+        graphics.fillRect(0, 0, 1000, 2500);
 
-        var rocket = this.add.image(500, 320, 'rocket');
-        this.physics.add.existing(rocket);
-        rocket.body.setBounce(0.1).setCollideWorldBounds(true);
+        particlesManager = this.add.particles('fire');
+
+        rocket = this.physics.add.sprite(500, 2437.5, 'rocket');
+        rocket.setOrigin(0.5, 0.5)
+              .setBounce(0.1)
+              .setCollideWorldBounds(true);
 
         this.input.on('pointerdown', function () {
-            rocket.body.setAccelerationY(-350);
+            rocket.body.setAccelerationY(-225);
         });
 
         this.input.on('pointerup', function () {
             rocket.body.setAccelerationY(0);
         });
+
+        var particleConfig = {
+            on: false,
+            alpha: { start: 1, end: 0 },
+            scale: { start: 0.65, end: 1.5 },
+            accelerationY: 225,
+            gravityY: 200,
+            angle: { min: -85, max: -95 },
+            rotate: { min: -180, max: 180 },
+            lifespan: { min: 500, max: 600 },
+            blendMode: 'ADD',
+            frequency: 100,
+            maxParticles: 35
+        }
+        particlesEmitterLeft = particlesManager.createEmitter(particleConfig);
+        particlesEmitterRight = particlesManager.createEmitter(particleConfig);
+
+        this.physics.world.setBounds(0, 0, 1000, 2500);
+
+        this.cameras.main.setBounds(0, 0, 1000, 2500);
+        this.cameras.main.startFollow(rocket);
+        particlesEmitterLeft.startFollow(rocket, -rocket.width / 4, rocket.height / 2);
+        particlesEmitterRight.startFollow(rocket, rocket.width / 4, rocket.height / 2);
+    }
+
+    function update()
+    {
+        if (rocket.body.acceleration.y < 0)
+        {
+            var ratio = rocket.y / 2500;
+            this.cameras.main.shake(100, 0.0025 * ratio);
+            particlesEmitterLeft.start();
+            particlesEmitterRight.start();
+        }
+        else
+        {
+            particlesEmitterLeft.stop();
+            particlesEmitterRight.stop();
+        }
     }
 }
