@@ -49,23 +49,27 @@
         
         foreach ($json_post_data->items as &$post)
         {
-            echo("<br/><br/>");
-            echo($post->published);
-            echo("<br/><br/>");
-            echo($post->updated);
-            echo("<br/><br/>");
-            echo($post->url);
-            echo("<br/><br/>");
-            echo($post->title);
-            echo("<br/><br/>");
-            echo($post->content);
-            echo("<br/><br/>");
-            echo($post->author->displayName);
-            echo("<br/><br/>");
-            echo($post->author->url);
-            echo("<br/><br/>");
-            echo($post->author->image->url);
-            echo("<br/><br/><br/><br/>");
+      ?>
+        <div class="post">
+          <div class="post-title">
+            <?=$post->title?>
+          </div>
+          <div class="post-metadata">
+            <div class="post-date">
+              <?php
+                $published = date("j M Y", strtotime($post->published));
+              ?>
+              <?=$published?>
+            </div>
+            <div class="post-link">
+              <a href="<?=$post->url?>" target="_blank">Read on Blogger</a>
+            </div>
+          </div>
+          <div class="post-content">
+            <?=$post->content?>
+          </div>
+        </div>
+      <?php
         }
       ?>
     </div>

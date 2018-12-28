@@ -25,3 +25,50 @@
     width: 100%;
     max-width: 700px;
 }
+
+.post
+{
+    margin: 50px 0;
+}
+
+.post-metadata
+{
+    margin: 5px 0;
+}
+
+.post-date
+{
+    display: inline-block;
+    color: #777777;
+}
+
+.post-link
+{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.post-link a
+{
+    color: #777777;
+}
+
+.post-link a:hover
+{
+    color: #777777;
+}
+
+.post-link a:visited
+{
+    color: #777777;
+}
+
+.post-title
+{
+    font-size: 3em;
+}
+
+.post-content
+{
+    margin: 45px 0;
+}
