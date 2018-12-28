@@ -24,11 +24,19 @@
     margin-right: auto;
     width: 100%;
     max-width: 700px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .post
 {
-    margin: 50px 0;
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+.post-title
+{
+    font-size: 3em;
 }
 
 .post-metadata
@@ -63,12 +71,13 @@
     color: #777777;
 }
 
-.post-title
-{
-    font-size: 3em;
-}
-
 .post-content
 {
     margin: 45px 0;
+}
+
+.post img
+{
+    max-width: 80%;
+    object-fit: contain;
 }
