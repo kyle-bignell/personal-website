@@ -36,7 +36,7 @@
     <div id="header">
         <div id="title">
             <div id="title-image">
-                <img id="title-image-data" src="assets/images/kyle-bignell-2.png" alt="Picture of Kyle Bignell"/>
+                <img id="title-image-data" src="assets/images/kyle-bignell.png" alt="Picture of Kyle Bignell"/>
             </div>
             <div id="title-text">
                 <div id="title-text-name">

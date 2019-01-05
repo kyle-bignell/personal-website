@@ -43,7 +43,7 @@
         <div class="experience-entry">
             <div class="experience-entry-content">
                 <div class="experience-entry-header">
-                    <img class="experience-entry-header-logo" src="assets/images/future_logo.png" alt="Future Logo" />
+                    <img class="experience-entry-header-logo" src="assets/images/experience/future_logo.png" alt="Future Logo" />
                     <div class="experience-entry-header-text">
                         <div class="experience-entry-header-name">
                             Future
@@ -70,7 +70,7 @@
         <div class="experience-entry">
             <div class="experience-entry-content">
                 <div class="experience-entry-header">
-                    <img class="experience-entry-header-logo" src="assets/images/red7_logo.png" alt="Red7 Logo" />
+                    <img class="experience-entry-header-logo" src="assets/images/experience/red7_logo.png" alt="Red7 Logo" />
                     <div class="experience-entry-header-text">
                         <div class="experience-entry-header-name">
                             Red7
@@ -98,7 +98,7 @@
         <div class="experience-entry">
             <div class="experience-entry-content">
                 <div class="experience-entry-header">
-                    <img class="experience-entry-header-logo" src="assets/images/red7_logo.png" alt="Red7 Logo" />
+                    <img class="experience-entry-header-logo" src="assets/images/experience/red7_logo.png" alt="Red7 Logo" />
                     <div class="experience-entry-header-text">
                         <div class="experience-entry-header-name">
                             Red7
@@ -126,7 +126,7 @@
         <div class="experience-entry">
             <div class="experience-entry-content">
                 <div class="experience-entry-header">
-                    <img class="experience-entry-header-logo" src="assets/images/ccfe_logo.png" alt="CCFE Logo" />
+                    <img class="experience-entry-header-logo" src="assets/images/experience/ccfe_logo.png" alt="CCFE Logo" />
                     <div class="experience-entry-header-text">
                         <div class="experience-entry-header-name">
                             Culham Centre for Fusion Energy
