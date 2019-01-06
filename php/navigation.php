@@ -3,6 +3,7 @@
 
     $experienceActiveClass = ($page == "experience.php") ? "active-navigation-node" : "inactive-navigation-node";
     $projectsActiveClass = ($page == "projects.php") ? "active-navigation-node" : "inactive-navigation-node";
+    $blogActiveClass = ($page == "blog.php") ? "active-navigation-node" : "inactive-navigation-node";
     $cvActiveClass = ($page == "cv.php") ? "active-navigation-node" : "inactive-navigation-node";
 
     $relativePath = "";
@@ -27,8 +28,9 @@
     </div>
 
     <div id="navigation-right">
-        <div id="navigation-projects" class="navigation-node <?php echo $experienceActiveClass ?>"><a class="navigation-link" href="<?= $relativePath ?>experience.php">EXPERIENCE</a></div>
-        <div id="navigation-projects" class="navigation-node <?php echo $projectsActiveClass ?>"><a class="navigation-link" href="<?= $relativePath ?>projects.php">PROJECTS</a></div>
-        <div id="navigation-cv" class="navigation-node <?php echo $cvActiveClass ?>"><a class="navigation-link" href="<?= $relativePath ?>cv.php">CV</a></div>
+        <a class="navigation-link" href="<?= $relativePath ?>experience.php"><div id="navigation-projects" class="navigation-node <?php echo $experienceActiveClass ?>">EXPERIENCE</div></a>
+        <a class="navigation-link" href="<?= $relativePath ?>projects.php"><div id="navigation-projects" class="navigation-node <?php echo $projectsActiveClass ?>">PROJECTS</div></a>
+        <a class="navigation-link" href="<?= $relativePath ?>blog.php"><div id="navigation-projects" class="navigation-node <?php echo $blogActiveClass ?>">BLOG</div></a>
+        <a class="navigation-link" href="<?= $relativePath ?>cv.php"><div id="navigation-cv" class="navigation-node <?php echo $cvActiveClass ?>">CV</div></a>
     </div>
 </div>

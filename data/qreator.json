@@ -1,0 +1,14 @@
+{
+    "description": "Kyle Bignell technical lead QReator project",
+    "canonical": "http://www.kyle-bignell.co.uk/projects/qreator.php",
+    "title": "Kyle Bignell - Technical Lead | Project: QReator",
+    "content":
+    {
+        "title": "Project: QReator",
+        "image_alt": "QReator",
+        "image_src": "../assets/images/projects/qreator.png",
+        "link": "http://qreator.kyle-bignell.co.uk",
+        "technologies": ["JavaScript", "Bitly API", "QRCode.js"],
+        "description": "Converts your supplied URL into a QR code that can be quickly scanned by your mobile device. No more typing huge URLs on our tiny screens!"
+    }
+}

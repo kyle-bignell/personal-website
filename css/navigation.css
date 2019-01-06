@@ -12,7 +12,7 @@
     height: 45px;
 }
 
-@media (max-width: 475px)
+@media (max-width: 550px)
 {
     #navigation-right-menu
     {
@@ -37,7 +37,7 @@
     }
 }
 
-@media (min-width: 476px)
+@media (min-width: 551px)
 {
     #navigation-right-menu
     {
@@ -57,8 +57,8 @@
         line-height: 45px;
         font-size: 1em;
         text-align: center;
-        margin-left: 14px;
-        margin-right: 14px;
+        margin-left: 10px;
+        margin-right: 20px;
     }
 }
 

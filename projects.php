@@ -41,6 +41,30 @@
 
     <div id="content">
         <div class="projects-entry">
+            <img class="projects-entry-image" src="assets/images/projects/qreator.png" alt="QReator"/>
+            <div class="projects-entry-content">
+                <div class="projects-entry-title">
+                    QReator
+                </div>
+                <div class="projects-entry-description">
+                    A URL shortening QR code generator. Avoid typing long URLs on your mobile!
+                </div>
+                <div class="projects-entry-footer">
+                    <a class="projects-entry-link" href="projects/qreator.php">
+                        <div class="projects-entry-link-content">
+                                More Info
+                        </div>
+                    </a>
+                    <a class="projects-entry-link" href="http://qreator.kyle-bignell.co.uk" target="_blank">
+                        <div class="projects-entry-link-content">
+                                Visit Project
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-entry">
             <img class="projects-entry-image" src="assets/images/projects/flocking.png" alt="Flocking"/>
             <div class="projects-entry-content">
                 <div class="projects-entry-title">
@@ -62,9 +86,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-
-        <div class="projects-spacer">
         </div>
 
         <div class="projects-entry">
@@ -91,9 +112,6 @@
             </div>
         </div>
 
-        <div class="projects-spacer">
-        </div>
-
         <div class="projects-entry">
             <img class="projects-entry-image" src="assets/images/projects/sdcnm.png" alt="Self Defence Classes Near Me"/>
             <div class="projects-entry-content">
@@ -116,9 +134,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-
-        <div class="projects-spacer">
         </div>
 
         <div class="projects-entry">
@@ -145,9 +160,6 @@
             </div>
         </div>
 
-        <div class="projects-spacer">
-        </div>
-
         <div class="projects-entry">
             <img class="projects-entry-image" src="assets/images/projects/wba.png" alt="Wernie's Big Adventure"/>
             <div class="projects-entry-content">
@@ -170,9 +182,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-
-        <div class="projects-spacer">
         </div>
 
         <div class="projects-entry">
@@ -199,9 +208,6 @@
             </div>
         </div>
 
-        <div class="projects-spacer">
-        </div>
-
         <div class="projects-entry">
             <img class="projects-entry-image" src="assets/images/projects/starcraft_ai.png" alt="StarCraft AI"/>
             <div class="projects-entry-content">
@@ -219,9 +225,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-
-        <div class="projects-spacer">
         </div>
     </div>
 
