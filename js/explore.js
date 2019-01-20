@@ -67,6 +67,16 @@ function setupExplore()
         initialize: function()
         {
             Phaser.Scene.call(this, { key: 'sceneLaunch' });
+
+            this.sceneDimensions = {
+                w: config.width,
+                h: 4000
+            };
+            this.rocketDimensions = {
+                w: 100,
+                h: 125
+            };
+            this.cameraBuffer = 500;
         },
 
         preload: function()
@@ -82,7 +92,7 @@ function setupExplore()
 
             var graphics = this.add.graphics();
             graphics.fillGradientStyle(0x000000, 0x000000, 0x83EAFF, 0x83EAFF);
-            graphics.fillRect(0, 0, 1000, 3000);
+            graphics.fillRect(0, this.cameraBuffer, this.sceneDimensions.w, this.sceneDimensions.h);
 
             var particleConfig = {
                 on: false,
@@ -101,16 +111,17 @@ function setupExplore()
             this.particlesEmitterLeft = particlesManager.createEmitter(particleConfig);
             this.particlesEmitterRight = particlesManager.createEmitter(particleConfig);
 
-            this.rocket = this.physics.add.sprite(500, 2937.5, 'rocket');
+            this.rocket = this.physics.add.sprite(this.sceneDimensions.w / 2,
+                                                  this.sceneDimensions.h - (this.rocketDimensions.h / 2),
+                                                  'rocket');
             this.rocket.setOrigin(0.5, 0.5)
-                       .setBounce(0.1)
                        .setCollideWorldBounds(true);
 
             this.particlesEmitterLeft.startFollow(this.rocket, -this.rocket.width / 4, this.rocket.height / 1.75);
             this.particlesEmitterRight.startFollow(this.rocket, this.rocket.width / 4, this.rocket.height / 1.75);
             this.cameras.main.startFollow(this.rocket);
 
-            zone = this.add.zone(0, 0).setSize(1000, 3);
+            zone = this.add.zone(0, 0).setSize(this.sceneDimensions.w, 3);
             this.physics.world.enable(zone);
             zone.body.setAllowGravity(false);
             zone.body.moves = false;
@@ -120,7 +131,10 @@ function setupExplore()
                 this.scene.start('sceneOrbit');
             }, null, this);
 
-            text = this.add.text(500, 2650, "Click to launch", { font: "65px Arial", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
+            text = this.add.text(this.sceneDimensions.w / 2,
+                                 this.sceneDimensions.h - 350,
+                                 "Click to launch",
+                                 { font: "65px Arial", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
             text.setOrigin(0.5);
             this.tweens.add({
                 targets: text,
@@ -137,15 +151,15 @@ function setupExplore()
                 text.destroy();
             }.bind(this));
 
-            this.physics.world.setBounds(0, 0, 1000, 3000);
-            this.cameras.main.setBounds(0, 500, 1000, 2500);
+            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h)
+            this.cameras.main.setBounds(0, this.cameraBuffer, this.sceneDimensions.w, this.sceneDimensions.h - this.cameraBuffer);
         },
 
         update: function()
         {
             if (this.rocket.body.acceleration.y < 0)
             {
-                var ratio = this.rocket.y / 3500;
+                var ratio = this.rocket.y / this.sceneDimensions.h;
                 this.cameras.main.shake(100, 0.0025 * ratio);
                 this.particlesEmitterLeft.start();
                 this.particlesEmitterRight.start();
@@ -164,6 +178,15 @@ function setupExplore()
         initialize: function()
         {
             Phaser.Scene.call(this, { key: 'sceneOrbit' });
+
+            this.sceneDimensions = {
+                w: config.width,
+                h: config.height
+            };
+            this.rocketDimensions = {
+                w: 100,
+                h: 125
+            };
         },
 
         preload: function()
@@ -177,23 +200,38 @@ function setupExplore()
         {
             this.physics.world.gravity.y = 0;
 
+            this.config = {
+                planetRadius: 200,
+                orbitRadius: 300,
+                orbitTime: 30000
+            };
+
             var graphics = this.add.graphics();
             graphics.fillGradientStyle(0x000000, 0x000000, 0x333333, 0x333333);
-            graphics.fillRect(0, 0, 1000, 680);
+            graphics.fillRect(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
 
-            this.rocket = this.physics.add.sprite(500, 340, 'rocket');
-            this.rocket.setOrigin(0.5, 0.5);
+            graphics.fillStyle(0xff0000, 1);
+            graphics.fillCircle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, this.config.planetRadius);
 
-            this.orbitCircle = new Phaser.Geom.Circle(500, 320, 250);
+            this.rocket = this.physics.add.sprite(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, 'rocket');
+            this.rocket.setOrigin(0.5, 0.5)
+                       .setScale(0.6, 0.6);
+
+            this.orbitCircle = new Phaser.Geom.Circle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, this.config.orbitRadius);
             this.orbitRotation = this.tweens.addCounter({
                 from: 0,
                 to: 6.28,
-                duration: 20000,
+                duration: this.config.orbitTime,
                 repeat: -1
-            })
+            });
 
-            this.physics.world.setBounds(0, 0, 1000, 680);
-            this.cameras.main.setBounds(0, 0, 1000, 680);
+            this.input.on('pointerdown', function()
+            {
+                
+            }.bind(this));
+
+            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+            this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
         },
 
         update: function()
@@ -217,7 +255,7 @@ function setupExplore()
                 debug: true
             }
         },
-        scene: [SceneLaunch, SceneOrbit],
+        scene: [SceneOrbit, SceneLaunch],
         parent: "explore"
     };
 
