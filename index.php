@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="css/footer.css">
 
     <script async src="js/navigation.js"></script>
-    <script async src="js/explore.js"></script>
+    <script async src="js/explore/scenes/launch.js"></script>
+    <script async src="js/explore/scenes/overview.js"></script>
+    <script async src="js/explore/scenes/orbit.js"></script>
+    <script async src="js/explore/index.js"></script>
 
     <title>Kyle Bignell - Technical Lead</title>
 
