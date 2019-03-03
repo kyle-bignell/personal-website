@@ -2,7 +2,7 @@ window.SceneOrbit = function(config) {
     return new Phaser.Class({
         Extends: Phaser.Scene,
 
-        initialize: function()
+        initialize: function(data)
         {
             Phaser.Scene.call(this, { key: 'sceneOrbit' });
 
@@ -14,6 +14,11 @@ window.SceneOrbit = function(config) {
                 w: 100,
                 h: 125
             };
+        },
+
+        init: function(data)
+        {
+
         },
 
         preload: function()

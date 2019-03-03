@@ -54,7 +54,7 @@ function loadExplore()
     {
       setupExplore();
     };
-    phaserScript.src = "js/phaser.min.js";
+    phaserScript.src = "js/phaser.js";
     phaserScript.async = true;
     document.getElementsByTagName('head')[0].appendChild(phaserScript);
 }

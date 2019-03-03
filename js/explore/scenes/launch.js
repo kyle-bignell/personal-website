@@ -17,6 +17,11 @@ var SceneLaunch = function(config) {
             this.cameraBuffer = 500;
         },
 
+        init: function(data)
+        {
+
+        },
+
         preload: function()
         {
             this.load.path = 'assets/explore/';
