@@ -48,7 +48,7 @@ var SceneLaunch = function(config) {
                 lifespan: { min: 500, max: 600 },
                 blendMode: 'ADD',
                 frequency: 100,
-                maxParticles: 35
+                maxParticles: 50
             }
             particlesManager = this.add.particles('fire');
             this.particlesEmitterLeft = particlesManager.createEmitter(particleConfig);
@@ -104,6 +104,14 @@ var SceneLaunch = function(config) {
             {
                 var ratio = this.rocket.y / this.sceneDimensions.h;
                 this.cameras.main.shake(100, 0.0025 * ratio);
+
+                var zoom = Math.max(ratio, 0.65);
+                this.cameras.main.setZoom(zoom);
+
+                var sceneMid = (this.sceneDimensions.w / 2);
+                var halfCameraWidth = (this.cameras.main.width * this.cameras.main.zoom) / 2;
+                this.cameras.main.x = sceneMid - halfCameraWidth;
+
                 this.particlesEmitterLeft.start();
                 this.particlesEmitterRight.start();
             }

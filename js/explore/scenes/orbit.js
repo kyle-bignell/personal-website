@@ -18,7 +18,7 @@ window.SceneOrbit = function(config) {
 
         init: function(data)
         {
-
+            this.planetID = data.id;
         },
 
         preload: function()
@@ -50,14 +50,34 @@ window.SceneOrbit = function(config) {
             graphics.fillGradientStyle(0x000000, 0x000000, 0x333333, 0x333333);
             graphics.fillRect(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
 
-            graphics.fillStyle(0xff0000, 1);
+            graphics.fillStyle(window.explore.config.planets[this.planetID].colour, 1);
             graphics.fillCircle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, this.config.planetRadius);
+
+            var particleConfig = {
+                on: false,
+                alpha: { start: 1, end: 0 },
+                scale: { start: 0.65, end: 1.5 },
+                accelerationY: 225,
+                gravityY: 200,
+                angle: { min: -85, max: -95 },
+                rotate: { min: -180, max: 180 },
+                lifespan: { min: 500, max: 600 },
+                blendMode: 'ADD',
+                frequency: 100,
+                maxParticles: 50
+            }
+            particlesManager = this.add.particles('fire');
+            this.particlesEmitterLeft = particlesManager.createEmitter(particleConfig);
+            this.particlesEmitterRight = particlesManager.createEmitter(particleConfig);
 
             this.rocket = this.physics.add.sprite(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, 'rocket');
             this.rocket.setOrigin(0.5, 0.5)
                        .setScale(0.6, 0.6);
             this.rocket.body.setCollideWorldBounds(true);
             this.rocket.body.onWorldBounds = true;
+
+            this.particlesEmitterLeft.startFollow(this.rocket, -this.rocket.width / 4, this.rocket.height / 1.75);
+            this.particlesEmitterRight.startFollow(this.rocket, this.rocket.width / 4, this.rocket.height / 1.75);
 
             this.orbitCircle = new Phaser.Geom.Circle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, this.config.orbitRadius);
             this.orbitRotation = this.tweens.addCounter({
