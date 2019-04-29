@@ -14,6 +14,25 @@ window.SceneOverview = function(config) {
                 w: 100,
                 h: 125
             };
+
+            var exploreToggleDOM = document.getElementById("explore-toggle");
+            exploreToggleDOM.addEventListener("click", function()
+            {
+                handleVisible(window.inExplore, this.scene);
+            }.bind(this));
+
+            document.addEventListener("visibilitychange", function()
+            {
+                debugger;
+                if (window.document.hidden)
+                {
+                    handleVisible(false, this.scene);
+                }
+                else
+                {
+                    handleVisible(true, this.scene);
+                }
+            }.bind(this));
         },
 
         init: function(data)
@@ -51,7 +70,11 @@ window.SceneOverview = function(config) {
                     useHandCursor: true
                 });
                 planet.graphics.on('pointerdown', function (pointer) {
-                    this.scene.start('sceneOrbit', { id: planet.id });
+                    this.cameras.main.fadeOut(750, 0, 0, 0, function(camera, progress) {
+                        if (progress === 1) {
+                            this.scene.start('sceneOrbit', { id: planet.id });
+                        }
+                    }.bind(this));
                 }.bind(this));
                 planet.graphics.on('pointerover', function (pointer) {
                     planet.outline.setAlpha(1);
@@ -68,6 +91,8 @@ window.SceneOverview = function(config) {
                     repeat: -1
                 });
             }.bind(this));
+
+            this.cameras.main.fadeIn(750);
         },
 
         update: function()

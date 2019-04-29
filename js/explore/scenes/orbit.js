@@ -14,6 +14,25 @@ window.SceneOrbit = function(config) {
                 w: 100,
                 h: 125
             };
+
+            var exploreToggleDOM = document.getElementById("explore-toggle");
+            exploreToggleDOM.addEventListener("click", function()
+            {
+                handleVisible(window.inExplore, this.scene);
+            }.bind(this));
+
+            document.addEventListener("visibilitychange", function()
+            {
+                debugger;
+                if (window.document.hidden)
+                {
+                    handleVisible(false, this.scene);
+                }
+                else
+                {
+                    handleVisible(true, this.scene);
+                }
+            }.bind(this), false);
         },
 
         init: function(data)
@@ -36,7 +55,11 @@ window.SceneOrbit = function(config) {
                 body.setCollideWorldBounds(false);
                 body.onWorldBounds = false;
                 timedEvent = this.time.delayedCall(2500, function() {
-                    this.scene.start('sceneOverview');
+                    this.cameras.main.fadeOut(750, 0, 0, 0, function(camera, progress) {
+                        if (progress === 1) {
+                            this.scene.start('sceneOverview');
+                        }
+                    }.bind(this));
                 }, [], this);
             }.bind(this));
 
@@ -105,6 +128,7 @@ window.SceneOrbit = function(config) {
 
             this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
             this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+            this.cameras.main.fadeIn(750);
         },
 
         update: function()

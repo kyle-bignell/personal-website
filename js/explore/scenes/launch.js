@@ -7,7 +7,7 @@ var SceneLaunch = function(config) {
             Phaser.Scene.call(this, { key: 'sceneLaunch' });
 
             this.sceneDimensions = {
-                w: config.width,
+                w: 3000,
                 h: 4000
             };
             this.rocketDimensions = {
@@ -15,6 +15,27 @@ var SceneLaunch = function(config) {
                 h: 125
             };
             this.cameraBuffer = 500;
+            this.fading = false;
+
+            var exploreToggleDOM = document.getElementById("explore-toggle");
+            exploreToggleDOM.addEventListener("click", function()
+            {
+                debugger;
+                handleVisible(window.inExplore, this.scene);
+            }.bind(this));
+
+            document.addEventListener("visibilitychange", function()
+            {
+                debugger;
+                if (window.document.hidden)
+                {
+                    handleVisible(false, this.scene);
+                }
+                else
+                {
+                    handleVisible(true, this.scene);
+                }
+            }.bind(this), false);
         },
 
         init: function(data)
@@ -74,14 +95,14 @@ var SceneLaunch = function(config) {
                 this.scene.start('sceneOverview');
             }, null, this);
 
-            text = this.add.text(this.sceneDimensions.w / 2,
+            this.text = this.add.text(this.sceneDimensions.w / 2,
                                  this.sceneDimensions.h - 350,
-                                 "Click to launch",
-                                 { font: "65px Arial", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
-            text.setOrigin(0.5);
-            this.tweens.add({
-                targets: text,
-                alpha: 0.35,
+                                 "Click to Launch",
+                                 { font: "65px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
+            this.text.setOrigin(0.5);
+            this.textTween = this.tweens.add({
+                targets: this.text,
+                alpha: 0.3,
                 ease: 'Sine',
                 duration: 750,
                 yoyo: true,
@@ -91,7 +112,13 @@ var SceneLaunch = function(config) {
             this.input.once('pointerdown', function()
             {
                 this.rocket.body.setAccelerationY(-225);
-                text.destroy();
+                this.textTween.loop = false;
+                this.textTween.stop();
+                this.tweens.add({
+                    targets: this.text,
+                    alpha: 0,
+                    duration: 750
+                });
             }.bind(this));
 
             this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h)
@@ -105,12 +132,8 @@ var SceneLaunch = function(config) {
                 var ratio = this.rocket.y / this.sceneDimensions.h;
                 this.cameras.main.shake(100, 0.0025 * ratio);
 
-                var zoom = Math.max(ratio, 0.65);
+                var zoom = Math.max(ratio, 0.5);
                 this.cameras.main.setZoom(zoom);
-
-                var sceneMid = (this.sceneDimensions.w / 2);
-                var halfCameraWidth = (this.cameras.main.width * this.cameras.main.zoom) / 2;
-                this.cameras.main.x = sceneMid - halfCameraWidth;
 
                 this.particlesEmitterLeft.start();
                 this.particlesEmitterRight.start();
@@ -119,6 +142,13 @@ var SceneLaunch = function(config) {
             {
                 this.particlesEmitterLeft.stop();
                 this.particlesEmitterRight.stop();
+            }
+
+            var cameraAtTop = this.cameras.main.scrollY === (this.cameraBuffer + (config.height / 2));
+            if (!this.fading && cameraAtTop)
+            {
+                this.fading = true;
+                this.cameras.main.fadeOut(750);
             }
         }
     })

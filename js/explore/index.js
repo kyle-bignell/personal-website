@@ -1,6 +1,6 @@
-var exploreLoaded = false;
-var inExplore = false;
-var moveExploreIntervalID;
+window.exploreLoaded = false;
+window.inExplore = false;
+window.moveExploreIntervalID;
 
 window.explore.config = {
     planets: [
@@ -13,13 +13,29 @@ window.explore.config = {
     ]
 };
 
+function handleVisible(visible, scene)
+{
+    debugger;
+    // if (scene.settings.active)
+    // {
+    //     if (visible)
+    //     {
+    //         scene.resume();
+    //     }
+    //     else
+    //     {
+    //         scene.pause();
+    //     }
+    // }
+}
+
 window.addEventListener("load", function()
 {
     var exploreToggleDOM = document.getElementById("explore-toggle");
     exploreToggleDOM.addEventListener("click", function()
     {
-        inExplore = !inExplore;
-        exploreToggleDOM.innerText = inExplore ? "Home" : "Explore";
+        window.inExplore = !window.inExplore;
+        exploreToggleDOM.innerText = window.inExplore ? "Home" : "Explore";
         moveExplore();
     });
 });
@@ -33,14 +49,14 @@ function moveExplore()
     var delta = inExplore ? 1 : -1;
     var currentPos = parseFloat(exploreDOM.style.left) || startPos;
 
-    clearInterval(moveExploreIntervalID);
-    moveExploreIntervalID = setInterval(frame, 5);
+    clearInterval(window.moveExploreIntervalID);
+    window.moveExploreIntervalID = setInterval(frame, 5);
 
     function frame()
     {
         if (currentPos === endPos)
         {
-            clearInterval(moveExploreIntervalID);
+            clearInterval(window.moveExploreIntervalID);
             loadExplore();
         }
         else
@@ -53,12 +69,12 @@ function moveExplore()
 
 function loadExplore()
 {
-    if (exploreLoaded)
+    if (window.exploreLoaded)
     {
         return;
     }
 
-    exploreLoaded = true;
+    window.exploreLoaded = true;
 
     var phaserScript = document.createElement('script');
     phaserScript.onload = function()
