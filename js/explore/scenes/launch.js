@@ -20,27 +20,13 @@ var SceneLaunch = function(config) {
             var exploreToggleDOM = document.getElementById("explore-toggle");
             exploreToggleDOM.addEventListener("click", function()
             {
-                debugger;
                 handleVisible(window.inExplore, this.scene);
             }.bind(this));
-
-            document.addEventListener("visibilitychange", function()
-            {
-                debugger;
-                if (window.document.hidden)
-                {
-                    handleVisible(false, this.scene);
-                }
-                else
-                {
-                    handleVisible(true, this.scene);
-                }
-            }.bind(this), false);
         },
 
         init: function(data)
         {
-
+            window.explore.currentScene = "sceneLaunch";
         },
 
         preload: function()

@@ -1,6 +1,8 @@
 window.exploreLoaded = false;
 window.inExplore = false;
 window.moveExploreIntervalID;
+window.explore.game = null;
+window.explore.currentScene = null;
 
 window.explore.config = {
     planets: [
@@ -15,18 +17,17 @@ window.explore.config = {
 
 function handleVisible(visible, scene)
 {
-    debugger;
-    // if (scene.settings.active)
-    // {
-    //     if (visible)
-    //     {
-    //         scene.resume();
-    //     }
-    //     else
-    //     {
-    //         scene.pause();
-    //     }
-    // }
+    if (scene.settings.key === window.explore.currentScene)
+    {
+        if (visible)
+        {
+            scene.resume();
+        }
+        else
+        {
+            scene.pause();
+        }
+    }
 }
 
 window.addEventListener("load", function()
@@ -106,5 +107,5 @@ function setupExplore()
     var sceneOrbit = SceneOrbit(config);
     config.scene = [sceneLaunch, sceneOverview, sceneOrbit],
 
-    new Phaser.Game(config);
+    window.explore.game = new Phaser.Game(config);
 }
