@@ -54,8 +54,8 @@ var SceneLaunch = function(config) {
                 rotate: { min: -180, max: 180 },
                 lifespan: { min: 500, max: 600 },
                 blendMode: 'ADD',
-                frequency: 100,
-                maxParticles: 50
+                frequency: 50,
+                maxParticles: 200
             }
             particlesManager = this.add.particles('fire');
             this.particlesEmitterLeft = particlesManager.createEmitter(particleConfig);
@@ -78,34 +78,54 @@ var SceneLaunch = function(config) {
 
             this.physics.add.overlap(this.rocket, zone, function()
             {
+                this.particlesEmitterLeft.stop();
+                this.particlesEmitterRight.stop();
+
                 this.scene.start('sceneOverview');
             }, null, this);
 
-            this.text = this.add.text(this.sceneDimensions.w / 2,
-                                 this.sceneDimensions.h - 350,
-                                 "Click to Launch",
-                                 { font: "65px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
-            this.text.setOrigin(0.5);
-            this.textTween = this.tweens.add({
-                targets: this.text,
-                alpha: 0.3,
-                ease: 'Sine',
-                duration: 750,
-                yoyo: true,
-                repeat: -1
+            this.button = this.add.graphics();
+            this.button.fillStyle(0x4b4b4b, 1);
+            this.button.fillRoundedRect((this.sceneDimensions.w / 2) - 185, this.sceneDimensions.h - 410, 370, 120, 25);
+            this.button.lineStyle(3, 0xfa8200, 1);
+            this.button.strokeRoundedRect((this.sceneDimensions.w / 2) - 185, this.sceneDimensions.h - 410, 370, 120, 25);
+            this.button.setInteractive({
+                hitArea: new Phaser.Geom.Rectangle((this.sceneDimensions.w / 2) - 185, this.sceneDimensions.h - 410, 370, 120),
+                hitAreaCallback: Phaser.Geom.Rectangle.Contains,
+                useHandCursor: true
             });
-
-            this.input.once('pointerdown', function()
+            this.button.once('pointerdown', function()
             {
+                this.particlesEmitterLeft.start();
+                this.particlesEmitterRight.start();
+
                 this.rocket.body.setAccelerationY(-225);
-                this.textTween.loop = false;
                 this.textTween.stop();
                 this.tweens.add({
                     targets: this.text,
                     alpha: 0,
                     duration: 750
                 });
+                this.tweens.add({
+                    targets: this.button,
+                    alpha: 0,
+                    duration: 750
+                });
             }.bind(this));
+
+            this.text = this.add.text(this.sceneDimensions.w / 2,
+                this.sceneDimensions.h - 350,
+                "Launch",
+                { font: "100px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
+            this.text.setOrigin(0.5);
+            this.textTween = this.tweens.add({
+                targets: this.text,
+                alpha: 0.4,
+                ease: 'Sine',
+                duration: 750,
+                yoyo: true,
+                repeat: -1
+            });
 
             this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h)
             this.cameras.main.setBounds(0, this.cameraBuffer, this.sceneDimensions.w, this.sceneDimensions.h - this.cameraBuffer);
@@ -120,14 +140,9 @@ var SceneLaunch = function(config) {
 
                 var zoom = Math.max(ratio, 0.5);
                 this.cameras.main.setZoom(zoom);
-
-                this.particlesEmitterLeft.start();
-                this.particlesEmitterRight.start();
             }
             else
             {
-                this.particlesEmitterLeft.stop();
-                this.particlesEmitterRight.stop();
             }
 
             var cameraAtTop = this.cameras.main.scrollY === (this.cameraBuffer + (config.height / 2));

@@ -39,10 +39,6 @@ window.SceneOverview = function(config) {
             this.physics.world.gravity.y = 0;
             this.physics.world.setBoundsCollision(true, true, true, true);
 
-            background = this.add.graphics();
-            background.fillGradientStyle(0x000000, 0x000000, 0x333333, 0x333333);
-            background.fillRect(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
-
             window.explore.config.planets.forEach(function(planet) {
                 planet.outline = this.add.graphics();
                 planet.outline.fillStyle(planet.outlineColour, 1);

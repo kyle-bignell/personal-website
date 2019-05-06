@@ -25,7 +25,7 @@ window.SceneOrbit = function(config) {
         init: function(data)
         {
             window.explore.currentScene = "sceneOrbit";
-            this.planetID = data.id;
+            this.planetID = data.id || 0;
         },
 
         preload: function()
@@ -53,14 +53,11 @@ window.SceneOrbit = function(config) {
 
             this.config = {
                 planetRadius: 200,
-                orbitRadius: 300,
+                orbitRadius: 270,
                 orbitTime: 30000
             };
 
             var graphics = this.add.graphics();
-            graphics.fillGradientStyle(0x000000, 0x000000, 0x333333, 0x333333);
-            graphics.fillRect(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
-
             graphics.fillStyle(window.explore.config.planets[this.planetID].colour, 1);
             graphics.fillCircle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, this.config.planetRadius);
 
@@ -69,26 +66,29 @@ window.SceneOrbit = function(config) {
                 alpha: { start: 1, end: 0 },
                 scale: { start: 0.65, end: 1.5 },
                 accelerationY: 225,
-                gravityY: 200,
                 angle: { min: -85, max: -95 },
                 rotate: { min: -180, max: 180 },
                 lifespan: { min: 500, max: 600 },
                 blendMode: 'ADD',
-                frequency: 100,
-                maxParticles: 50
+                frequency: 10,
+                maxParticles: 200
             }
             particlesManager = this.add.particles('fire');
             this.particlesEmitterLeft = particlesManager.createEmitter(particleConfig);
             this.particlesEmitterRight = particlesManager.createEmitter(particleConfig);
 
+            var rocketScale = (window.explore.config.planets[0].radius / window.explore.config.planets[this.planetID].radius) / 2;
+            rocketScale *= 0.4;
             this.rocket = this.physics.add.sprite(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, 'rocket');
             this.rocket.setOrigin(0.5, 0.5)
-                       .setScale(0.6, 0.6);
+                       .setScale(rocketScale, rocketScale);
             this.rocket.body.setCollideWorldBounds(true);
             this.rocket.body.onWorldBounds = true;
 
-            this.particlesEmitterLeft.startFollow(this.rocket, -this.rocket.width / 4, this.rocket.height / 1.75);
-            this.particlesEmitterRight.startFollow(this.rocket, this.rocket.width / 4, this.rocket.height / 1.75);
+            // this.particlesEmitterLeft.startFollow(this.rocket);
+            // this.particlesEmitterRight.startFollow(this.rocket);
+            this.particlesEmitterLeft.setScale(rocketScale);
+            this.particlesEmitterRight.setScale(rocketScale);
 
             this.orbitCircle = new Phaser.Geom.Circle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, this.config.orbitRadius);
             this.orbitRotation = this.tweens.addCounter({
@@ -98,8 +98,23 @@ window.SceneOrbit = function(config) {
                 repeat: -1
             });
 
-            this.input.once('pointerdown', function()
+            this.button = this.add.graphics();
+            this.button.fillStyle(0x4b4b4b, 1);
+            this.button.fillRoundedRect(this.sceneDimensions.w - 260, 10, 250, 60, 25);
+            this.button.lineStyle(3, 0xfa8200, 1);
+            this.button.strokeRoundedRect(this.sceneDimensions.w - 260, 10, 250, 60, 25);
+            this.button.setInteractive({
+                hitArea: new Phaser.Geom.Rectangle(this.sceneDimensions.w - 260, 10, 250, 60),
+                hitAreaCallback: Phaser.Geom.Rectangle.Contains,
+                useHandCursor: true
+            });
+            this.button.once('pointerdown', function()
             {
+                this.particlesEmitterLeft.start();
+                this.particlesEmitterRight.start();
+
+                this.textTween.stop();
+
                 this.tweens.add({
                     targets: this.orbitCircle,
                     radius: this.config.orbitRadius * 2.5,
@@ -112,7 +127,31 @@ window.SceneOrbit = function(config) {
                     ease: Phaser.Math.Easing.Sine.In,
                     duration: 4500
                 });
+                this.tweens.add({
+                    targets: this.text,
+                    alpha: 0,
+                    duration: 750
+                });
+                this.tweens.add({
+                    targets: this.button,
+                    alpha: 0,
+                    duration: 750
+                });
             }.bind(this));
+
+            this.text = this.add.text(this.sceneDimensions.w - 135,
+                40,
+                "Exit Orbit",
+                { font: "50px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
+            this.text.setOrigin(0.5);
+            this.textTween = this.tweens.add({
+                targets: this.text,
+                alpha: 0.4,
+                ease: 'Sine',
+                duration: 750,
+                yoyo: true,
+                repeat: -1
+            });
 
             this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
             this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
@@ -127,6 +166,12 @@ window.SceneOrbit = function(config) {
                 this.orbitRotation.getValue()
             );
             this.rocket.rotation = this.orbitRotation.getValue() + 3.14;
+            const xDistance = 15 * this.rocket.scaleX;
+            const yDistance = 75 * this.rocket.scaleY;
+            const leftOffset = Phaser.Math.Rotate({x: xDistance, y: yDistance}, this.orbitRotation.getValue() + 3.14);
+            const rightOffset = Phaser.Math.Rotate({x: -xDistance, y: yDistance}, this.orbitRotation.getValue() + 3.14);
+            this.particlesEmitterLeft.setPosition(this.rocket.x + leftOffset.x, this.rocket.y + leftOffset.y);
+            this.particlesEmitterRight.setPosition(this.rocket.x + rightOffset.x, this.rocket.y + rightOffset.y);
         }
     })
 }
