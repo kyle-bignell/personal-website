@@ -66,10 +66,22 @@
     overflow: hidden;
 }
 
-#explore canvas
+@media (orientation: landscape)
 {
-    width: 100%;
+    #explore canvas
+    {
+        height: 100%;
+    }
 }
+
+@media (orientation: portrait)
+{
+    #explore canvas
+    {
+        width: 100%;
+    }
+}
+
 
 @media (max-width: 475px)
 {
