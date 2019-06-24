@@ -15,6 +15,28 @@ window.explore.config = {
     ]
 };
 
+/* Returns a random number in the range [minVal,maxVal] */
+window.explore.randomRange = function(minVal, maxVal)
+{
+    return (Math.random() * (maxVal - minVal - 1)) + minVal;
+}
+
+window.explore.stars = {};
+window.explore.stars.MAX_DEPTH = 32;
+window.explore.stars.COLOUR = 0xffffff;
+window.explore.stars.data = new Array(2048);
+window.explore.stars.init = function()
+{
+    for( var i = 0; i < window.explore.stars.data.length; i++ )
+    {
+        window.explore.stars.data[i] = {
+          x: window.explore.randomRange(-1000, 1000),
+          y: window.explore.randomRange(-680, 680),
+          z: window.explore.randomRange(1, window.explore.stars.MAX_DEPTH)
+         }
+    }
+}
+
 function handleVisible(visible, scene)
 {
     if (scene.settings.key === window.explore.currentScene)
@@ -105,7 +127,8 @@ function setupExplore()
     var sceneLaunch = SceneLaunch(config);
     var sceneOverview = SceneOverview(config);
     var sceneOrbit = SceneOrbit(config);
-    config.scene = [sceneLaunch, sceneOverview, sceneOrbit],
+    config.scene = [sceneOverview, sceneLaunch, sceneOrbit],
 
     window.explore.game = new Phaser.Game(config);
+    window.explore.stars.init();
 }

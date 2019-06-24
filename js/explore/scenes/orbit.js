@@ -51,6 +51,18 @@ window.SceneOrbit = function(config) {
                 }, [], this);
             }.bind(this));
 
+            this.starRenderTexture = this.add.renderTexture(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+            this.stars = this.add.graphics();
+            this.stars.setVisible(false);
+            for(var i = 0; i < window.explore.stars.data.length; i++)
+            {
+                var starData = window.explore.stars.data[i];
+                var intensity = (1 - starData.z / window.explore.stars.MAX_DEPTH);
+                this.stars.fillStyle(window.explore.stars.COLOUR, intensity);
+                this.stars.fillCircle(starData.x, starData.y, intensity);
+            }
+            this.starRenderTexture.draw(this.stars);
+
             this.config = {
                 planetRadius: 200,
                 orbitRadius: 270,
@@ -86,8 +98,6 @@ window.SceneOrbit = function(config) {
             this.rocket.body.setCollideWorldBounds(true);
             this.rocket.body.onWorldBounds = true;
 
-            // this.particlesEmitterLeft.startFollow(this.rocket);
-            // this.particlesEmitterRight.startFollow(this.rocket);
             this.particlesEmitterLeft.setScale(rocketScale);
             this.particlesEmitterRight.setScale(rocketScale);
 

@@ -39,6 +39,18 @@ window.SceneOverview = function(config) {
             this.physics.world.gravity.y = 0;
             this.physics.world.setBoundsCollision(true, true, true, true);
 
+            this.starRenderTexture = this.add.renderTexture(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+            this.stars = this.add.graphics();
+            this.stars.setVisible(false);
+            for(var i = 0; i < window.explore.stars.data.length; i++)
+            {
+                var starData = window.explore.stars.data[i];
+                var intensity = (1 - starData.z / window.explore.stars.MAX_DEPTH);
+                this.stars.fillStyle(window.explore.stars.COLOUR, intensity);
+                this.stars.fillCircle(starData.x, starData.y, intensity);
+            }
+            this.starRenderTexture.draw(this.stars);
+
             window.explore.config.planets.forEach(function(planet) {
                 planet.outline = this.add.graphics();
                 planet.outline.fillStyle(planet.outlineColour, 1);
