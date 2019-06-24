@@ -37,6 +37,19 @@ window.SceneOrbit = function(config) {
 
         create: function()
         {
+            var camera = this.cameras.main;
+            var dragScale = this.plugins.get('rexpinchplugin').add(this);
+            dragScale
+              .on('drag1', function (dragScale) {
+                var drag1Vector = dragScale.drag1Vector;
+                camera.scrollX -= drag1Vector.x / camera.zoom;
+                camera.scrollY -= drag1Vector.y / camera.zoom;
+              }, this)
+              .on('pinch', function (dragScale) {
+                var scaleFactor = dragScale.scaleFactor;
+                camera.zoom *= scaleFactor;
+              }, this);
+
             this.physics.world.gravity.y = 0;
             this.physics.world.setBoundsCollision(true, true, true, true);
             this.physics.world.on("worldbounds", function (body) {
@@ -124,8 +137,6 @@ window.SceneOrbit = function(config) {
                 this.particlesEmitterLeft.start();
                 this.particlesEmitterRight.start();
 
-                this.textTween.stop();
-
                 this.tweens.add({
                     targets: this.orbitCircle,
                     radius: this.config.orbitRadius * 2.5,
@@ -155,14 +166,6 @@ window.SceneOrbit = function(config) {
                 "Exit Orbit",
                 { font: "50px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
             this.text.setOrigin(0.5);
-            this.textTween = this.tweens.add({
-                targets: this.text,
-                alpha: 0.4,
-                ease: 'Sine',
-                duration: 750,
-                yoyo: true,
-                repeat: -1
-            });
 
             this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
             this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);

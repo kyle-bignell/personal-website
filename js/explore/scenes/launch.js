@@ -31,6 +31,9 @@ var SceneLaunch = function(config) {
 
         preload: function()
         {
+            var url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/plugins/dist/rexpinchplugin.min.js';
+            this.load.plugin('rexpinchplugin', url, true);
+
             this.load.path = 'assets/explore/';
             this.load.image('rocket', 'rocket.png');
             this.load.image('fire', 'fire.png');
@@ -38,6 +41,19 @@ var SceneLaunch = function(config) {
 
         create: function()
         {
+            var camera = this.cameras.main;
+            var dragScale = this.plugins.get('rexpinchplugin').add(this);
+            dragScale
+              .on('drag1', function (dragScale) {
+                var drag1Vector = dragScale.drag1Vector;
+                camera.scrollX -= drag1Vector.x / camera.zoom;
+                camera.scrollY -= drag1Vector.y / camera.zoom;
+              }, this)
+              .on('pinch', function (dragScale) {
+                var scaleFactor = dragScale.scaleFactor;
+                camera.zoom *= scaleFactor;
+              }, this);
+
             this.physics.world.gravity.y = 200;
 
             var graphics = this.add.graphics();

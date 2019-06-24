@@ -36,6 +36,19 @@ window.SceneOverview = function(config) {
 
         create: function()
         {
+            var camera = this.cameras.main;
+            var dragScale = this.plugins.get('rexpinchplugin').add(this);
+            dragScale
+              .on('drag1', function (dragScale) {
+                var drag1Vector = dragScale.drag1Vector;
+                camera.scrollX -= drag1Vector.x / camera.zoom;
+                camera.scrollY -= drag1Vector.y / camera.zoom;
+              }, this)
+              .on('pinch', function (dragScale) {
+                var scaleFactor = dragScale.scaleFactor;
+                camera.zoom *= scaleFactor;
+              }, this);
+
             this.physics.world.gravity.y = 0;
             this.physics.world.setBoundsCollision(true, true, true, true);
 

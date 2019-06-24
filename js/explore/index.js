@@ -127,7 +127,7 @@ function setupExplore()
     var sceneLaunch = SceneLaunch(config);
     var sceneOverview = SceneOverview(config);
     var sceneOrbit = SceneOrbit(config);
-    config.scene = [sceneOverview, sceneLaunch, sceneOrbit],
+    config.scene = [sceneLaunch, sceneOrbit, sceneOverview],
 
     window.explore.game = new Phaser.Game(config);
     window.explore.stars.init();
