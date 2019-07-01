@@ -32,6 +32,12 @@ window.SceneOverview = function(config) {
             this.load.path = 'assets/explore/';
             this.load.image('rocket', 'rocket.png');
             this.load.image('fire', 'fire.png');
+            this.load.image('planet-background-0', 'planet-background-0.jpg');
+            this.load.image('planet-background-1', 'planet-background-1.jpg');
+            this.load.image('planet-background-2', 'planet-background-2.jpg');
+            this.load.image('planet-background-3', 'planet-background-3.jpg');
+            this.load.image('planet-background-4', 'planet-background-4.jpg');
+            this.load.image('planet-background-5', 'planet-background-5.jpg');
         },
 
         create: function()
@@ -69,7 +75,13 @@ window.SceneOverview = function(config) {
                 planet.outline.fillStyle(planet.outlineColour, 1);
                 planet.outline.fillCircle(planet.x, planet.y, planet.radius + 3);
                 planet.outline.setAlpha(0);
+
+                planet.background = this.add.image(planet.x, planet.y, 'planet-background-' + planet.id);
+                planet.background.setOrigin(0.5, 0.5);
+                planet.background.scale = (planet.radius * 2) / planet.background.width;
+
                 planet.graphics = this.add.graphics();
+                planet.graphics.blendMode = 'MULTIPLY';
                 planet.graphics.fillStyle(planet.colour, 1);
                 planet.graphics.fillCircle(planet.x, planet.y, planet.radius);
                 planet.graphics.setInteractive({
@@ -91,6 +103,8 @@ window.SceneOverview = function(config) {
                     planet.outline.setAlpha(0);
                 }.bind(this));
 
+                planet.background.setMask(planet.graphics.createGeometryMask());
+
                 planet.orbitCircle = new Phaser.Geom.Circle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, planet.orbitRadius);
                 planet.orbitRotation = this.tweens.addCounter({
                     from: 0,
@@ -106,6 +120,11 @@ window.SceneOverview = function(config) {
         update: function()
         {
             window.explore.config.planets.forEach(function(planet) {
+                Phaser.Actions.PlaceOnCircle(
+                    [planet.background],
+                    planet.orbitCircle,
+                    (planet.orbitRotation.getValue() + planet.orbitRotationOffset)
+                );
                 Phaser.Actions.PlaceOnCircle(
                     [planet.graphics],
                     planet.orbitCircle,

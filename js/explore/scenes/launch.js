@@ -100,13 +100,20 @@ var SceneLaunch = function(config) {
                 this.scene.start('sceneOverview');
             }, null, this);
 
+            var button = {
+              x: (this.sceneDimensions.w / 2) - 130,
+              y: this.sceneDimensions.h - 705,
+              w: 260,
+              h: 90,
+              r: 25
+            };
             this.button = this.add.graphics();
             this.button.fillStyle(0x4b4b4b, 1);
-            this.button.fillRoundedRect((this.sceneDimensions.w / 2) - 185, this.sceneDimensions.h - 410, 370, 120, 25);
+            this.button.fillRoundedRect(button.x, button.y, button.w, button.h, button.r);
             this.button.lineStyle(3, 0xfa8200, 1);
-            this.button.strokeRoundedRect((this.sceneDimensions.w / 2) - 185, this.sceneDimensions.h - 410, 370, 120, 25);
+            this.button.strokeRoundedRect(button.x, button.y, button.w, button.h, button.r);
             this.button.setInteractive({
-                hitArea: new Phaser.Geom.Rectangle((this.sceneDimensions.w / 2) - 185, this.sceneDimensions.h - 410, 370, 120),
+                hitArea: new Phaser.Geom.Rectangle(button.x, button.y, button.w, button.h),
                 hitAreaCallback: Phaser.Geom.Rectangle.Contains,
                 useHandCursor: true
             });
@@ -130,9 +137,9 @@ var SceneLaunch = function(config) {
             }.bind(this));
 
             this.text = this.add.text(this.sceneDimensions.w / 2,
-                this.sceneDimensions.h - 350,
+                this.sceneDimensions.h - 650,
                 "Launch",
-                { font: "100px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
+                { font: "55px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
             this.text.setOrigin(0.5);
             this.textTween = this.tweens.add({
                 targets: this.text,

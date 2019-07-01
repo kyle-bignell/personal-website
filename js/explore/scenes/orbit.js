@@ -33,6 +33,12 @@ window.SceneOrbit = function(config) {
             this.load.path = 'assets/explore/';
             this.load.image('rocket', 'rocket.png');
             this.load.image('fire', 'fire.png');
+            this.load.image('planet-background-0', 'planet-background-0.jpg');
+            this.load.image('planet-background-1', 'planet-background-1.jpg');
+            this.load.image('planet-background-2', 'planet-background-2.jpg');
+            this.load.image('planet-background-3', 'planet-background-3.jpg');
+            this.load.image('planet-background-4', 'planet-background-4.jpg');
+            this.load.image('planet-background-5', 'planet-background-5.jpg');
         },
 
         create: function()
@@ -82,9 +88,16 @@ window.SceneOrbit = function(config) {
                 orbitTime: 30000
             };
 
+            var background = this.add.image(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, 'planet-background-' + this.planetID);
+            background.setOrigin(0.5, 0.5);
+            background.scale = (this.config.planetRadius * 2) / background.width;
+
             var graphics = this.add.graphics();
             graphics.fillStyle(window.explore.config.planets[this.planetID].colour, 1);
             graphics.fillCircle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, this.config.planetRadius);
+            graphics.blendMode = 'MULTIPLY';
+
+            background.setMask(graphics.createGeometryMask());
 
             var particleConfig = {
                 on: false,
@@ -122,13 +135,20 @@ window.SceneOrbit = function(config) {
                 repeat: -1
             });
 
+            var button = {
+              x: this.sceneDimensions.w - 260,
+              y: -25,
+              w: 250,
+              h: 85,
+              r: 25
+            };
             this.button = this.add.graphics();
             this.button.fillStyle(0x4b4b4b, 1);
-            this.button.fillRoundedRect(this.sceneDimensions.w - 260, 10, 250, 60, 25);
+            this.button.fillRoundedRect(button.x, button.y, button.w, button.h, button.r);
             this.button.lineStyle(3, 0xfa8200, 1);
-            this.button.strokeRoundedRect(this.sceneDimensions.w - 260, 10, 250, 60, 25);
+            this.button.strokeRoundedRect(button.x, button.y, button.w, button.h, button.r);
             this.button.setInteractive({
-                hitArea: new Phaser.Geom.Rectangle(this.sceneDimensions.w - 260, 10, 250, 60),
+                hitArea: new Phaser.Geom.Rectangle(button.x, button.y, button.w, button.h),
                 hitAreaCallback: Phaser.Geom.Rectangle.Contains,
                 useHandCursor: true
             });
@@ -162,7 +182,7 @@ window.SceneOrbit = function(config) {
             }.bind(this));
 
             this.text = this.add.text(this.sceneDimensions.w - 135,
-                40,
+                27.5,
                 "Exit Orbit",
                 { font: "50px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
             this.text.setOrigin(0.5);

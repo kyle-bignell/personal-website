@@ -6,12 +6,12 @@ window.explore.currentScene = null;
 
 window.explore.config = {
     planets: [
-        { id: 0, radius: 40, x: 0, y: 0, colour: 0xff0000, outlineColour: 0xffffff, orbitRadius: 0, orbitTime: 1, orbitRotation: null, orbitRotationOffset: 0, orbitCircle: null, graphics: null },
-        { id: 1, radius: 15, x: 0, y: 0, colour: 0x00ff00, outlineColour: 0xffffff, orbitRadius: 75, orbitTime: 5000, orbitRotation: null, orbitRotationOffset: 0, orbitCircle: null, graphics: null },
-        { id: 2, radius: 20, x: 0, y: 0, colour: 0x0000ff, outlineColour: 0xffffff, orbitRadius: 120, orbitTime: 10000, orbitRotation: null, orbitRotationOffset: 1.5, orbitCircle: null, graphics: null },
-        { id: 3, radius: 30, x: 0, y: 0, colour: 0x00ffff, outlineColour: 0xffffff, orbitRadius: 180, orbitTime: 30000, orbitRotation: null, orbitRotationOffset: 5.7, orbitCircle: null, graphics: null },
-        { id: 4, radius: 22, x: 0, y: 0, colour: 0xffff00, outlineColour: 0xffffff, orbitRadius: 250, orbitTime: 56000, orbitRotation: null, orbitRotationOffset: 3.3, orbitCircle: null, graphics: null },
-        { id: 5, radius: 18, x: 0, y: 0, colour: 0xff00ff, outlineColour: 0xffffff, orbitRadius: 310, orbitTime: 80000, orbitRotation: null, orbitRotationOffset: 4.2, orbitCircle: null, graphics: null }
+        { id: 0, radius: 40, x: 0, y: 0, colour: 0xff666e, outlineColour: 0xffffff, orbitRadius: 0, orbitTime: 1, orbitRotation: null, orbitRotationOffset: 0, orbitCircle: null, graphics: null },
+        { id: 1, radius: 18, x: 0, y: 0, colour: 0xffd180, outlineColour: 0xffffff, orbitRadius: 75, orbitTime: 5000, orbitRotation: null, orbitRotationOffset: 0, orbitCircle: null, graphics: null },
+        { id: 2, radius: 20, x: 0, y: 0, colour: 0xff8a80, outlineColour: 0xffffff, orbitRadius: 120, orbitTime: 10000, orbitRotation: null, orbitRotationOffset: 1.5, orbitCircle: null, graphics: null },
+        { id: 3, radius: 30, x: 0, y: 0, colour: 0x00bcd4, outlineColour: 0xffffff, orbitRadius: 180, orbitTime: 30000, orbitRotation: null, orbitRotationOffset: 5.7, orbitCircle: null, graphics: null },
+        { id: 4, radius: 22, x: 0, y: 0, colour: 0x00ffa1, outlineColour: 0xffffff, orbitRadius: 250, orbitTime: 56000, orbitRotation: null, orbitRotationOffset: 3.3, orbitCircle: null, graphics: null },
+        { id: 5, radius: 20, x: 0, y: 0, colour: 0xea80fc, outlineColour: 0xffffff, orbitRadius: 310, orbitTime: 80000, orbitRotation: null, orbitRotationOffset: 4.2, orbitCircle: null, graphics: null }
     ]
 };
 
@@ -104,7 +104,7 @@ function loadExplore()
     {
       setupExplore();
     };
-    phaserScript.src = "js/phaser.js";
+    phaserScript.src = "js/phaser.min.js";
     phaserScript.async = true;
     document.getElementsByTagName('head')[0].appendChild(phaserScript);
 }
@@ -127,7 +127,7 @@ function setupExplore()
     var sceneLaunch = SceneLaunch(config);
     var sceneOverview = SceneOverview(config);
     var sceneOrbit = SceneOrbit(config);
-    config.scene = [sceneLaunch, sceneOrbit, sceneOverview],
+    config.scene = [sceneLaunch, sceneOverview, sceneOrbit],
 
     window.explore.game = new Phaser.Game(config);
     window.explore.stars.init();
