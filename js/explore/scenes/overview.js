@@ -47,12 +47,12 @@ window.SceneOverview = function(config) {
             dragScale
               .on('drag1', function (dragScale) {
                 var drag1Vector = dragScale.drag1Vector;
-                camera.scrollX = (camera.scrollX - drag1Vector.x / camera.zoom);
-                camera.scrollY = (camera.scrollY - drag1Vector.y / camera.zoom);
+                camera.scrollX = camera.scrollX - (drag1Vector.x / camera.zoom);
+                camera.scrollY =  camera.scrollY - (drag1Vector.y / camera.zoom);
               }, this)
               .on('pinch', function (dragScale) {
                 var scaleFactor = dragScale.scaleFactor;
-                camera.zoom = Math.min(1, (camera.zoom * scaleFactor));
+                camera.zoom = Math.max(1, (camera.zoom * scaleFactor));
               }, this);
 
             this.physics.world.gravity.y = 0;
@@ -114,6 +114,7 @@ window.SceneOverview = function(config) {
                 });
             }.bind(this));
 
+            this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
             this.cameras.main.fadeIn(750);
         },
 

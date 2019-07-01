@@ -46,12 +46,12 @@ var SceneLaunch = function(config) {
             dragScale
               .on('drag1', function (dragScale) {
                 var drag1Vector = dragScale.drag1Vector;
-                camera.scrollX -= drag1Vector.x / camera.zoom;
-                camera.scrollY -= drag1Vector.y / camera.zoom;
+                camera.scrollX = camera.scrollX - (drag1Vector.x / camera.zoom);
+                camera.scrollY =  camera.scrollY - (drag1Vector.y / camera.zoom);
               }, this)
               .on('pinch', function (dragScale) {
                 var scaleFactor = dragScale.scaleFactor;
-                camera.zoom = Math.min(1, camera.zoom * scaleFactor);
+                camera.zoom = Math.max(1, (camera.zoom * scaleFactor));
               }, this);
 
             this.physics.world.gravity.y = 200;
@@ -105,14 +105,22 @@ var SceneLaunch = function(config) {
               y: this.sceneDimensions.h - 650,
               w: 260,
               h: 85,
-              r: 25
+              r: 25,
+              b: 3
             };
+
+            this.buttonBackground = this.add.graphics();
+            this.buttonBackground.fillStyle(0xfa8200, 1);
+            this.buttonBackground.fillRoundedRect(
+              button.x - button.b,
+              button.y - button.b,
+              button.w + (button.b * 2),
+              button.h + (button.b * 2),
+            button.r);
+
             this.button = this.add.graphics();
             this.button.fillStyle(0x4b4b4b, 1);
             this.button.fillRoundedRect(button.x, button.y, button.w, button.h, button.r);
-            this.button.lineStyle(3, 0xfa8200, 1);
-            this.button.moveTo(button.x, button.y);
-            this.button.strokeRoundedRect(button.x, button.y, button.w, button.h, button.r);
             this.button.setInteractive({
                 hitArea: new Phaser.Geom.Rectangle(button.x, button.y, button.w, button.h),
                 hitAreaCallback: Phaser.Geom.Rectangle.Contains,
@@ -127,6 +135,11 @@ var SceneLaunch = function(config) {
                 this.textTween.stop();
                 this.tweens.add({
                     targets: this.text,
+                    alpha: 0,
+                    duration: 750
+                });
+                this.tweens.add({
+                    targets: this.buttonBackground,
                     alpha: 0,
                     duration: 750
                 });
@@ -164,9 +177,6 @@ var SceneLaunch = function(config) {
 
                 var zoom = Math.max(ratio, 0.5);
                 this.cameras.main.setZoom(zoom);
-            }
-            else
-            {
             }
 
             var cameraAtTop = this.cameras.main.scrollY === (this.cameraBuffer + (config.height / 2));
