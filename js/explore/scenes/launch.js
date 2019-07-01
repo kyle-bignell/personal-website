@@ -111,6 +111,7 @@ var SceneLaunch = function(config) {
             this.button.fillStyle(0x4b4b4b, 1);
             this.button.fillRoundedRect(button.x, button.y, button.w, button.h, button.r);
             this.button.lineStyle(3, 0xfa8200, 1);
+            this.button.moveTo(button.x, button.y);
             this.button.strokeRoundedRect(button.x, button.y, button.w, button.h, button.r);
             this.button.setInteractive({
                 hitArea: new Phaser.Geom.Rectangle(button.x, button.y, button.w, button.h),
