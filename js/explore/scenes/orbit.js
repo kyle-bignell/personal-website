@@ -53,7 +53,7 @@ window.SceneOrbit = function(config) {
               }, this)
               .on('pinch', function (dragScale) {
                 var scaleFactor = dragScale.scaleFactor;
-                camera.zoom *= scaleFactor;
+                camera.zoom = Math.min(1, camera.zoom * scaleFactor);
               }, this);
 
             this.physics.world.gravity.y = 0;

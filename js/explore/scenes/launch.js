@@ -51,7 +51,7 @@ var SceneLaunch = function(config) {
               }, this)
               .on('pinch', function (dragScale) {
                 var scaleFactor = dragScale.scaleFactor;
-                camera.zoom *= scaleFactor;
+                camera.zoom = Math.min(1, camera.zoom * scaleFactor);
               }, this);
 
             this.physics.world.gravity.y = 200;
@@ -102,9 +102,9 @@ var SceneLaunch = function(config) {
 
             var button = {
               x: (this.sceneDimensions.w / 2) - 130,
-              y: this.sceneDimensions.h - 705,
+              y: this.sceneDimensions.h - 650,
               w: 260,
-              h: 90,
+              h: 85,
               r: 25
             };
             this.button = this.add.graphics();
@@ -137,7 +137,7 @@ var SceneLaunch = function(config) {
             }.bind(this));
 
             this.text = this.add.text(this.sceneDimensions.w / 2,
-                this.sceneDimensions.h - 650,
+                this.sceneDimensions.h - 610,
                 "Launch",
                 { font: "55px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
             this.text.setOrigin(0.5);
