@@ -61,7 +61,14 @@ window.SceneOrbit = function(config) {
             this.physics.world.on("worldbounds", function (body) {
                 body.setCollideWorldBounds(false);
                 body.onWorldBounds = false;
-                timedEvent = this.time.delayedCall(2500, function() {
+
+                this.time.delayedCall(25, function() {
+                    body.gameObject.setVisible(false);
+                    this.particlesEmitterLeft.stop();
+                    this.particlesEmitterRight.stop();
+                }, [], this);
+
+                this.time.delayedCall(2500, function() {
                     this.cameras.main.fadeOut(750, 0, 0, 0, function(camera, progress) {
                         if (progress === 1) {
                             this.scene.start('sceneOverview');
@@ -123,6 +130,7 @@ window.SceneOrbit = function(config) {
                        .setScale(rocketScale, rocketScale);
             this.rocket.body.setCollideWorldBounds(true);
             this.rocket.body.onWorldBounds = true;
+            this.rocket.body.setSize(1, 1, true);
 
             this.particlesEmitterLeft.setScale(rocketScale);
             this.particlesEmitterRight.setScale(rocketScale);
