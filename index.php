@@ -56,16 +56,16 @@
     <div id="content">
         <div id="about">
             <div class="content-title">
-                About me
+                About
             </div>
             <p>
-                I'm a software developer currently specialising in web technologies. As a technical lead I bring order and clear direction to complex software development projects which ensures that my team and I can focus on what we do best, delivering valuable software to the business.
+                I'm a software developer specialising in web technologies. As a technical lead I bring order and clear direction to complex software development projects so that my team and I can focus on what we do best, delivering valuable software to the business.
             </p>
             <p>
                 Find out more about my current and previous roles over on my <a href="experience.php">experience page</a>.
             </p>
             <p>
-                Check out other things I am working on my <a href="projects.php">projects page</a>.
+                Check out the projects I'm tinkering with on my <a href="projects.php">projects page</a>.
             </p>
         </div>
 
