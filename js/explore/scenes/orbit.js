@@ -2,6 +2,18 @@ window.SceneOrbit = function(config) {
     return new Phaser.Class({
         Extends: Phaser.Scene,
 
+        exitButton: {
+          background: null,
+          foreground: null,
+          text: null
+        },
+
+        landButton: {
+          background: null,
+          foreground: null,
+          text: null
+        },
+
         initialize: function(data)
         {
             Phaser.Scene.call(this, { key: 'sceneOrbit' });
@@ -174,32 +186,30 @@ window.SceneOrbit = function(config) {
             var backgroundColour = 0xfa8200;
             var foregroundColour = 0x4b4b4b;
             var tweenConfig = {
-              buttonAlphaTarget: 0,
-              buttonFadeDuration: 750,
               orbitRadiusMultiplier: 2.5,
               orbitRadiusDuration: 5000,
               orbitSpeedMultiplier: 10,
               orbitSpeedDuration: 4500
             }
 
-            var buttonBackground = this.add.graphics();
-            buttonBackground.fillStyle(backgroundColour, 1);
-            buttonBackground.fillRoundedRect(
+            this.exitButton.background = this.add.graphics();
+            this.exitButton.background.fillStyle(backgroundColour, 1);
+            this.exitButton.background.fillRoundedRect(
               buttonConfig.x - buttonConfig.b,
               buttonConfig.y - buttonConfig.b,
               buttonConfig.w + (buttonConfig.b * 2),
               buttonConfig.h + (buttonConfig.b * 2),
             buttonConfig.r);
 
-            var buttonForeground = this.add.graphics();
-            buttonForeground.fillStyle(foregroundColour, 1);
-            buttonForeground.fillRoundedRect(
+            this.exitButton.foreground = this.add.graphics();
+            this.exitButton.foreground.fillStyle(foregroundColour, 1);
+            this.exitButton.foreground.fillRoundedRect(
               buttonConfig.x,
               buttonConfig.y,
               buttonConfig.w,
               buttonConfig.h,
               buttonConfig.r);
-            buttonForeground.setInteractive({
+            this.exitButton.foreground.setInteractive({
                 hitArea: new Phaser.Geom.Rectangle(
                   buttonConfig.x,
                   buttonConfig.y,
@@ -209,7 +219,7 @@ window.SceneOrbit = function(config) {
                 useHandCursor: true
             });
 
-            var text = this.add.text(
+            this.exitButton.text = this.add.text(
                 this.sceneDimensions.w - 135,
                 27.5,
                 "Exit Orbit",
@@ -220,10 +230,12 @@ window.SceneOrbit = function(config) {
                     strokeThickness: 5,
                     align: "center"
                 });
-            text.setOrigin(0.5);
+            this.exitButton.text.setOrigin(0.5);
 
-            buttonForeground.once('pointerdown', function()
+            this.exitButton.foreground.once('pointerdown', function()
             {
+                this.fadeButtons();
+
                 this.particlesEmitterLeft.start();
                 this.particlesEmitterRight.start();
 
@@ -238,21 +250,6 @@ window.SceneOrbit = function(config) {
                     timeScale: tweenConfig.orbitSpeedMultiplier,
                     ease: Phaser.Math.Easing.Sine.In,
                     duration: tweenConfig.orbitSpeedDuration
-                });
-                this.tweens.add({
-                    targets: buttonBackground,
-                    alpha: tweenConfig.buttonAlphaTarget,
-                    duration: tweenConfig.buttonFadeDuration
-                });
-                this.tweens.add({
-                    targets: buttonForeground,
-                    alpha: tweenConfig.buttonAlphaTarget,
-                    duration: tweenConfig.buttonFadeDuration
-                });
-                this.tweens.add({
-                    targets: text,
-                    alpha: tweenConfig.buttonAlphaTarget,
-                    duration: tweenConfig.buttonFadeDuration
                 });
             }.bind(this));
         },
@@ -270,8 +267,6 @@ window.SceneOrbit = function(config) {
             var backgroundColour = 0xfa8200;
             var foregroundColour = 0x4b4b4b;
             var tweenConfig = {
-              buttonAlphaTarget: 0,
-              buttonFadeDuration: 750,
               orbitRadiusMultiplier: 0.75,
               orbitRadiusDuration: 5000,
               orbitSpeedMultiplier: 10,
@@ -282,24 +277,24 @@ window.SceneOrbit = function(config) {
               particleScaleDuration: 5000
             }
 
-            var buttonBackground = this.add.graphics();
-            buttonBackground.fillStyle(backgroundColour, 1);
-            buttonBackground.fillRoundedRect(
+            this.landButton.background = this.add.graphics();
+            this.landButton.background.fillStyle(backgroundColour, 1);
+            this.landButton.background.fillRoundedRect(
               buttonConfig.x - buttonConfig.b,
               buttonConfig.y - buttonConfig.b,
               buttonConfig.w + (buttonConfig.b * 2),
               buttonConfig.h + (buttonConfig.b * 2),
             buttonConfig.r);
 
-            var buttonForeground = this.add.graphics();
-            buttonForeground.fillStyle(foregroundColour, 1);
-            buttonForeground.fillRoundedRect(
+            this.landButton.foreground = this.add.graphics();
+            this.landButton.foreground.fillStyle(foregroundColour, 1);
+            this.landButton.foreground.fillRoundedRect(
               buttonConfig.x,
               buttonConfig.y,
               buttonConfig.w,
               buttonConfig.h,
               buttonConfig.r);
-            buttonForeground.setInteractive({
+            this.landButton.foreground.setInteractive({
                 hitArea: new Phaser.Geom.Rectangle(
                   buttonConfig.x,
                   buttonConfig.y,
@@ -309,7 +304,7 @@ window.SceneOrbit = function(config) {
                 useHandCursor: true
             });
 
-            var text = this.add.text(
+            this.landButton.text = this.add.text(
                 135,
                 27.5,
                 "Land",
@@ -320,12 +315,29 @@ window.SceneOrbit = function(config) {
                     strokeThickness: 5,
                     align: "center"
                 });
-            text.setOrigin(0.5);
+            this.landButton.text.setOrigin(0.5);
 
-            buttonForeground.once('pointerdown', function()
+            this.landButton.foreground.once('pointerdown', function()
             {
+                this.fadeButtons();
+
                 this.particlesEmitterLeft.start();
                 this.particlesEmitterRight.start();
+
+                var particleEmitterTargets = {
+                  scale: this.particlesEmitterLeft.scaleX.propertyValue
+                }
+                this.tweens.add({
+                    targets: particleEmitterTargets,
+                    scale: tweenConfig.particleScaleTarget,
+                    duration: tweenConfig.particleScaleDuration,
+                    onUpdate: function() {
+                      this.particlesEmitterLeft.setScale(particleEmitterTargets.scale);
+                      this.particlesEmitterRight.setScale(particleEmitterTargets.scale);
+                      console.log('scale', particleEmitterTargets.scale);
+                    },
+                    onUpdateScope: this
+                });
 
                 this.tweens.add({
                     targets: this.orbitCircle,
@@ -344,22 +356,27 @@ window.SceneOrbit = function(config) {
                     scale: tweenConfig.rocketScaleTarget,
                     duration: tweenConfig.rocketScaleDuration
                 });
-                this.tweens.add({
-                    targets: buttonBackground,
-                    alpha: tweenConfig.buttonAlphaTarget,
-                    duration: tweenConfig.buttonFadeDuration
-                });
-                this.tweens.add({
-                    targets: buttonForeground,
-                    alpha: tweenConfig.buttonAlphaTarget,
-                    duration: tweenConfig.buttonFadeDuration
-                });
-                this.tweens.add({
-                    targets: text,
-                    alpha: tweenConfig.buttonAlphaTarget,
-                    duration: tweenConfig.buttonFadeDuration
-                });
             }.bind(this));
+        },
+
+        fadeButtons: function() {
+            this.exitButton.foreground.removeAllListeners();
+            this.landButton.foreground.removeAllListeners();
+
+            var tweenConfig = {
+              buttonAlphaTarget: 0,
+              buttonFadeDuration: 750
+            }
+            this.tweens.add({
+                targets: [this.exitButton.background, this.exitButton.foreground, this.exitButton.text],
+                alpha: tweenConfig.buttonAlphaTarget,
+                duration: tweenConfig.buttonFadeDuration
+            });
+            this.tweens.add({
+                targets: [this.landButton.background, this.landButton.foreground, this.landButton.text],
+                alpha: tweenConfig.buttonAlphaTarget,
+                duration: tweenConfig.buttonFadeDuration
+            });
         },
 
         create: function()
@@ -382,10 +399,10 @@ window.SceneOrbit = function(config) {
             );
             this.rocket.rotation = this.orbitRotation.getValue() + 3.14;
 
-            const xDistance = 15 * this.rocket.scaleX;
-            const yDistance = 75 * this.rocket.scaleY;
-            const leftOffset = Phaser.Math.Rotate({x: xDistance, y: yDistance}, this.orbitRotation.getValue() + 3.14);
-            const rightOffset = Phaser.Math.Rotate({x: -xDistance, y: yDistance}, this.orbitRotation.getValue() + 3.14);
+            var xDistance = 15 * this.rocket.scaleX;
+            var yDistance = 75 * this.rocket.scaleY;
+            var leftOffset = Phaser.Math.Rotate({x: xDistance, y: yDistance}, this.orbitRotation.getValue() + 3.14);
+            var rightOffset = Phaser.Math.Rotate({x: -xDistance, y: yDistance}, this.orbitRotation.getValue() + 3.14);
             this.particlesEmitterLeft.setPosition(this.rocket.x + leftOffset.x, this.rocket.y + leftOffset.y);
             this.particlesEmitterRight.setPosition(this.rocket.x + rightOffset.x, this.rocket.y + rightOffset.y);
         },

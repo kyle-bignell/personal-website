@@ -173,7 +173,7 @@ var SceneLaunch = function(config) {
             if (this.rocket.body.acceleration.y < 0)
             {
                 var ratio = this.rocket.y / this.sceneDimensions.h;
-                this.cameras.main.shake(100, 0.0025 * ratio);
+                this.cameras.main.shake(100, 0.005 * ratio);
 
                 var zoom = Math.max(ratio, 0.5);
                 this.cameras.main.setZoom(zoom);
