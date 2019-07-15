@@ -32,12 +32,12 @@ window.SceneOverview = function(config) {
             this.load.path = 'assets/explore/';
             this.load.image('rocket', 'rocket.png');
             this.load.image('fire', 'fire.png');
-            this.load.image('planet-background-0', 'planet-background-0.jpg');
-            this.load.image('planet-background-1', 'planet-background-1.jpg');
-            this.load.image('planet-background-2', 'planet-background-2.jpg');
-            this.load.image('planet-background-3', 'planet-background-3.jpg');
-            this.load.image('planet-background-4', 'planet-background-4.jpg');
-            this.load.image('planet-background-5', 'planet-background-5.jpg');
+            this.load.image('planet-background-low-0', 'planets/planet-background-low-0.jpg');
+            this.load.image('planet-background-low-1', 'planets/planet-background-low-1.jpg');
+            this.load.image('planet-background-low-2', 'planets/planet-background-low-2.jpg');
+            this.load.image('planet-background-low-3', 'planets/planet-background-low-3.jpg');
+            this.load.image('planet-background-low-4', 'planets/planet-background-low-4.jpg');
+            this.load.image('planet-background-low-5', 'planets/planet-background-low-5.jpg');
         },
 
         create: function()
@@ -76,7 +76,7 @@ window.SceneOverview = function(config) {
                 planet.outline.fillCircle(planet.x, planet.y, planet.radius + 3);
                 planet.outline.setAlpha(0);
 
-                planet.background = this.add.image(planet.x, planet.y, 'planet-background-' + planet.id);
+                planet.background = this.add.image(planet.x, planet.y, 'planet-background-low-' + planet.id);
                 planet.background.setOrigin(0.5, 0.5);
                 planet.background.scale = (planet.radius * 2) / planet.background.width;
 

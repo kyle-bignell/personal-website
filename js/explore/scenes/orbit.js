@@ -40,12 +40,12 @@ window.SceneOrbit = function(config) {
             this.load.path = 'assets/explore/';
             this.load.image('rocket', 'rocket.png');
             this.load.image('fire', 'fire.png');
-            this.load.image('planet-background-0', 'planet-background-0.jpg');
-            this.load.image('planet-background-1', 'planet-background-1.jpg');
-            this.load.image('planet-background-2', 'planet-background-2.jpg');
-            this.load.image('planet-background-3', 'planet-background-3.jpg');
-            this.load.image('planet-background-4', 'planet-background-4.jpg');
-            this.load.image('planet-background-5', 'planet-background-5.jpg');
+            this.load.image('planet-background-high-0', 'planets/planet-background-high-0.jpg');
+            this.load.image('planet-background-high-1', 'planets/planet-background-high-1.jpg');
+            this.load.image('planet-background-high-2', 'planets/planet-background-high-2.jpg');
+            this.load.image('planet-background-high-3', 'planets/planet-background-high-3.jpg');
+            this.load.image('planet-background-high-4', 'planets/planet-background-high-4.jpg');
+            this.load.image('planet-background-high-5', 'planets/planet-background-high-5.jpg');
         },
 
         initCamera: function()
@@ -78,7 +78,7 @@ window.SceneOrbit = function(config) {
                     this.particlesEmitterRight.stop();
                 }, [], this);
 
-                this.time.delayedCall(2500, function() {
+                this.time.delayedCall(1000, function() {
                     this.cameras.main.fadeOut(750, 0, 0, 0, function(camera, progress) {
                         if (progress === 1) {
                             this.scene.start('sceneOverview');
@@ -129,7 +129,7 @@ window.SceneOrbit = function(config) {
 
         createPlanet: function()
         {
-            var background = this.add.image(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, 'planet-background-' + this.planetID);
+            var background = this.add.image(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, 'planet-background-high-' + this.planetID);
             background.setOrigin(0.5, 0.5);
             background.scale = (this.config.planetRadius * 2) / background.width;
 
@@ -334,7 +334,6 @@ window.SceneOrbit = function(config) {
                     onUpdate: function() {
                       this.particlesEmitterLeft.setScale(particleEmitterTargets.scale);
                       this.particlesEmitterRight.setScale(particleEmitterTargets.scale);
-                      console.log('scale', particleEmitterTargets.scale);
                     },
                     onUpdateScope: this
                 });
