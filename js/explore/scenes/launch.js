@@ -24,9 +24,23 @@ var SceneLaunch = function(config) {
             }.bind(this));
         },
 
+        initCamera: function()
+        {
+            this.cameras.main.setBounds(0, this.cameraBuffer, this.sceneDimensions.w, this.sceneDimensions.h - this.cameraBuffer);
+        },
+
+        initPhysics: function()
+        {
+            this.physics.world.gravity.y = 200;
+            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+        },
+
         init: function(data)
         {
             window.explore.currentScene = "sceneLaunch";
+
+            this.initCamera();
+            this.initPhysics();
         },
 
         preload: function()
@@ -39,7 +53,7 @@ var SceneLaunch = function(config) {
             this.load.image('fire', 'fire.png');
         },
 
-        create: function()
+        createCameraHandler: function()
         {
             var camera = this.cameras.main;
             var dragScale = this.plugins.get('rexpinchplugin').add(this);
@@ -53,13 +67,17 @@ var SceneLaunch = function(config) {
                 var scaleFactor = dragScale.scaleFactor;
                 camera.zoom = Math.max(1, (camera.zoom * scaleFactor));
               }, this);
+        },
 
-            this.physics.world.gravity.y = 200;
-
+        createBackground: function()
+        {
             var graphics = this.add.graphics();
             graphics.fillGradientStyle(0x000000, 0x000000, 0x83EAFF, 0x83EAFF);
             graphics.fillRect(0, this.cameraBuffer, this.sceneDimensions.w, this.sceneDimensions.h);
+        },
 
+        createRocket: function()
+        {
             var particleConfig = {
                 on: false,
                 alpha: { start: 1, end: 0 },
@@ -86,7 +104,10 @@ var SceneLaunch = function(config) {
             this.particlesEmitterLeft.startFollow(this.rocket, -this.rocket.width / 4, this.rocket.height / 1.75);
             this.particlesEmitterRight.startFollow(this.rocket, this.rocket.width / 4, this.rocket.height / 1.75);
             this.cameras.main.startFollow(this.rocket);
+        },
 
+        createExitZone: function()
+        {
             zone = this.add.zone(0, 0).setSize(this.sceneDimensions.w, 3);
             this.physics.world.enable(zone);
             zone.body.setAllowGravity(false);
@@ -99,7 +120,10 @@ var SceneLaunch = function(config) {
 
                 this.scene.start('sceneOverview');
             }, null, this);
+        },
 
+        createLaunchButton: function()
+        {
             var button = {
               x: (this.sceneDimensions.w / 2) - 130,
               y: this.sceneDimensions.h - 650,
@@ -112,10 +136,10 @@ var SceneLaunch = function(config) {
             this.buttonBackground = this.add.graphics();
             this.buttonBackground.fillStyle(0xfa8200, 1);
             this.buttonBackground.fillRoundedRect(
-              button.x - button.b,
-              button.y - button.b,
-              button.w + (button.b * 2),
-              button.h + (button.b * 2),
+            button.x - button.b,
+            button.y - button.b,
+            button.w + (button.b * 2),
+            button.h + (button.b * 2),
             button.r);
 
             this.button = this.add.graphics();
@@ -128,29 +152,30 @@ var SceneLaunch = function(config) {
             });
             this.button.once('pointerdown', function()
             {
-                this.particlesEmitterLeft.start();
-                this.particlesEmitterRight.start();
+              this.particlesEmitterLeft.start();
+              this.particlesEmitterRight.start();
 
-                this.rocket.body.setAccelerationY(-225);
-                this.textTween.stop();
-                this.tweens.add({
-                    targets: this.text,
-                    alpha: 0,
-                    duration: 750
-                });
-                this.tweens.add({
-                    targets: this.buttonBackground,
-                    alpha: 0,
-                    duration: 750
-                });
-                this.tweens.add({
-                    targets: this.button,
-                    alpha: 0,
-                    duration: 750
-                });
+              this.rocket.body.setAccelerationY(-225);
+              this.textTween.stop();
+              this.tweens.add({
+                  targets: this.text,
+                  alpha: 0,
+                  duration: 750
+              });
+              this.tweens.add({
+                  targets: this.buttonBackground,
+                  alpha: 0,
+                  duration: 750
+              });
+              this.tweens.add({
+                  targets: this.button,
+                  alpha: 0,
+                  duration: 750
+              });
             }.bind(this));
 
-            this.text = this.add.text(this.sceneDimensions.w / 2,
+            this.text = this.add.text(
+                this.sceneDimensions.w / 2,
                 this.sceneDimensions.h - 610,
                 "Launch",
                 { font: "55px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
@@ -163,12 +188,18 @@ var SceneLaunch = function(config) {
                 yoyo: true,
                 repeat: -1
             });
-
-            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h)
-            this.cameras.main.setBounds(0, this.cameraBuffer, this.sceneDimensions.w, this.sceneDimensions.h - this.cameraBuffer);
         },
 
-        update: function()
+        create: function()
+        {
+            this.createCameraHandler();
+            this.createBackground();
+            this.createRocket();
+            this.createExitZone();
+            this.createLaunchButton();
+        },
+
+        updateRocket: function()
         {
             if (this.rocket.body.acceleration.y < 0)
             {
@@ -178,13 +209,22 @@ var SceneLaunch = function(config) {
                 var zoom = Math.max(ratio, 0.5);
                 this.cameras.main.setZoom(zoom);
             }
+        },
 
+        updateCamera: function()
+        {
             var cameraAtTop = this.cameras.main.scrollY === (this.cameraBuffer + (config.height / 2));
             if (!this.fading && cameraAtTop)
             {
                 this.fading = true;
                 this.cameras.main.fadeOut(750);
             }
+        },
+
+        update: function()
+        {
+            this.updateRocket();
+            this.updateCamera();
         }
     })
 }

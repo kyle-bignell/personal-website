@@ -22,9 +22,23 @@ window.SceneOverview = function(config) {
             }.bind(this));
         },
 
+        initCamera: function()
+        {
+            this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+        },
+
+        initPhysics: function()
+        {
+            this.physics.world.gravity.y = 0;
+            this.physics.world.setBoundsCollision(true, true, true, true);
+        },
+
         init: function(data)
         {
             window.explore.currentScene = "sceneOverview";
+
+            this.initCamera();
+            this.initPhysics();
         },
 
         preload: function()
@@ -40,7 +54,7 @@ window.SceneOverview = function(config) {
             this.load.image('planet-background-low-5', 'planets/planet-background-low-5.jpg');
         },
 
-        create: function()
+        createCameraHandler: function()
         {
             var camera = this.cameras.main;
             var dragScale = this.plugins.get('rexpinchplugin').add(this);
@@ -54,10 +68,10 @@ window.SceneOverview = function(config) {
                 var scaleFactor = dragScale.scaleFactor;
                 camera.zoom = Math.max(1, (camera.zoom * scaleFactor));
               }, this);
+        },
 
-            this.physics.world.gravity.y = 0;
-            this.physics.world.setBoundsCollision(true, true, true, true);
-
+        createBackground: function()
+        {
             this.starRenderTexture = this.add.renderTexture(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
             this.stars = this.add.graphics();
             this.stars.setVisible(false);
@@ -69,7 +83,10 @@ window.SceneOverview = function(config) {
                 this.stars.fillCircle(starData.x, starData.y, intensity);
             }
             this.starRenderTexture.draw(this.stars);
+        },
 
+        createPlanets: function()
+        {
             window.explore.config.planets.forEach(function(planet) {
                 planet.outline = this.add.graphics();
                 planet.outline.fillStyle(planet.outlineColour, 1);
@@ -85,7 +102,11 @@ window.SceneOverview = function(config) {
                 planet.graphics.fillStyle(planet.colour, 1);
                 planet.graphics.fillCircle(planet.x, planet.y, planet.radius);
                 planet.graphics.setInteractive({
-                    hitArea: new Phaser.Geom.Rectangle(-planet.radius, -planet.radius, planet.radius * 2, planet.radius * 2),
+                    hitArea: new Phaser.Geom.Rectangle(
+                        -planet.radius,
+                        -planet.radius,
+                        planet.radius * 2,
+                        planet.radius * 2),
                     hitAreaCallback: Phaser.Geom.Rectangle.Contains,
                     useHandCursor: true
                 });
@@ -105,7 +126,10 @@ window.SceneOverview = function(config) {
 
                 planet.background.setMask(planet.graphics.createGeometryMask());
 
-                planet.orbitCircle = new Phaser.Geom.Circle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, planet.orbitRadius);
+                planet.orbitCircle = new Phaser.Geom.Circle(
+                  this.sceneDimensions.w / 2,
+                  this.sceneDimensions.h / 2,
+                  planet.orbitRadius);
                 planet.orbitRotation = this.tweens.addCounter({
                     from: 0,
                     to: 6.28,
@@ -113,12 +137,18 @@ window.SceneOverview = function(config) {
                     repeat: -1
                 });
             }.bind(this));
+        },
 
-            this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+        create: function()
+        {
+            this.createCameraHandler();
+            this.createBackground();
+            this.createPlanets();
+
             this.cameras.main.fadeIn(750);
         },
 
-        update: function()
+        updatePlanets: function()
         {
             window.explore.config.planets.forEach(function(planet) {
                 Phaser.Actions.PlaceOnCircle(
@@ -137,6 +167,11 @@ window.SceneOverview = function(config) {
                     (planet.orbitRotation.getValue() + planet.orbitRotationOffset)
                 );
             });
+        },
+
+        update: function()
+        {
+            this.updatePlanets();
         }
     })
 }

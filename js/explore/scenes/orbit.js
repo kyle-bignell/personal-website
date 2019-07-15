@@ -35,38 +35,15 @@ window.SceneOrbit = function(config) {
             }.bind(this));
         },
 
-        preload: function()
-        {
-            this.load.path = 'assets/explore/';
-            this.load.image('rocket', 'rocket.png');
-            this.load.image('fire', 'fire.png');
-            this.load.image('planet-background-high-0', 'planets/planet-background-high-0.jpg');
-            this.load.image('planet-background-high-1', 'planets/planet-background-high-1.jpg');
-            this.load.image('planet-background-high-2', 'planets/planet-background-high-2.jpg');
-            this.load.image('planet-background-high-3', 'planets/planet-background-high-3.jpg');
-            this.load.image('planet-background-high-4', 'planets/planet-background-high-4.jpg');
-            this.load.image('planet-background-high-5', 'planets/planet-background-high-5.jpg');
-        },
-
         initCamera: function()
         {
-            var camera = this.cameras.main;
-            var dragScale = this.plugins.get('rexpinchplugin').add(this);
-            dragScale
-                .on('drag1', function (dragScale) {
-                  var drag1Vector = dragScale.drag1Vector;
-                  camera.scrollX = camera.scrollX - (drag1Vector.x / camera.zoom);
-                  camera.scrollY =  camera.scrollY - (drag1Vector.y / camera.zoom);
-                }, this)
-                .on('pinch', function (dragScale) {
-                  var scaleFactor = dragScale.scaleFactor;
-                  camera.zoom = Math.max(1, (camera.zoom * scaleFactor));
-                }, this);
+            this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
         },
 
         initPhysics: function()
         {
             this.physics.world.gravity.y = 0;
+            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
             this.physics.world.setBoundsCollision(true, true, true, true);
             this.physics.world.on("worldbounds", function (body) {
                 body.setCollideWorldBounds(false);
@@ -102,14 +79,41 @@ window.SceneOrbit = function(config) {
         init: function(data)
         {
             window.explore.currentScene = "sceneOrbit";
-            this.planetID = data.id || 0;
 
-            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
-            this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+            this.planetID = data.id || 0;
 
             this.initCamera();
             this.initPhysics();
             this.initOrbit();
+        },
+
+        preload: function()
+        {
+            this.load.path = 'assets/explore/';
+            this.load.image('rocket', 'rocket.png');
+            this.load.image('fire', 'fire.png');
+            this.load.image('planet-background-high-0', 'planets/planet-background-high-0.jpg');
+            this.load.image('planet-background-high-1', 'planets/planet-background-high-1.jpg');
+            this.load.image('planet-background-high-2', 'planets/planet-background-high-2.jpg');
+            this.load.image('planet-background-high-3', 'planets/planet-background-high-3.jpg');
+            this.load.image('planet-background-high-4', 'planets/planet-background-high-4.jpg');
+            this.load.image('planet-background-high-5', 'planets/planet-background-high-5.jpg');
+        },
+
+        createCameraHandler: function()
+        {
+            var camera = this.cameras.main;
+            var dragScale = this.plugins.get('rexpinchplugin').add(this);
+            dragScale
+                .on('drag1', function (dragScale) {
+                  var drag1Vector = dragScale.drag1Vector;
+                  camera.scrollX = camera.scrollX - (drag1Vector.x / camera.zoom);
+                  camera.scrollY =  camera.scrollY - (drag1Vector.y / camera.zoom);
+                }, this)
+                .on('pinch', function (dragScale) {
+                  var scaleFactor = dragScale.scaleFactor;
+                  camera.zoom = Math.max(1, (camera.zoom * scaleFactor));
+                }, this);
         },
 
         createBackground: function()
@@ -380,6 +384,7 @@ window.SceneOrbit = function(config) {
 
         create: function()
         {
+            this.createCameraHandler();
             this.createBackground();
             this.createPlanet();
             this.createRocket();
