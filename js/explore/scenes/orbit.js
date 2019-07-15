@@ -10,9 +10,10 @@ window.SceneOrbit = function(config) {
                 w: config.width,
                 h: config.height
             };
-            this.rocketDimensions = {
-                w: 100,
-                h: 125
+            this.config = {
+                planetRadius: 200,
+                orbitRadius: 270,
+                orbitTime: 30000
             };
 
             var exploreToggleDOM = document.getElementById("explore-toggle");
@@ -20,12 +21,6 @@ window.SceneOrbit = function(config) {
             {
                 handleVisible(window.inExplore, this.scene);
             }.bind(this));
-        },
-
-        init: function(data)
-        {
-            window.explore.currentScene = "sceneOrbit";
-            this.planetID = data.id || 0;
         },
 
         preload: function()
@@ -41,28 +36,31 @@ window.SceneOrbit = function(config) {
             this.load.image('planet-background-5', 'planet-background-5.jpg');
         },
 
-        create: function()
+        initCamera: function()
         {
             var camera = this.cameras.main;
             var dragScale = this.plugins.get('rexpinchplugin').add(this);
             dragScale
-              .on('drag1', function (dragScale) {
-                var drag1Vector = dragScale.drag1Vector;
-                camera.scrollX = camera.scrollX - (drag1Vector.x / camera.zoom);
-                camera.scrollY =  camera.scrollY - (drag1Vector.y / camera.zoom);
-              }, this)
-              .on('pinch', function (dragScale) {
-                var scaleFactor = dragScale.scaleFactor;
-                camera.zoom = Math.max(1, (camera.zoom * scaleFactor));
-              }, this);
+                .on('drag1', function (dragScale) {
+                  var drag1Vector = dragScale.drag1Vector;
+                  camera.scrollX = camera.scrollX - (drag1Vector.x / camera.zoom);
+                  camera.scrollY =  camera.scrollY - (drag1Vector.y / camera.zoom);
+                }, this)
+                .on('pinch', function (dragScale) {
+                  var scaleFactor = dragScale.scaleFactor;
+                  camera.zoom = Math.max(1, (camera.zoom * scaleFactor));
+                }, this);
+        },
 
+        initPhysics: function()
+        {
             this.physics.world.gravity.y = 0;
             this.physics.world.setBoundsCollision(true, true, true, true);
             this.physics.world.on("worldbounds", function (body) {
                 body.setCollideWorldBounds(false);
                 body.onWorldBounds = false;
 
-                this.time.delayedCall(25, function() {
+                this.time.delayedCall(50, function() {
                     body.gameObject.setVisible(false);
                     this.particlesEmitterLeft.stop();
                     this.particlesEmitterRight.stop();
@@ -76,7 +74,34 @@ window.SceneOrbit = function(config) {
                     }.bind(this));
                 }, [], this);
             }.bind(this));
+        },
 
+        initOrbit: function()
+        {
+            this.orbitCircle = new Phaser.Geom.Circle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, this.config.orbitRadius);
+            this.orbitRotation = this.tweens.addCounter({
+                from: 0,
+                to: 6.28,
+                duration: this.config.orbitTime,
+                repeat: -1
+            });
+        },
+
+        init: function(data)
+        {
+            window.explore.currentScene = "sceneOrbit";
+            this.planetID = data.id || 0;
+
+            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+            this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+
+            this.initCamera();
+            this.initPhysics();
+            this.initOrbit();
+        },
+
+        createBackground: function()
+        {
             this.starRenderTexture = this.add.renderTexture(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
             this.stars = this.add.graphics();
             this.stars.setVisible(false);
@@ -88,13 +113,10 @@ window.SceneOrbit = function(config) {
                 this.stars.fillCircle(starData.x, starData.y, intensity);
             }
             this.starRenderTexture.draw(this.stars);
+        },
 
-            this.config = {
-                planetRadius: 200,
-                orbitRadius: 270,
-                orbitTime: 30000
-            };
-
+        createPlanet: function()
+        {
             var background = this.add.image(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, 'planet-background-' + this.planetID);
             background.setOrigin(0.5, 0.5);
             background.scale = (this.config.planetRadius * 2) / background.width;
@@ -105,7 +127,10 @@ window.SceneOrbit = function(config) {
             graphics.blendMode = 'MULTIPLY';
 
             background.setMask(graphics.createGeometryMask());
+        },
 
+        createRocket: function()
+        {
             var particleConfig = {
                 on: false,
                 alpha: { start: 1, end: 0 },
@@ -134,16 +159,11 @@ window.SceneOrbit = function(config) {
 
             this.particlesEmitterLeft.setScale(rocketScale);
             this.particlesEmitterRight.setScale(rocketScale);
+        },
 
-            this.orbitCircle = new Phaser.Geom.Circle(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, this.config.orbitRadius);
-            this.orbitRotation = this.tweens.addCounter({
-                from: 0,
-                to: 6.28,
-                duration: this.config.orbitTime,
-                repeat: -1
-            });
-
-            var button = {
+        createExitButton: function()
+        {
+            var buttonConfig = {
               x: this.sceneDimensions.w - 260,
               y: -25,
               w: 250,
@@ -151,70 +171,209 @@ window.SceneOrbit = function(config) {
               r: 25,
               b: 3
             };
+            var backgroundColour = 0xfa8200;
+            var foregroundColour = 0x4b4b4b;
+            var tweenConfig = {
+              buttonAlphaTarget: 0,
+              buttonFadeDuration: 750,
+              orbitRadiusMultiplier: 2.5,
+              orbitRadiusDuration: 5000,
+              orbitSpeedMultiplier: 10,
+              orbitSpeedDuration: 4500
+            }
 
-            this.buttonBackground = this.add.graphics();
-            this.buttonBackground.fillStyle(0xfa8200, 1);
-            this.buttonBackground.fillRoundedRect(
-              button.x - button.b,
-              button.y - button.b,
-              button.w + (button.b * 2),
-              button.h + (button.b * 2),
-            button.r);
+            var buttonBackground = this.add.graphics();
+            buttonBackground.fillStyle(backgroundColour, 1);
+            buttonBackground.fillRoundedRect(
+              buttonConfig.x - buttonConfig.b,
+              buttonConfig.y - buttonConfig.b,
+              buttonConfig.w + (buttonConfig.b * 2),
+              buttonConfig.h + (buttonConfig.b * 2),
+            buttonConfig.r);
 
-            this.button = this.add.graphics();
-            this.button.fillStyle(0x4b4b4b, 1);
-            this.button.fillRoundedRect(button.x, button.y, button.w, button.h, button.r);
-            this.button.setInteractive({
-                hitArea: new Phaser.Geom.Rectangle(button.x, button.y, button.w, button.h),
+            var buttonForeground = this.add.graphics();
+            buttonForeground.fillStyle(foregroundColour, 1);
+            buttonForeground.fillRoundedRect(
+              buttonConfig.x,
+              buttonConfig.y,
+              buttonConfig.w,
+              buttonConfig.h,
+              buttonConfig.r);
+            buttonForeground.setInteractive({
+                hitArea: new Phaser.Geom.Rectangle(
+                  buttonConfig.x,
+                  buttonConfig.y,
+                  buttonConfig.w,
+                  buttonConfig.h),
                 hitAreaCallback: Phaser.Geom.Rectangle.Contains,
                 useHandCursor: true
             });
-            this.button.once('pointerdown', function()
+
+            var text = this.add.text(
+                this.sceneDimensions.w - 135,
+                27.5,
+                "Exit Orbit",
+                {
+                    font: "50px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            text.setOrigin(0.5);
+
+            buttonForeground.once('pointerdown', function()
             {
                 this.particlesEmitterLeft.start();
                 this.particlesEmitterRight.start();
 
                 this.tweens.add({
                     targets: this.orbitCircle,
-                    radius: this.config.orbitRadius * 2.5,
+                    radius: this.config.orbitRadius * tweenConfig.orbitRadiusMultiplier,
                     ease: Phaser.Math.Easing.Expo.In,
-                    duration: 5000
+                    duration: tweenConfig.orbitRadiusDuration
                 });
                 this.tweens.add({
                     targets: this.orbitRotation,
-                    timeScale: 10,
+                    timeScale: tweenConfig.orbitSpeedMultiplier,
                     ease: Phaser.Math.Easing.Sine.In,
-                    duration: 4500
+                    duration: tweenConfig.orbitSpeedDuration
                 });
                 this.tweens.add({
-                    targets: this.text,
-                    alpha: 0,
-                    duration: 750
+                    targets: buttonBackground,
+                    alpha: tweenConfig.buttonAlphaTarget,
+                    duration: tweenConfig.buttonFadeDuration
                 });
                 this.tweens.add({
-                    targets: this.buttonBackground,
-                    alpha: 0,
-                    duration: 750
+                    targets: buttonForeground,
+                    alpha: tweenConfig.buttonAlphaTarget,
+                    duration: tweenConfig.buttonFadeDuration
                 });
                 this.tweens.add({
-                    targets: this.button,
-                    alpha: 0,
-                    duration: 750
+                    targets: text,
+                    alpha: tweenConfig.buttonAlphaTarget,
+                    duration: tweenConfig.buttonFadeDuration
                 });
             }.bind(this));
+        },
 
-            this.text = this.add.text(this.sceneDimensions.w - 135,
+        createLandButton: function()
+        {
+            var buttonConfig = {
+              x: 10,
+              y: -25,
+              w: 250,
+              h: 85,
+              r: 25,
+              b: 3
+            };
+            var backgroundColour = 0xfa8200;
+            var foregroundColour = 0x4b4b4b;
+            var tweenConfig = {
+              buttonAlphaTarget: 0,
+              buttonFadeDuration: 750,
+              orbitRadiusMultiplier: 0.75,
+              orbitRadiusDuration: 5000,
+              orbitSpeedMultiplier: 10,
+              orbitSpeedDuration: 4500,
+              rocketScaleTarget: 0,
+              rocketScaleDuration: 5000,
+              particleScaleTarget: 0,
+              particleScaleDuration: 5000
+            }
+
+            var buttonBackground = this.add.graphics();
+            buttonBackground.fillStyle(backgroundColour, 1);
+            buttonBackground.fillRoundedRect(
+              buttonConfig.x - buttonConfig.b,
+              buttonConfig.y - buttonConfig.b,
+              buttonConfig.w + (buttonConfig.b * 2),
+              buttonConfig.h + (buttonConfig.b * 2),
+            buttonConfig.r);
+
+            var buttonForeground = this.add.graphics();
+            buttonForeground.fillStyle(foregroundColour, 1);
+            buttonForeground.fillRoundedRect(
+              buttonConfig.x,
+              buttonConfig.y,
+              buttonConfig.w,
+              buttonConfig.h,
+              buttonConfig.r);
+            buttonForeground.setInteractive({
+                hitArea: new Phaser.Geom.Rectangle(
+                  buttonConfig.x,
+                  buttonConfig.y,
+                  buttonConfig.w,
+                  buttonConfig.h),
+                hitAreaCallback: Phaser.Geom.Rectangle.Contains,
+                useHandCursor: true
+            });
+
+            var text = this.add.text(
+                135,
                 27.5,
-                "Exit Orbit",
-                { font: "50px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
-            this.text.setOrigin(0.5);
+                "Land",
+                {
+                    font: "50px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            text.setOrigin(0.5);
 
-            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
-            this.cameras.main.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+            buttonForeground.once('pointerdown', function()
+            {
+                this.particlesEmitterLeft.start();
+                this.particlesEmitterRight.start();
+
+                this.tweens.add({
+                    targets: this.orbitCircle,
+                    radius: this.config.orbitRadius * tweenConfig.orbitRadiusMultiplier,
+                    ease: Phaser.Math.Easing.Expo.In,
+                    duration: tweenConfig.orbitRadiusDuration
+                });
+                this.tweens.add({
+                    targets: this.orbitRotation,
+                    timeScale: tweenConfig.orbitSpeedMultiplier,
+                    ease: Phaser.Math.Easing.Sine.In,
+                    duration: tweenConfig.orbitSpeedDuration
+                });
+                this.tweens.add({
+                    targets: this.rocket,
+                    scale: tweenConfig.rocketScaleTarget,
+                    duration: tweenConfig.rocketScaleDuration
+                });
+                this.tweens.add({
+                    targets: buttonBackground,
+                    alpha: tweenConfig.buttonAlphaTarget,
+                    duration: tweenConfig.buttonFadeDuration
+                });
+                this.tweens.add({
+                    targets: buttonForeground,
+                    alpha: tweenConfig.buttonAlphaTarget,
+                    duration: tweenConfig.buttonFadeDuration
+                });
+                this.tweens.add({
+                    targets: text,
+                    alpha: tweenConfig.buttonAlphaTarget,
+                    duration: tweenConfig.buttonFadeDuration
+                });
+            }.bind(this));
+        },
+
+        create: function()
+        {
+            this.createBackground();
+            this.createPlanet();
+            this.createRocket();
+            this.createExitButton();
+            this.createLandButton();
+
             this.cameras.main.fadeIn(750);
         },
 
-        update: function()
+        updateRocket: function()
         {
             Phaser.Actions.PlaceOnCircle(
                 [this.rocket],
@@ -222,12 +381,18 @@ window.SceneOrbit = function(config) {
                 this.orbitRotation.getValue()
             );
             this.rocket.rotation = this.orbitRotation.getValue() + 3.14;
+
             const xDistance = 15 * this.rocket.scaleX;
             const yDistance = 75 * this.rocket.scaleY;
             const leftOffset = Phaser.Math.Rotate({x: xDistance, y: yDistance}, this.orbitRotation.getValue() + 3.14);
             const rightOffset = Phaser.Math.Rotate({x: -xDistance, y: yDistance}, this.orbitRotation.getValue() + 3.14);
             this.particlesEmitterLeft.setPosition(this.rocket.x + leftOffset.x, this.rocket.y + leftOffset.y);
             this.particlesEmitterRight.setPosition(this.rocket.x + rightOffset.x, this.rocket.y + rightOffset.y);
+        },
+
+        update: function()
+        {
+            this.updateRocket();
         }
     })
 }
