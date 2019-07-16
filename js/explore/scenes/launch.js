@@ -14,8 +14,13 @@ var SceneLaunch = function(config) {
                 w: 100,
                 h: 125
             };
+            this.config = {
+                planetRadius: 2000,
+                orbitRadius: 270,
+                orbitTime: 30000,
+                rocketStart: 148
+            };
             this.cameraBuffer = 500;
-            this.fading = false;
 
             var exploreToggleDOM = document.getElementById("explore-toggle");
             exploreToggleDOM.addEventListener("click", function()
@@ -32,12 +37,20 @@ var SceneLaunch = function(config) {
         initPhysics: function()
         {
             this.physics.world.gravity.y = 200;
-            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h);
+            this.physics.world.setBounds(0, 0, this.sceneDimensions.w, this.sceneDimensions.h - this.config.rocketStart);
+
+            if (this.rocket)
+            {
+                this.physics.add.existing(this.rocket);
+            }
         },
 
         init: function(data)
         {
             window.explore.currentScene = "sceneLaunch";
+
+            this.planetID = data.id || 0;
+            this.fading = false;
 
             this.initCamera();
             this.initPhysics();
@@ -51,6 +64,12 @@ var SceneLaunch = function(config) {
             this.load.path = 'assets/explore/';
             this.load.image('rocket', 'rocket.png');
             this.load.image('fire', 'fire.png');
+            this.load.image('planet-background-high-0', 'planets/planet-background-high-0.jpg');
+            this.load.image('planet-background-high-1', 'planets/planet-background-high-1.jpg');
+            this.load.image('planet-background-high-2', 'planets/planet-background-high-2.jpg');
+            this.load.image('planet-background-high-3', 'planets/planet-background-high-3.jpg');
+            this.load.image('planet-background-high-4', 'planets/planet-background-high-4.jpg');
+            this.load.image('planet-background-high-5', 'planets/planet-background-high-5.jpg');
         },
 
         createCameraHandler: function()
@@ -71,9 +90,28 @@ var SceneLaunch = function(config) {
 
         createBackground: function()
         {
+            var endColour = 0x000000;
+            var startColour = window.explore.config.planets[this.planetID].skyColour
             var graphics = this.add.graphics();
-            graphics.fillGradientStyle(0x000000, 0x000000, 0x83EAFF, 0x83EAFF);
+            graphics.fillGradientStyle(endColour, endColour, startColour, startColour);
             graphics.fillRect(0, this.cameraBuffer, this.sceneDimensions.w, this.sceneDimensions.h);
+        },
+
+        createPlanet: function()
+        {
+            var centreX = this.sceneDimensions.w / 2;
+            var centreY = this.sceneDimensions.h + 1850;
+
+            var background = this.add.image(centreX, centreY, 'planet-background-high-' + this.planetID);
+            background.setOrigin(0.5, 0.5);
+            background.scale = (this.config.planetRadius * 2) / background.width;
+
+            var graphics = this.add.graphics();
+            graphics.fillStyle(window.explore.config.planets[this.planetID].colour, 1);
+            graphics.fillCircle(centreX, centreY, this.config.planetRadius);
+            graphics.blendMode = 'MULTIPLY';
+
+            background.setMask(graphics.createGeometryMask());
         },
 
         createRocket: function()
@@ -81,7 +119,7 @@ var SceneLaunch = function(config) {
             var particleConfig = {
                 on: false,
                 alpha: { start: 1, end: 0 },
-                scale: { start: 0.65, end: 1.5 },
+                scale: { start: 0.45, end: 1.25 },
                 accelerationY: 225,
                 gravityY: 200,
                 angle: { min: -85, max: -95 },
@@ -95,14 +133,23 @@ var SceneLaunch = function(config) {
             this.particlesEmitterLeft = particlesManager.createEmitter(particleConfig);
             this.particlesEmitterRight = particlesManager.createEmitter(particleConfig);
 
-            this.rocket = this.physics.add.sprite(this.sceneDimensions.w / 2,
-                                                  this.sceneDimensions.h - (this.rocketDimensions.h / 2),
-                                                  'rocket');
+            var rocketScale = 0.6;
+            this.rocket = this.physics.add.sprite(
+                this.sceneDimensions.w / 2,
+                this.sceneDimensions.h - ((this.rocketDimensions.h * rocketScale) / 2) - this.config.rocketStart,
+                'rocket');
             this.rocket.setOrigin(0.5, 0.5)
-                       .setCollideWorldBounds(true);
+                       .setCollideWorldBounds(true)
+                       .setScale(rocketScale);
 
-            this.particlesEmitterLeft.startFollow(this.rocket, -this.rocket.width / 4, this.rocket.height / 1.75);
-            this.particlesEmitterRight.startFollow(this.rocket, this.rocket.width / 4, this.rocket.height / 1.75);
+            this.particlesEmitterLeft.startFollow(
+                this.rocket,
+                -(this.rocket.width * rocketScale) / 4,
+                (this.rocket.height * rocketScale) / 1.8);
+            this.particlesEmitterRight.startFollow(
+                this.rocket,
+                (this.rocket.width * rocketScale) / 4,
+                (this.rocket.height * rocketScale) / 1.8);
             this.cameras.main.startFollow(this.rocket);
         },
 
@@ -181,7 +228,7 @@ var SceneLaunch = function(config) {
                 { font: "55px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
             this.text.setOrigin(0.5);
             this.textTween = this.tweens.add({
-                targets: this.text,
+                targets: [this.text, this.buttonBackground],
                 alpha: 0.4,
                 ease: 'Sine',
                 duration: 750,
@@ -194,6 +241,7 @@ var SceneLaunch = function(config) {
         {
             this.createCameraHandler();
             this.createBackground();
+            this.createPlanet();
             this.createRocket();
             this.createExitZone();
             this.createLaunchButton();

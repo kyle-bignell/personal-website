@@ -133,7 +133,10 @@ window.SceneOrbit = function(config) {
 
         createPlanet: function()
         {
-            var background = this.add.image(this.sceneDimensions.w / 2, this.sceneDimensions.h / 2, 'planet-background-high-' + this.planetID);
+            var background = this.add.image(
+              this.sceneDimensions.w / 2,
+              this.sceneDimensions.h / 2,
+              'planet-background-high-' + this.planetID);
             background.setOrigin(0.5, 0.5);
             background.scale = (this.config.planetRadius * 2) / background.width;
 
@@ -359,6 +362,14 @@ window.SceneOrbit = function(config) {
                     scale: tweenConfig.rocketScaleTarget,
                     duration: tweenConfig.rocketScaleDuration
                 });
+
+                this.time.delayedCall(tweenConfig.rocketScaleDuration, function() {
+                    this.cameras.main.fadeOut(750, 0, 0, 0, function(camera, progress) {
+                        if (progress === 1) {
+                            this.scene.start('sceneLaunch', { id: this.planetID });
+                        }
+                    }.bind(this));
+                }, [], this);
             }.bind(this));
         },
 
