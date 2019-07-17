@@ -202,8 +202,21 @@ var SceneLaunch = function(config) {
               this.particlesEmitterLeft.start();
               this.particlesEmitterRight.start();
 
-              this.rocket.body.setAccelerationY(-225);
-              this.textTween.stop();
+              this.pulseTween.stop();
+
+              var rocketTargets = {
+                accelerationY: 0
+              }
+              this.tweens.add({
+                  targets: rocketTargets,
+                  accelerationY: -225,
+                  duration: 250,
+                  onUpdate: function() {
+                    this.rocket.body.setAccelerationY(rocketTargets.accelerationY);
+                  },
+                  onUpdateScope: this
+              });
+
               this.tweens.add({
                   targets: this.text,
                   alpha: 0,
@@ -227,7 +240,8 @@ var SceneLaunch = function(config) {
                 "Launch",
                 { font: "55px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
             this.text.setOrigin(0.5);
-            this.textTween = this.tweens.add({
+
+            this.pulseTween = this.tweens.add({
                 targets: [this.text, this.buttonBackground],
                 alpha: 0.4,
                 ease: 'Sine',
@@ -251,7 +265,7 @@ var SceneLaunch = function(config) {
         {
             if (this.rocket.body.acceleration.y < 0)
             {
-                var ratio = this.rocket.y / this.sceneDimensions.h;
+                var ratio = (this.rocket.y + this.config.rocketStart) / this.sceneDimensions.h;
                 this.cameras.main.shake(100, 0.005 * ratio);
 
                 var zoom = Math.max(ratio, 0.5);
