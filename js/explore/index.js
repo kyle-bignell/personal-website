@@ -59,36 +59,19 @@ window.addEventListener("load", function()
     {
         window.inExplore = !window.inExplore;
         exploreToggleDOM.innerText = window.inExplore ? "Home" : "Explore";
-        moveExplore();
-    });
-});
-
-function moveExplore()
-{
-    var exploreDOM = document.getElementById("explore");
-
-    var startPos = inExplore ? -100 : 0;
-    var endPos = inExplore ? 0 : -100;
-    var delta = inExplore ? 1 : -1;
-    var currentPos = parseFloat(exploreDOM.style.left) || startPos;
-
-    clearInterval(window.moveExploreIntervalID);
-    window.moveExploreIntervalID = setInterval(frame, 5);
-
-    function frame()
-    {
-        if (currentPos === endPos)
+        var exploreDOM = document.getElementById("explore");
+        if (window.inExplore)
         {
-            clearInterval(window.moveExploreIntervalID);
+            exploreDOM.classList.add("explore-transform-active");
             loadExplore();
         }
         else
         {
-            currentPos += delta;
-            exploreDOM.style.left = currentPos + '%';
+            exploreDOM.classList.remove("explore-transform-active");
         }
-    }
-}
+    });
+});
+
 
 function loadExplore()
 {
@@ -102,9 +85,12 @@ function loadExplore()
     var phaserScript = document.createElement('script');
     phaserScript.onload = function()
     {
-      setupExplore();
+        window.setTimeout(function()
+        {
+          setupExplore();
+        }, 500);
     };
-    phaserScript.src = "js/phaser.min.js";
+    phaserScript.src = "js/explore/phaser.min.js";
     phaserScript.async = true;
     document.getElementsByTagName('head')[0].appendChild(phaserScript);
 }

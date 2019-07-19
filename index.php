@@ -98,7 +98,7 @@
         Explore
     </div>
 
-    <div id="explore">
+    <div id="explore" class="explore-transform">
 
     </div>
 
