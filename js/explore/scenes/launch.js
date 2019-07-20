@@ -180,24 +180,26 @@ var SceneLaunch = function(config) {
               b: 3
             };
 
-            this.buttonBackground = this.add.graphics();
-            this.buttonBackground.fillStyle(0xfa8200, 1);
-            this.buttonBackground.fillRoundedRect(
-            button.x - button.b,
-            button.y - button.b,
-            button.w + (button.b * 2),
-            button.h + (button.b * 2),
-            button.r);
+            this.launchButtonBorder = this.add.graphics();
+            this.launchButtonBorder.fillStyle(0xfa8200, 1);
+            this.launchButtonBorder.setAlpha(0);
+            this.launchButtonBorder.fillRoundedRect(
+                button.x - button.b,
+                button.y - button.b,
+                button.w + (button.b * 2),
+                button.h + (button.b * 2),
+                button.r);
 
-            this.button = this.add.graphics();
-            this.button.fillStyle(0x4b4b4b, 1);
-            this.button.fillRoundedRect(button.x, button.y, button.w, button.h, button.r);
-            this.button.setInteractive({
+            this.launchButton = this.add.graphics();
+            this.launchButton.fillStyle(0x4b4b4b, 1);
+            this.launchButton.setAlpha(0);
+            this.launchButton.fillRoundedRect(button.x, button.y, button.w, button.h, button.r);
+            this.launchButton.setInteractive({
                 hitArea: new Phaser.Geom.Rectangle(button.x, button.y, button.w, button.h),
                 hitAreaCallback: Phaser.Geom.Rectangle.Contains,
                 useHandCursor: true
             });
-            this.button.once('pointerdown', function()
+            this.launchButton.once('pointerdown', function()
             {
               this.particlesEmitterLeft.start();
               this.particlesEmitterRight.start();
@@ -218,36 +220,208 @@ var SceneLaunch = function(config) {
               });
 
               this.tweens.add({
-                  targets: this.text,
-                  alpha: 0,
-                  duration: 750
-              });
-              this.tweens.add({
-                  targets: this.buttonBackground,
-                  alpha: 0,
-                  duration: 750
-              });
-              this.tweens.add({
-                  targets: this.button,
+                  targets: [
+                      this.launchButtonBorder,
+                      this.launchButton,
+                      this.launchButtonText,
+                  ],
                   alpha: 0,
                   duration: 750
               });
             }.bind(this));
 
-            this.text = this.add.text(
+            this.launchButtonText = this.add.text(
                 this.sceneDimensions.w / 2,
                 this.sceneDimensions.h - 610,
                 "Launch",
-                { font: "55px Roboto", fill: "#ffffff", stroke: "#000000", strokeThickness: 5, align: "center" });
-            this.text.setOrigin(0.5);
+                {
+                    font: "55px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.launchButtonText.setOrigin(0.5);
+            this.launchButtonText.setAlpha(0);
 
-            this.pulseTween = this.tweens.add({
-                targets: [this.text, this.buttonBackground],
-                alpha: 0.4,
-                ease: 'Sine',
-                duration: 750,
-                yoyo: true,
-                repeat: -1
+            this.tweens.add({
+                targets: [
+                    this.launchButtonBorder,
+                    this.launchButton,
+                    this.launchButtonText,
+                ],
+                alpha: 1,
+                duration: 500
+            });
+
+            this.time.delayedCall(500, function() {
+                this.pulseTween = this.tweens.add({
+                    targets: [
+                        this.launchButtonBorder,
+                        this.launchButtonText
+                    ],
+                    alpha: 0.4,
+                    ease: 'Sine',
+                    duration: 500,
+                    yoyo: true,
+                    repeat: -1
+                        });
+            }, [], this);
+        },
+
+        createPickup: function()
+        {
+            var box = {
+              x: (this.sceneDimensions.w / 2),
+              y: this.sceneDimensions.h - 625,
+              w: 450,
+              h: 350,
+              r: 25,
+              b: 3
+            };
+
+            this.boxBorder = this.add.graphics();
+            this.boxBorder.fillStyle(0xfa8200, 0.5);
+            this.boxBorder.setAlpha(0);
+            this.boxBorder.fillRoundedRect(
+                box.x - box.b,
+                box.y - box.b,
+                box.w + (box.b * 2),
+                box.h + (box.b * 2),
+                box.r);
+
+            this.box = this.add.graphics();
+            this.box.fillStyle(0x4b4b4b, 0.5);
+            this.box.setAlpha(0);
+            this.box.fillRoundedRect(
+                box.x,
+                box.y,
+                box.w,
+                box.h,
+                box.r);
+
+            this.titleText = this.add.text(
+                this.sceneDimensions.w / 2 + 225,
+                this.sceneDimensions.h - 585,
+                "CREATIVISIUM",
+                {
+                    font: "50px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.titleText.setOrigin(0.5);
+            this.titleText.setAlpha(0);
+
+            this.detailText = this.add.text(
+                this.sceneDimensions.w / 2 + 225,
+                this.sceneDimensions.h - 460,
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco \
+                laboris nisi ut aliquip ex ea commodo consequat. ",
+                {
+                    font: "20px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center",
+                    wordWrap: { width: 420, useAdvancedWrap: true }
+                });
+            this.detailText.setOrigin(0.5);
+            this.detailText.setAlpha(0);
+
+            var button = {
+              x: (this.sceneDimensions.w / 2) + 50,
+              y: this.sceneDimensions.h - 355,
+              w: 350,
+              h: 60,
+              r: 25,
+              b: 3
+            };
+
+            this.buttonBorder = this.add.graphics();
+            this.buttonBorder.fillStyle(0xfa8200, 1);
+            this.buttonBorder.setAlpha(0);
+            this.buttonBorder.fillRoundedRect(
+                button.x - button.b,
+                button.y - button.b,
+                button.w + (button.b * 2),
+                button.h + (button.b * 2),
+                button.r);
+
+            this.button = this.add.graphics();
+            this.button.fillStyle(0x4b4b4b, 1);
+            this.button.setAlpha(0);
+            this.button.fillRoundedRect(button.x, button.y, button.w, button.h, button.r);
+            this.button.setInteractive({
+                hitArea: new Phaser.Geom.Rectangle(button.x, button.y, button.w, button.h),
+                hitAreaCallback: Phaser.Geom.Rectangle.Contains,
+                useHandCursor: true
+            });
+            this.button.once('pointerdown', function()
+            {
+                window.explore.state.recordVisit(this.planetID);
+
+                this.tweens.add({
+                    targets: [
+                        this.titleText,
+                        this.detailText,
+                        this.boxBorder,
+                        this.box,
+                        this.buttonBorder,
+                        this.button,
+                        this.collectText,
+                        this.pickup
+                    ],
+                    alpha: 0,
+                    duration: 750
+                });
+
+                this.time.delayedCall(1000, function() {
+                    this.createLaunchButton();
+                }, [], this);
+            }.bind(this));
+
+            this.collectText = this.add.text(
+                this.sceneDimensions.w / 2 + 225,
+                this.sceneDimensions.h - 325,
+                "Collect Sample",
+                {
+                    font: "34px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.collectText.setOrigin(0.5);
+            this.collectText.setAlpha(0);
+
+            var pickup = {
+                x: (this.sceneDimensions.w / 2) - 250,
+                y: this.sceneDimensions.h - 450,
+                r: 100
+            };
+
+            this.pickup = this.add.graphics();
+            this.pickup.fillStyle(0xfa8200, 1);
+            this.pickup.fillCircle(pickup.x, pickup.y, pickup.r);
+            this.pickup.setAlpha(0);
+
+            this.tweens.add({
+                targets: [
+                    this.boxBorder,
+                    this.box,
+                    this.titleText,
+                    this.detailText,
+                    this.buttonBorder,
+                    this.button,
+                    this.collectText,
+                    this.pickup,
+                ],
+                alpha: 1,
+                duration: 500
             });
         },
 
@@ -258,7 +432,15 @@ var SceneLaunch = function(config) {
             this.createPlanet();
             this.createRocket();
             this.createExitZone();
-            this.createLaunchButton();
+
+            if (window.explore.state.data.planets[this.planetID])
+            {
+                this.createLaunchButton();
+            }
+            else
+            {
+                this.createPickup();
+            }
         },
 
         updateRocket: function()

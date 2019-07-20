@@ -37,6 +37,55 @@ window.explore.stars.init = function()
     }
 }
 
+window.explore.state =
+{
+    data: {
+        visited: 0,
+        planets: {
+            0: false
+        },
+    },
+
+    recordVisit: function(id)
+    {
+        window.explore.state.data.planets[id] = true;
+        window.explore.state.updateVisited();
+        window.explore.state.save();
+    },
+
+    updateVisited: function()
+    {
+        var visited = 0;
+        for (var key in window.explore.state.data.planets)
+        {
+            if (!window.explore.state.data.planets.hasOwnProperty(key))
+            {
+                continue;
+            }
+
+            if (window.explore.state.data.planets[key])
+            {
+                visited++;
+            }
+        }
+        window.explore.state.data.visited = visited;
+    },
+
+    save: function()
+    {
+        window.localStorage.setItem('kyle_bignell_explore', JSON.stringify(window.explore.state.data));
+    },
+
+    load: function()
+    {
+        var storedData = JSON.parse(window.localStorage.getItem('kyle_bignell_explore')) || {};
+        if (storedData.planets)
+        {
+            window.explore.state.data = storedData;
+        }
+    }
+}
+
 function handleVisible(visible, scene)
 {
     if (scene.settings.key === window.explore.currentScene)
@@ -62,6 +111,7 @@ window.addEventListener("load", function()
         var exploreDOM = document.getElementById("explore");
         if (window.inExplore)
         {
+            exploreDOM.classList.add("explore-transform");
             exploreDOM.classList.add("explore-transform-active");
             loadExplore();
         }
@@ -115,6 +165,7 @@ function setupExplore()
     var sceneOrbit = SceneOrbit(config);
     config.scene = [sceneLaunch, sceneOverview, sceneOrbit],
 
+    window.explore.state.load();
     window.explore.game = new Phaser.Game(config);
     window.explore.stars.init();
 }
