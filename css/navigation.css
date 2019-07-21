@@ -1,15 +1,23 @@
 #navigation
 {
+    position: fixed;
+    top: 0;
     width: 100%;
-    background-color: rgb(255, 255, 255);
-    color: #2e2e2e;
+    height: 45px;
+    background-color: #FFFFFF;
+    color: #2E2E2E;
     font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,.2);
 }
 
 #navigation-left
 {
     display: inline-block;
-    height: 45px;
+}
+
+#navigation-right
+{
+    background-color: #FFFFFF;
 }
 
 @media (max-width: 550px)
@@ -24,6 +32,7 @@
     {
         display: none;
         clear: both;
+        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.5);
     }
 
     .navigation-node

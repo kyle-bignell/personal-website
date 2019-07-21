@@ -64,26 +64,6 @@
     }
 }
 
-#header
-{
-    background-color: #4b4b4b;
-    color: white;
-    border-top: 2px solid rgba(255, 130, 0, 1);
-    border-bottom: 2px solid rgba(255, 130, 0, 1);
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-}
-
-#title
-{
-    display: inline-block;
-    text-align: center;
-    font-family: "geosans", sans-serif;
-    font-size: 3.5em;
-    font-weight: bold;
-}
-
 #project-image img
 {
     width: 100%;
@@ -95,23 +75,18 @@
     color: black;
 }
 
-#project-link:hover
-{
-    color: #ffffff;
-}
-
 #project-link-copy
 {
     padding: 10px 0;
     text-align: center;
-    background-color: #dedede;
+    background-color: #FCA311;
     border-radius: 3px;
     font-size: 1.5em;
 }
 
 #project-link-copy:hover
 {
-    background-color: #999999;
+    background-color: #FCE4BD;
 }
 
 .project-technology

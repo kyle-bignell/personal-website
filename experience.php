@@ -56,15 +56,19 @@
                 <hr/>
                 <div class="experience-entry-content">
                     <p>
-                        <a href="https://www.futureplc.com/" target="_blank">Future</a> is a British media company founded in 1985. They publish magazines, operate websites, and run events in order to connect over 120 million people worldwide with their passions.
+                        <a href="https://www.futureplc.com/" target="_blank">Future</a> is a British media
+                        company founded in 1985. They publish magazines, operate websites, and run events
+                        in order to connect over 120 million people worldwide with their passions.
                     </p>
                     <p>
-                        In my role as technical lead of the advertisement team I set out our technical goals, manage communications with external parties, and ensure operations run smoothly so that our website content can be effectively monetised.
+                        In my role as technical lead of the advertisement team I set out our technical goals,
+                        manage communications with external parties, and ensure operations run smoothly so
+                        that our website content can be effectively monetised.
                     </p>
                 </div>
             </div>
             <div class="experience-entry-footer">
-                May 2018 - Present | Bath, Somserset
+                May 2018 - Present | <span class="italic">Bath, Somserset</span>
             </div>
         </div>
         <div class="experience-entry">
@@ -83,15 +87,18 @@
                 <hr/>
                 <div class="experience-entry-content">
                     <p>
-                        <a href="http://www.red7mobile.com/" target="_blank">Red7</a> is a development studio based in Bristol that produces games and apps for the gambling industry.
+                        <a href="http://www.red7mobile.com/" target="_blank">Red7</a> is a development
+                        studio based in Bristol that produces games and apps for the gambling industry.
                     </p>
                     <p>
-                        Working as a technical lead alongside game development responsibilities I lead a team of 15 developers to produce high quality HTML5/JavaScript games while supporting management and encouraging growth in team members.
+                        Working as a technical lead alongside game development responsibilities I lead
+                        a team of 15 developers to produce high quality HTML5/JavaScript games while
+                        supporting management and encouraging growth in team members.
                     </p>
                 </div>
             </div>
             <div class="experience-entry-footer">
-                Jan 2017 - May 2018 | Bristol, Somserset
+                Jan 2017 - May 2018 | <span class="italic">Bristol, Somserset</span>
             </div>
         </div>
 
@@ -111,15 +118,18 @@
                 <hr/>
                 <div class="experience-entry-content">
                     <p>
-                        <a href="http://www.red7mobile.com/" target="_blank">Red7</a> is a development studio based in Bristol that produces games and apps for the gambling industry.
+                        <a href="http://www.red7mobile.com/" target="_blank">Red7</a> is a development
+                        studio based in Bristol that produces games and apps for the gambling industry.
                     </p>
                     <p>
-                        As part of the games development team I produced slot and table HTML5/JavaScript games for the gambling industry. I also made significant improvements to the teams build tools and development processes.
+                        As part of the games development team I produced slot and table HTML5/JavaScript
+                        games for the gambling industry. I also made significant improvements to the teams
+                        build tools and development processes.
                     </p>
                 </div>
             </div>
             <div class="experience-entry-footer">
-                May 2015 - Dec 2016 | Bristol, Somserset
+                May 2015 - Dec 2016 | <span class="italic">Bristol, Somserset</span>
             </div>
         </div>
 
@@ -139,15 +149,18 @@
                 <hr/>
                 <div class="experience-entry-content">
                     <p>
-                        <a href="http://www.ccfe.ac.uk/" target="_blank">CCFE</a> is the UK's national laboratory for fusion research. The site works to solve the problems assosciated with harnessing fusion energy as a viable energy source.
+                        <a href="http://www.ccfe.ac.uk/" target="_blank">CCFE</a> is the UK's national
+                        laboratory for fusion research. The site works to solve the problems assosciated
+                        with harnessing fusion energy as a viable energy source.
                     </p>
                     <p>
-                        My role as junior developer included maintaining and developing software that supported the research of scientists working at the site and remotely around the world.
+                        My role as junior developer included maintaining and developing software that
+                        supported the research of scientists working at the site and remotely around the world.
                     </p>
                 </div>
             </div>
             <div class="experience-entry-footer">
-                Jul 2013 - Jun 2014 | Culham, Oxfordshire
+                Jul 2013 - Jun 2014 | <span class="italic">Culham, Oxfordshire</span>
             </div>
         </div>
     </div>

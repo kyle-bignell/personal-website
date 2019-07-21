@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/navigation.css">
     <link rel="stylesheet" href="css/page_index.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/explore.css">
 
     <script async src="js/navigation.js"></script>
     <script async src="js/explore/scenes/launch.js"></script>
@@ -59,13 +60,18 @@
                 About
             </div>
             <p>
-                I'm a software developer specialising in web technologies. As a technical lead I bring order and clear direction to complex software development projects so that my team and I can focus on what we do best, delivering valuable software to the business.
+                Hi there, thank you for visiting my little corner of the internet. I'm Kyle, a front-end developer
+                based in South West England. In my current role I work as a technical lead of a 4 person team
+                developing a bespoke JavaScript framework to manage website advertisements.
             </p>
             <p>
-                Find out more about my current and previous roles over on my <a href="experience.php">experience page</a>.
+                If you want to find out more about my current and previous roles head on over on to my
+                <a href="experience.php">experience page</a> or connect with me on
+                <a href="https://www.linkedin.com/in/kyle-bignell/" target="_blank">LinkedIn</a>.
             </p>
             <p>
-                Check out the projects I'm tinkering with on my <a href="projects.php">projects page</a>.
+                You can also check out my projects on my <a href="projects.php">projects page</a> or go for
+                a deeper dive with my <a href="blog.php">blog</a>.
             </p>
         </div>
 

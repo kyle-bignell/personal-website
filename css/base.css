@@ -10,6 +10,11 @@
     src: url(../assets/fonts/Roboto/Roboto-Regular.ttf);
 }
 
+.italic
+{
+    font-style: italic;
+}
+
 html
 {
     width: 100%;
@@ -26,4 +31,25 @@ body
     padding: 0;
     padding-bottom: 30px;
     font-family: "Roboto", sans-serif;
+}
+
+#header
+{
+    background-color: #393E41;
+    color: white;
+    border-top: 4px solid #FCA311;
+    border-bottom: 4px solid #FCA311;
+    margin-top: 45px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#title
+{
+    display: inline-block;
+    text-align: center;
+    font-family: "geosans", sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
 }
