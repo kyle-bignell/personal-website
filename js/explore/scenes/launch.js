@@ -349,10 +349,10 @@ var SceneLaunch = function(config) {
         createPickup: function()
         {
             var box = {
-              x: (this.sceneDimensions.w / 2),
+              x: (this.sceneDimensions.w / 2) - 100,
               y: this.sceneDimensions.h - 625,
-              w: 450,
-              h: 350,
+              w: 550,
+              h: 380,
               r: 25,
               b: 3
             };
@@ -378,7 +378,7 @@ var SceneLaunch = function(config) {
                 box.r);
 
             this.titleText = this.add.text(
-                this.sceneDimensions.w / 2 + 225,
+                this.sceneDimensions.w / 2 + 175,
                 this.sceneDimensions.h - 585,
                 window.explore.config.planets[this.planetID].element,
                 {
@@ -392,23 +392,23 @@ var SceneLaunch = function(config) {
             this.titleText.setAlpha(0);
 
             this.detailText = this.add.text(
-                this.sceneDimensions.w / 2 + 225,
-                this.sceneDimensions.h - 460,
+                this.sceneDimensions.w / 2 + 175,
+                this.sceneDimensions.h - 445,
                 window.explore.config.planets[this.planetID].description,
                 {
-                    font: "20px Roboto",
+                    font: "23px Roboto",
                     fill: "#ffffff",
                     stroke: "#000000",
                     strokeThickness: 5,
                     align: "center",
-                    wordWrap: { width: 420, useAdvancedWrap: true }
+                    wordWrap: { width: 500, useAdvancedWrap: true }
                 });
             this.detailText.setOrigin(0.5);
             this.detailText.setAlpha(0);
 
             var button = {
-              x: (this.sceneDimensions.w / 2) + 50,
-              y: this.sceneDimensions.h - 355,
+              x: (this.sceneDimensions.w / 2),
+              y: this.sceneDimensions.h - 325,
               w: 350,
               h: 60,
               r: 25,
@@ -487,8 +487,8 @@ var SceneLaunch = function(config) {
             }.bind(this));
 
             this.collectText = this.add.text(
-                this.sceneDimensions.w / 2 + 225,
-                this.sceneDimensions.h - 325,
+                this.sceneDimensions.w / 2 + 175,
+                this.sceneDimensions.h - 295,
                 "Collect Sample",
                 {
                     font: "34px Roboto",

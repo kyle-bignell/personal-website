@@ -46,12 +46,12 @@ window.SceneOverview = function(config) {
             this.load.path = 'assets/explore/';
             this.load.image('rocket', 'rocket.png');
             this.load.image('fire', 'fire.png');
-            this.load.image('planet-background-low-0', 'planets/planet-background-low-0.jpg');
-            this.load.image('planet-background-low-1', 'planets/planet-background-low-1.jpg');
-            this.load.image('planet-background-low-2', 'planets/planet-background-low-2.jpg');
-            this.load.image('planet-background-low-3', 'planets/planet-background-low-3.jpg');
-            this.load.image('planet-background-low-4', 'planets/planet-background-low-4.jpg');
-            this.load.image('planet-background-low-5', 'planets/planet-background-low-5.jpg');
+            this.load.image('planet-background-low-0', 'planets/planet-background-low-0.png');
+            this.load.image('planet-background-low-1', 'planets/planet-background-low-1.png');
+            this.load.image('planet-background-low-2', 'planets/planet-background-low-2.png');
+            this.load.image('planet-background-low-3', 'planets/planet-background-low-3.png');
+            this.load.image('planet-background-low-4', 'planets/planet-background-low-4.png');
+            this.load.image('planet-background-low-5', 'planets/planet-background-low-5.png');
         },
 
         createCameraHandler: function()
@@ -96,10 +96,10 @@ window.SceneOverview = function(config) {
                 planet.background = this.add.image(planet.x, planet.y, 'planet-background-low-' + planet.id);
                 planet.background.setOrigin(0.5, 0.5);
                 planet.background.scale = (planet.radius * 2) / planet.background.width;
+                planet.background.tint = planet.colour;
 
                 planet.graphics = this.add.graphics();
-                planet.graphics.blendMode = 'MULTIPLY';
-                planet.graphics.fillStyle(planet.colour, 1);
+                planet.graphics.fillStyle(0x000000, 0);
                 planet.graphics.fillCircle(0, 0, planet.radius);
                 planet.graphics.setInteractive({
                     hitArea: new Phaser.Geom.Rectangle(
@@ -124,7 +124,15 @@ window.SceneOverview = function(config) {
                     planet.outline.setAlpha(0);
                 }.bind(this));
 
-                planet.background.setMask(planet.graphics.createGeometryMask());
+                // planet.background.setMask(planet.graphics.createGeometryMask());
+
+                this.tweens.add({
+                    targets: planet.background,
+                    rotation: 6.24,
+                    ease: Phaser.Math.Easing.Linear.Linear,
+                    duration: 10000 * window.explore.config.planets[planet.id].rotationSpeed,
+                    repeat: -1
+                });
 
                 planet.status = this.add.text(
                     0,
@@ -138,14 +146,6 @@ window.SceneOverview = function(config) {
                         align: "center"
                     });
                 planet.status.setOrigin(0.5);
-
-                this.tweens.add({
-                    targets: planet.background,
-                    rotation: 6.24,
-                    ease: Phaser.Math.Easing.Linear.Linear,
-                    duration: 10000 * window.explore.config.planets[planet.id].rotationSpeed,
-                    repeat: -1
-                });
 
                 planet.orbitCircle = new Phaser.Geom.Circle(
                   this.sceneDimensions.w / 2,
@@ -240,17 +240,17 @@ window.SceneOverview = function(config) {
         {
             window.explore.config.planets.forEach(function(planet) {
                 Phaser.Actions.PlaceOnCircle(
+                    [planet.outline],
+                    planet.orbitCircle,
+                    (planet.orbitRotation.getValue() + planet.orbitRotationOffset)
+                );
+                Phaser.Actions.PlaceOnCircle(
                     [planet.background],
                     planet.orbitCircle,
                     (planet.orbitRotation.getValue() + planet.orbitRotationOffset)
                 );
                 Phaser.Actions.PlaceOnCircle(
                     [planet.graphics],
-                    planet.orbitCircle,
-                    (planet.orbitRotation.getValue() + planet.orbitRotationOffset)
-                );
-                Phaser.Actions.PlaceOnCircle(
-                    [planet.outline],
                     planet.orbitCircle,
                     (planet.orbitRotation.getValue() + planet.orbitRotationOffset)
                 );
