@@ -134,9 +134,9 @@ window.SceneOrbit = function(config) {
         createPlanet: function()
         {
             var background = this.add.image(
-              this.sceneDimensions.w / 2,
-              this.sceneDimensions.h / 2,
-              'planet-background-high-' + this.planetID);
+                this.sceneDimensions.w / 2,
+                this.sceneDimensions.h / 2,
+                'planet-background-high-' + this.planetID);
             background.setOrigin(0.5, 0.5);
             background.scale = (this.config.planetRadius * 2) / background.width;
 
@@ -146,6 +146,30 @@ window.SceneOrbit = function(config) {
             graphics.blendMode = 'MULTIPLY';
 
             background.setMask(graphics.createGeometryMask());
+
+            this.tweens.add({
+                targets: background,
+                rotation: 6.24,
+                ease: Phaser.Math.Easing.Linear.Linear,
+                duration: 25000 * window.explore.config.planets[this.planetID].rotationSpeed,
+                repeat: -1
+            });
+        },
+
+        createStatus: function()
+        {
+            this.status = this.add.text(
+                this.sceneDimensions.w / 2,
+                this.sceneDimensions.h / 2,
+                window.explore.state.data.planets[this.planetID] ? "✔" : "?",
+                {
+                    font: "150px Roboto",
+                    fill: window.explore.state.data.planets[this.planetID] ? "#66ff66" : "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 3,
+                    align: "center"
+                });
+            this.status.setOrigin(0.5);
         },
 
         createRocket: function()
@@ -398,6 +422,7 @@ window.SceneOrbit = function(config) {
             this.createCameraHandler();
             this.createBackground();
             this.createPlanet();
+            this.createStatus();
             this.createRocket();
             this.createExitButton();
             this.createLandButton();

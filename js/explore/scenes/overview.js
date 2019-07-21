@@ -90,7 +90,7 @@ window.SceneOverview = function(config) {
             window.explore.config.planets.forEach(function(planet) {
                 planet.outline = this.add.graphics();
                 planet.outline.fillStyle(planet.outlineColour, 1);
-                planet.outline.fillCircle(planet.x, planet.y, planet.radius + 3);
+                planet.outline.fillCircle(0, 0, planet.radius + 3);
                 planet.outline.setAlpha(0);
 
                 planet.background = this.add.image(planet.x, planet.y, 'planet-background-low-' + planet.id);
@@ -100,7 +100,7 @@ window.SceneOverview = function(config) {
                 planet.graphics = this.add.graphics();
                 planet.graphics.blendMode = 'MULTIPLY';
                 planet.graphics.fillStyle(planet.colour, 1);
-                planet.graphics.fillCircle(planet.x, planet.y, planet.radius);
+                planet.graphics.fillCircle(0, 0, planet.radius);
                 planet.graphics.setInteractive({
                     hitArea: new Phaser.Geom.Rectangle(
                         -planet.radius,
@@ -126,6 +126,27 @@ window.SceneOverview = function(config) {
 
                 planet.background.setMask(planet.graphics.createGeometryMask());
 
+                planet.status = this.add.text(
+                    0,
+                    0,
+                    window.explore.state.data.planets[planet.id] ? "✔" : "?",
+                    {
+                        font: "25px Roboto",
+                        fill: window.explore.state.data.planets[planet.id] ? "#66ff66" : "#ffffff",
+                        stroke: "#000000",
+                        strokeThickness: 3,
+                        align: "center"
+                    });
+                planet.status.setOrigin(0.5);
+
+                this.tweens.add({
+                    targets: planet.background,
+                    rotation: 6.24,
+                    ease: Phaser.Math.Easing.Linear.Linear,
+                    duration: 10000 * window.explore.config.planets[planet.id].rotationSpeed,
+                    repeat: -1
+                });
+
                 planet.orbitCircle = new Phaser.Geom.Circle(
                   this.sceneDimensions.w / 2,
                   this.sceneDimensions.h / 2,
@@ -139,11 +160,78 @@ window.SceneOverview = function(config) {
             }.bind(this));
         },
 
+        createSummary: function()
+        {
+            this.statusText = this.add.text(
+                this.sceneDimensions.w / 2 - 475,
+                this.sceneDimensions.h - 675,
+                "Mission:",
+                {
+                    font: "40px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.statusText.setAlpha(0);
+
+            this.summaryText = this.add.text(
+                this.sceneDimensions.w / 2 - 310,
+                this.sceneDimensions.h - 675,
+                window.explore.state.data.visited === 6 ? "Complete" : "Retrieve samples",
+                {
+                    font: "40px Roboto",
+                    fill: window.explore.state.data.visited === 6 ? "#66ff66" : "#fa8200",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.summaryText.setAlpha(0);
+
+            this.samplesText = this.add.text(
+                this.sceneDimensions.w / 2 + 200,
+                this.sceneDimensions.h - 675,
+                "Samples:",
+                {
+                    font: "40px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.samplesText.setAlpha(0);
+
+            this.samplesValueText = this.add.text(
+                this.sceneDimensions.w / 2 + 385,
+                this.sceneDimensions.h - 675,
+                window.explore.state.data.visited + " / 6",
+                {
+                    font: "40px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.samplesValueText.setAlpha(0);
+
+            this.tweens.add({
+                targets: [
+                    this.statusText,
+                    this.summaryText,
+                    this.samplesText,
+                    this.samplesValueText
+                ],
+                alpha: 1,
+                duration: 500
+            });
+        },
+
         create: function()
         {
             this.createCameraHandler();
             this.createBackground();
             this.createPlanets();
+            this.createSummary();
 
             this.cameras.main.fadeIn(750);
         },
@@ -163,6 +251,11 @@ window.SceneOverview = function(config) {
                 );
                 Phaser.Actions.PlaceOnCircle(
                     [planet.outline],
+                    planet.orbitCircle,
+                    (planet.orbitRotation.getValue() + planet.orbitRotationOffset)
+                );
+                Phaser.Actions.PlaceOnCircle(
+                    [planet.status],
                     planet.orbitCircle,
                     (planet.orbitRotation.getValue() + planet.orbitRotationOffset)
                 );

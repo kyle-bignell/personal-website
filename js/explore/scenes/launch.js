@@ -70,6 +70,12 @@ var SceneLaunch = function(config) {
             this.load.image('planet-background-high-3', 'planets/planet-background-high-3.jpg');
             this.load.image('planet-background-high-4', 'planets/planet-background-high-4.jpg');
             this.load.image('planet-background-high-5', 'planets/planet-background-high-5.jpg');
+            this.load.image('element-0', 'elements/element-0.png');
+            this.load.image('element-1', 'elements/element-1.png');
+            this.load.image('element-2', 'elements/element-2.png');
+            this.load.image('element-3', 'elements/element-3.png');
+            this.load.image('element-4', 'elements/element-4.png');
+            this.load.image('element-5', 'elements/element-5.png');
         },
 
         createCameraHandler: function()
@@ -173,7 +179,7 @@ var SceneLaunch = function(config) {
         {
             var button = {
               x: (this.sceneDimensions.w / 2) - 130,
-              y: this.sceneDimensions.h - 650,
+              y: this.sceneDimensions.h - 400,
               w: 260,
               h: 85,
               r: 25,
@@ -199,40 +205,10 @@ var SceneLaunch = function(config) {
                 hitAreaCallback: Phaser.Geom.Rectangle.Contains,
                 useHandCursor: true
             });
-            this.launchButton.once('pointerdown', function()
-            {
-              this.particlesEmitterLeft.start();
-              this.particlesEmitterRight.start();
-
-              this.pulseTween.stop();
-
-              var rocketTargets = {
-                accelerationY: 0
-              }
-              this.tweens.add({
-                  targets: rocketTargets,
-                  accelerationY: -225,
-                  duration: 250,
-                  onUpdate: function() {
-                    this.rocket.body.setAccelerationY(rocketTargets.accelerationY);
-                  },
-                  onUpdateScope: this
-              });
-
-              this.tweens.add({
-                  targets: [
-                      this.launchButtonBorder,
-                      this.launchButton,
-                      this.launchButtonText,
-                  ],
-                  alpha: 0,
-                  duration: 750
-              });
-            }.bind(this));
 
             this.launchButtonText = this.add.text(
                 this.sceneDimensions.w / 2,
-                this.sceneDimensions.h - 610,
+                this.sceneDimensions.h - 360,
                 "Launch",
                 {
                     font: "55px Roboto",
@@ -266,7 +242,108 @@ var SceneLaunch = function(config) {
                     yoyo: true,
                     repeat: -1
                         });
+
+                this.launchButton.once('pointerdown', function()
+                {
+                  this.particlesEmitterLeft.start();
+                  this.particlesEmitterRight.start();
+
+                  this.pulseTween.stop();
+
+                  var rocketTargets = {
+                    accelerationY: 0
+                  }
+                  this.tweens.add({
+                      targets: rocketTargets,
+                      accelerationY: -225,
+                      duration: 250,
+                      onUpdate: function() {
+                        this.rocket.body.setAccelerationY(rocketTargets.accelerationY);
+                      },
+                      onUpdateScope: this
+                  });
+
+                  this.tweens.add({
+                      targets: [
+                          this.launchButtonBorder,
+                          this.launchButton,
+                          this.launchButtonText,
+                          this.statusText,
+                          this.summaryText,
+                          this.samplesText,
+                          this.samplesValueText
+                      ],
+                      alpha: 0,
+                      duration: 750
+                  });
+                }.bind(this));
             }, [], this);
+        },
+
+        createSummary: function()
+        {
+            this.statusText = this.add.text(
+                this.sceneDimensions.w / 2 - 475,
+                this.sceneDimensions.h - 675,
+                "Status:",
+                {
+                    font: "40px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.statusText.setAlpha(0);
+
+            this.summaryText = this.add.text(
+                this.sceneDimensions.w / 2 - 335,
+                this.sceneDimensions.h - 675,
+                window.explore.config.planets[this.planetID].element + " collected",
+                {
+                    font: "40px Roboto",
+                    fill: "#66ff66",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.summaryText.setAlpha(0);
+
+            this.samplesText = this.add.text(
+                this.sceneDimensions.w / 2 + 200,
+                this.sceneDimensions.h - 675,
+                "Samples:",
+                {
+                    font: "40px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.samplesText.setAlpha(0);
+
+            this.samplesValueText = this.add.text(
+                this.sceneDimensions.w / 2 + 385,
+                this.sceneDimensions.h - 675,
+                window.explore.state.data.visited + " / 6",
+                {
+                    font: "40px Roboto",
+                    fill: "#ffffff",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    align: "center"
+                });
+            this.samplesValueText.setAlpha(0);
+
+            this.tweens.add({
+                targets: [
+                    this.statusText,
+                    this.summaryText,
+                    this.samplesText,
+                    this.samplesValueText
+                ],
+                alpha: 1,
+                duration: 500
+            });
         },
 
         createPickup: function()
@@ -303,7 +380,7 @@ var SceneLaunch = function(config) {
             this.titleText = this.add.text(
                 this.sceneDimensions.w / 2 + 225,
                 this.sceneDimensions.h - 585,
-                "CREATIVISIUM",
+                window.explore.config.planets[this.planetID].element,
                 {
                     font: "50px Roboto",
                     fill: "#ffffff",
@@ -317,10 +394,7 @@ var SceneLaunch = function(config) {
             this.detailText = this.add.text(
                 this.sceneDimensions.w / 2 + 225,
                 this.sceneDimensions.h - 460,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco \
-                laboris nisi ut aliquip ex ea commodo consequat. ",
+                window.explore.config.planets[this.planetID].description,
                 {
                     font: "20px Roboto",
                     fill: "#ffffff",
@@ -372,15 +446,43 @@ var SceneLaunch = function(config) {
                         this.box,
                         this.buttonBorder,
                         this.button,
-                        this.collectText,
-                        this.pickup
+                        this.collectText
                     ],
                     alpha: 0,
                     duration: 750
                 });
 
-                this.time.delayedCall(1000, function() {
+                this.pickupPulseTween.stop();
+                this.tweens.add({
+                    targets: [
+                        this.pickup
+                    ],
+                    x: this.sceneDimensions.w / 2,
+                    ease: Phaser.Math.Easing.Back.In,
+                    duration: 1500
+                });
+                this.tweens.add({
+                    targets: [
+                        this.pickup
+                    ],
+                    y: this.sceneDimensions.h - 200,
+                    ease: Phaser.Math.Easing.Sine.InOut,
+                    duration: 1500
+                });
+                this.tweens.add({
+                    targets: [
+                        this.pickup
+                    ],
+                    alpha: 0,
+                    scale: 0,
+                    ease: Phaser.Math.Easing.Sine.In,
+                    duration: 1750
+                });
+
+                this.time.delayedCall(1250, function() {
+                    this.pickupRotationTween.stop();
                     this.createLaunchButton();
+                    this.createSummary();
                 }, [], this);
             }.bind(this));
 
@@ -400,14 +502,35 @@ var SceneLaunch = function(config) {
 
             var pickup = {
                 x: (this.sceneDimensions.w / 2) - 250,
-                y: this.sceneDimensions.h - 450,
-                r: 100
+                y: this.sceneDimensions.h - 450
             };
 
-            this.pickup = this.add.graphics();
-            this.pickup.fillStyle(0xfa8200, 1);
-            this.pickup.fillCircle(pickup.x, pickup.y, pickup.r);
+            this.pickup = this.add.image(pickup.x, pickup.y, 'element-' + this.planetID);
+            this.pickup.setOrigin(0.5, 0.5);
             this.pickup.setAlpha(0);
+            this.pickup.setScale(1.5);
+            this.pickup.tint = window.explore.config.planets[this.planetID].elementColour;
+
+            this.pickupPulseTween = this.tweens.add({
+                targets: [
+                    this.pickup
+                ],
+                scale: 1.75,
+                ease: Phaser.Math.Easing.Sine.InOut,
+                duration: 1500,
+                yoyo: true,
+                repeat: -1
+            });
+
+            this.pickupRotationTween = this.tweens.add({
+                targets: [
+                    this.pickup
+                ],
+                rotation: 6.28,
+                ease: Phaser.Math.Easing.Linear.Linear,
+                duration: 10000,
+                repeat: -1
+            });
 
             this.tweens.add({
                 targets: [
@@ -436,6 +559,7 @@ var SceneLaunch = function(config) {
             if (window.explore.state.data.planets[this.planetID])
             {
                 this.createLaunchButton();
+                this.createSummary();
             }
             else
             {
