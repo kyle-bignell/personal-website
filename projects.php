@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" CONTENT="Kyle Bignell technical lead projects">
 
+    <title>Kyle Bignell - Technical Lead | Projects</title>
+
     <link rel="canonical" href="http://www.kyle-bignell.co.uk/projects.php"/>
 
     <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/navigation.css">
+
+    <script async src="js/materialize.js"></script>
+    <script async src="js/base.js"></script>
+
     <link rel="stylesheet" href="css/page_projects.css">
-    <link rel="stylesheet" href="css/footer.css">
-
-    <script src="js/navigation.js"></script>
-
-    <title>Kyle Bignell - Technical Lead | Projects</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -33,10 +35,8 @@
 <body>
     <?php include "php/navigation.php" ?>
 
-    <div id="header">
-        <div id="title">
-            Projects
-        </div>
+    <div id="header" class="container">
+      <h1 class="center-align">Projects</h1>
     </div>
 
     <div id="content">

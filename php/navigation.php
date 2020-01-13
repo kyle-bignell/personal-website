@@ -1,10 +1,10 @@
 <?php
     $page = basename($_SERVER['PHP_SELF']);
 
-    $experienceActiveClass = ($page == "experience.php") ? "active-navigation-node" : "inactive-navigation-node";
-    $projectsActiveClass = ($page == "projects.php") ? "active-navigation-node" : "inactive-navigation-node";
-    $blogActiveClass = ($page == "blog.php") ? "active-navigation-node" : "inactive-navigation-node";
-    $cvActiveClass = ($page == "cv.php") ? "active-navigation-node" : "inactive-navigation-node";
+    $experienceActiveClass = ($page == "experience.php") ? "active" : "";
+    $projectsActiveClass = ($page == "projects.php") ? "active" : "";
+    $blogActiveClass = ($page == "blog.php") ? "active" : "";
+    $cvActiveClass = ($page == "cv.php") ? "active" : "";
 
     $relativePath = "";
     if (strpos($_SERVER["PHP_SELF"], "/php/") !== false)
@@ -16,21 +16,26 @@
         $relativePath = "../";
     }
 ?>
-<div id="navigation">
-    <div id="navigation-left">
-        <div id="navigation-about" class="navigation-node-home">
-            <a class="navigation-link" href="<?= $relativePath ?>index.php">KYLE BIGNELL</a>
-        </div>
-    </div>
 
-    <div id="navigation-right-menu">
-        <img id="navigation-right-menu-icon" src="<?= $relativePath ?>assets/icons/menu-button.png"/>
-    </div>
+<header>
+  <div class="navbar-fixed">
+    <nav class="orange lighten-2">
+      <div class="container nav-wrapper">
+        <a href="<?= $relativePath ?>index.php" class="black-text brand-logo">KYLE BIGNELL</a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li class="<?=$projectsActiveClass?>"><a class="black-text" href="<?=$relativePath?>projects.php">PROJECTS</a></li>
+          <li class="<?=$blogActiveClass?>"><a class="black-text" href="<?=$relativePath?>blog.php">BLOG</a></li>
+          <li class="<?=$experienceActiveClass?>"><a class="black-text" href="<?=$relativePath?>experience.php">EXPERIENCE</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-    <div id="navigation-right">
-        <a class="navigation-link" href="<?= $relativePath ?>experience.php"><div id="navigation-projects" class="navigation-node <?php echo $experienceActiveClass ?>">EXPERIENCE</div></a>
-        <a class="navigation-link" href="<?= $relativePath ?>projects.php"><div id="navigation-projects" class="navigation-node <?php echo $projectsActiveClass ?>">PROJECTS</div></a>
-        <a class="navigation-link" href="<?= $relativePath ?>blog.php"><div id="navigation-projects" class="navigation-node <?php echo $blogActiveClass ?>">BLOG</div></a>
-        <a class="navigation-link" href="<?= $relativePath ?>cv.php"><div id="navigation-cv" class="navigation-node <?php echo $cvActiveClass ?>">CV</div></a>
-    </div>
-</div>
+  <ul class="sidenav" id="mobile-nav">
+    <li class=""><a href="<?=$relativePath?>index.php">KYLE BIGNELL</a></li>
+    <li class="<?=$projectsActiveClass?>"><a href="<?=$relativePath?>projects.php">PROJECTS</a></li>
+    <li class="<?=$blogActiveClass?>"><a href="<?=$relativePath?>blog.php">BLOG</a></li>
+    <li class="<?=$experienceActiveClass?>"><a href="<?=$relativePath?>experience.php">EXPERIENCE</a></li>
+  </ul>
+</header>

@@ -9,19 +9,57 @@
         $relativePath = "../";
     }
 ?>
-<div id="footer">
-    <div id="footer-left">
-        © <?=date("Y");?> Kyle Bignell
+
+<footer class="page-footer grey lighten-3">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="grey-text text-darken-1">Pages</h5>
+        <ul>
+          <li>
+            <a class="grey-text text-darken-1" href="<?= $relativePath ?>index.php">
+              Home
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-darken-1" href="<?= $relativePath ?>projects.php">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-darken-1" href="<?= $relativePath ?>blog.php">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-darken-1" href="<?= $relativePath ?>experience.php">
+              Experience
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="grey-text text-darken-1">Links</h5>
+        <ul>
+          <li>
+            <a class="grey-text text-darken-1" target="_blank" href="https://www.linkedin.com/in/kyle-bignell-52592785/">
+              <img class="footer-image" src="<?= $relativePath ?>assets/icons/linkedin.png" alt="LinkedIn Icon"/>
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a class="grey-text text-darken-1" target="_blank" href="https://bitbucket.org/kyle_bignell/">
+              <img class="footer-image" src="<?= $relativePath ?>assets/icons/bitbucket.png" alt="BitBucket Icon"/>
+              Bitbucket
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div id="footer-right">
-        <a class="footer-right-link" href="https://www.linkedin.com/in/kyle-bignell-52592785/" target="_blank">
-            <img class="footer-right-image" src="<?= $relativePath ?>assets/icons/linkedin.png" alt="LinkedIn Icon"/>
-        </a>
-        <a class="footer-right-link" href="https://bitbucket.org/kyle_bignell/" target="_blank">
-            <img class="footer-right-image" src="<?= $relativePath ?>assets/icons/bitbucket.png" alt="BitBucket Icon"/>
-        </a>
-        <a class="footer-right-link" href="mailto:kyle.bignell@gmail.com" target="_blank">
-            <img class="footer-right-image" src="<?= $relativePath ?>assets/icons/email.png" alt="BitBucket Icon"/>
-        </a>
+  </div>
+  <div class="footer-copyright">
+    <div class="container grey-text text-darken-1">
+      © <?=date("Y");?> Kyle Bignell
     </div>
-</div>
+  </div>
+</footer>

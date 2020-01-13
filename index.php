@@ -6,23 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" CONTENT="Kyle Bignell technical lead portfolio">
 
+    <title>Kyle Bignell - Technical Lead</title>
+
     <link rel="canonical" href="http://www.kyle-bignell.co.uk/"/>
 
     <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/page_index.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/explore.css">
 
-    <script async src="js/navigation.js"></script>
-    <script async src="js/explore/scenes/launch.js"></script>
-    <script async src="js/explore/scenes/overview.js"></script>
-    <script async src="js/explore/scenes/orbit.js"></script>
-    <script async src="js/explore/index.js"></script>
-
-    <title>Kyle Bignell - Technical Lead</title>
+    <script async src="js/materialize.js"></script>
+    <script async src="js/base.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -36,79 +31,292 @@
 </head>
 
 <body>
-    <?php include "php/navigation.php" ?>
+  <?php include "php/navigation.php" ?>
 
-    <div id="header">
-        <div id="title">
-            <div id="title-image">
-                <img id="title-image-data" src="assets/images/kyle-bignell.png" alt="Picture of Kyle Bignell"/>
+  <main>
+    <div id="header" class="container">
+      <h1 class="center-align">Kyle Bignell</h1>
+      <h5 class="center-align">Software Engineer - Technical Lead</h5>
+    </div>
+
+    </br>
+    </br>
+
+    <div id="content" class="container">
+      <div id="about" class="section">
+        <div class="row">
+          <div class="col s4 m4 l2 offset-l1">
+            <div>
+              <img class="responsive-img flow-text" src="assets/images/kyle-bignell.png" alt="Picture of Kyle Bignell" style="margin-top:1em;margin-bottom:1em;"/>
             </div>
-            <div id="title-text">
-                <div id="title-text-name">
-                    Kyle Bignell
+          </div>
+          <div class="col s8 m8 l8">
+            <p class="flow-text">
+              Hi there, thank you for visiting my little corner of the internet. I'm a software engineer
+              based in the UK. In my current role I work as a technical lead for a bespoke JavaScript framework
+              to manage advertisements on publisher websites. Take a look around to find out more about my experience,
+              skills, and thoughts on software development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </br>
+
+    <div id="content" class="container">
+      <div id="areas" class="section">
+        <div class="row">
+          <a href="projects.php" class="black-text">
+            <div class="col s4 m4 l4">
+              <i class="areas-icon material-icons">computer</i>
+              <h4 class="center">Projects</h4>
+              <p class="flow-text light center">Take a look at the projects I have been working on with overviews, demonstrations, and breakdowns.</p>
+            </div>
+          </a>
+          <a href="blog.php" class="black-text">
+            <div class="col s4 m4 l4">
+              <i class="areas-icon material-icons">chrome_reader_mode</i>
+              <h4 class="center">Blog</h4>
+              <p class="flow-text light center">Read through my posts sharing my thoughts on interesting problems and project breakdowns among other topics.</p>
+            </div>
+          </a>
+          <a href="experience.php" class="black-text">
+            <div class="col s4 m4 l4">
+              <i class="areas-icon material-icons">person_add</i>
+              <h4 class="center">Experience</h4>
+              <p class="flow-text light center">Find out about my professional software engineering experience and the roles I have filled in software development teams.</p>
+            </div>
+          </a>
+        </div>
+        <div class="row">
+          <div class="col s4 m4 l4 center-align">
+            <a class="btn-large orange lighten-2 black-text" href="projects.php">Go to projects</a>
+          </div>
+          <div class="col s4 m4 l4 center-align">
+            <a class="btn-large orange lighten-2 black-text" href="blog.php">Got to blog</a>
+          </div>
+            <div class="col s4 m4 l4 center-align">
+              <a class="btn-large orange lighten-2 black-text" href="experience.php">Go to experience</a>
+            </div>
+        </div>
+      </div>
+
+      </br>
+
+      <div id="skills" class="section">
+        <div class="row">
+          <div class="section">
+            <h4>Languages</h4>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/js_logo.png">
                 </div>
-                <div id="title-text-role">
-                    Technical Lead
+                <div class="card-content">
+                  <span class="card-title">JavaScript</span>
                 </div>
+              </div>
             </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/ts_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">TypeScript</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/php_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">PHP</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/html_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">HTML</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/css_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">CSS</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
 
-    <div id="content">
-        <div id="about">
-            <div class="content-title">
-                About
+        <div class="row">
+          <div class="section">
+            <h4>Tools</h4>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/node_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Node</span>
+                </div>
+              </div>
             </div>
-            <p>
-                Hi there, thank you for visiting my little corner of the internet. I'm Kyle, a front-end developer
-                based in South West England. In my current role I work as a technical lead of a 4 person team
-                developing a bespoke JavaScript framework to manage website advertisements.
-            </p>
-            <p>
-                If you want to find out more about my current and previous roles head on over on to my
-                <a href="experience.php">experience page</a> or connect with me on
-                <a href="https://www.linkedin.com/in/kyle-bignell/" target="_blank">LinkedIn</a>.
-            </p>
-            <p>
-                You can also check out my projects on my <a href="projects.php">projects page</a> or go for
-                a deeper dive with my <a href="blog.php">blog</a>.
-            </p>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/webpack_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Webpack</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/npm_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">NPM</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/yarn_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Yarn</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/docker_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Docker</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/kubernetes_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Kubernetes</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/git_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Git</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div id="accounts">
-            <div class="content-title">
-                Contact
+        <div class="row">
+          <div class="section">
+            <h4>Systems</h4>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/prometheus_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Prometheus</span>
+                </div>
+              </div>
             </div>
-            <div class="accounts-row">
-                <a class="accounts-link" href="https://www.linkedin.com/in/kyle-bignell/" target="_blank">
-                    <img class="accounts-image" src="assets/icons/linkedin.png" alt="LinkedIn Icon"/>
-                    LinkedIn
-                </a>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/grafana_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Grafana</span>
+                </div>
+              </div>
             </div>
-            <div class="accounts-row">
-                <a class="accounts-link" href="https://bitbucket.org/kyle_bignell/" target="_blank">
-                    <img class="accounts-image" src="assets/icons/bitbucket.png" alt="BitBucket Icon"/>
-                    BitBucket
-                </a>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/kibana_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Kibana</span>
+                </div>
+              </div>
             </div>
-            <div class="accounts-row">
-                <a class="accounts-link" href="mailto:kyle.bignell@gmail.com" target="_blank">
-                    <img class="accounts-image" src="assets/icons/email.png" alt="BitBucket Icon"/>
-                    Email
-                </a>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/jira_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Jira</span>
+                </div>
+              </div>
             </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/confluence_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Confluence</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/gitlab_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">GitLab</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/bitbucket_logo.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">Bitbucket</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </main>
 
-    <div id="explore-toggle">
-        Explore
-    </div>
-
-    <div id="explore" class="explore-transform">
-
-    </div>
-
-    <?php include "php/footer.php" ?>
+  <?php include "php/footer.php" ?>
 </body>
 
 </html>
