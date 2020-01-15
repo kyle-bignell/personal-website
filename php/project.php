@@ -15,14 +15,16 @@
 
     <link rel="shortcut icon" type="image/png" href="../assets/icons/favicon.png"/>
 
+    <title><?=$project_data["title"]?></title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../css/materialize.css">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/footer.css">
+
     <link rel="stylesheet" href="../css/page_project.css">
 
-    <script src="../js/navigation.js"></script>
-
-    <title><?=$project_data["title"]?></title>
+    <script async src="../js/materialize.js"></script>
+    <script async src="../js/base.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -38,14 +40,12 @@
 <body>
     <?php include "../php/navigation.php" ?>
 
-    <div id="header">
-        <div id="title">
-            <?=$project_data["content"]["title"]?>
-        </div>
+    <div id="header" class="container">
+      <h2 class="center-align"><?=$project_data["content"]["title"]?></h2>
     </div>
 
     <div id="project-image">
-        <img alt="<?=$project_data["content"]["image_alt"]?> " src="<?=$project_data["content"]["image_src"]?>"/>
+      <img alt="<?=$project_data["content"]["image_alt"]?> " src="<?=$project_data["content"]["image_src"]?>"/>
     </div>
 
     <?php

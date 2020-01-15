@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/base.css">
 
@@ -114,7 +114,7 @@
                   <img src="assets/images/logos/js_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">JavaScript</span>
+                  <h6>JavaScript</h6>
                 </div>
               </div>
             </div>
@@ -124,7 +124,17 @@
                   <img src="assets/images/logos/ts_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">TypeScript</span>
+                  <h6>TypeScript</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/webgl_logo.png">
+                </div>
+                <div class="card-content">
+                  <h6>WebGL</h6>
                 </div>
               </div>
             </div>
@@ -134,7 +144,7 @@
                   <img src="assets/images/logos/php_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">PHP</span>
+                  <h6>PHP</h6>
                 </div>
               </div>
             </div>
@@ -144,7 +154,7 @@
                   <img src="assets/images/logos/html_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">HTML</span>
+                  <h6>HTML</h6>
                 </div>
               </div>
             </div>
@@ -154,7 +164,7 @@
                   <img src="assets/images/logos/css_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">CSS</span>
+                  <h6>CSS</h6>
                 </div>
               </div>
             </div>
@@ -170,7 +180,7 @@
                   <img src="assets/images/logos/node_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Node</span>
+                  <h6>Node</h6>
                 </div>
               </div>
             </div>
@@ -180,7 +190,7 @@
                   <img src="assets/images/logos/webpack_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Webpack</span>
+                  <h6>Webpack</h6>
                 </div>
               </div>
             </div>
@@ -190,7 +200,7 @@
                   <img src="assets/images/logos/npm_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">NPM</span>
+                  <h6>NPM</h6>
                 </div>
               </div>
             </div>
@@ -200,7 +210,7 @@
                   <img src="assets/images/logos/yarn_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Yarn</span>
+                  <h6>Yarn</h6>
                 </div>
               </div>
             </div>
@@ -210,7 +220,7 @@
                   <img src="assets/images/logos/docker_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Docker</span>
+                  <h6>Docker</h6>
                 </div>
               </div>
             </div>
@@ -220,7 +230,7 @@
                   <img src="assets/images/logos/kubernetes_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Kubernetes</span>
+                  <h6>Kubernetes</h6>
                 </div>
               </div>
             </div>
@@ -230,7 +240,27 @@
                   <img src="assets/images/logos/git_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Git</span>
+                  <h6>Git</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/phaser_logo.png">
+                </div>
+                <div class="card-content">
+                  <h6>Phaser</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col s3 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/logos/rxjs_logo.png">
+                </div>
+                <div class="card-content">
+                  <h6>RxJS</h6>
                 </div>
               </div>
             </div>
@@ -246,7 +276,7 @@
                   <img src="assets/images/logos/prometheus_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Prometheus</span>
+                  <h6>Prometheus</h6>
                 </div>
               </div>
             </div>
@@ -256,7 +286,7 @@
                   <img src="assets/images/logos/grafana_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Grafana</span>
+                  <h6>Grafana</h6>
                 </div>
               </div>
             </div>
@@ -266,7 +296,7 @@
                   <img src="assets/images/logos/kibana_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Kibana</span>
+                  <h6>Kibana</h6>
                 </div>
               </div>
             </div>
@@ -276,7 +306,7 @@
                   <img src="assets/images/logos/jira_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Jira</span>
+                  <h6>Jira</h6>
                 </div>
               </div>
             </div>
@@ -286,7 +316,7 @@
                   <img src="assets/images/logos/confluence_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Confluence</span>
+                  <h6>Confluence</h6>
                 </div>
               </div>
             </div>
@@ -296,7 +326,7 @@
                   <img src="assets/images/logos/gitlab_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">GitLab</span>
+                  <h6>GitLab</h6>
                 </div>
               </div>
             </div>
@@ -306,7 +336,7 @@
                   <img src="assets/images/logos/bitbucket_logo.png">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">Bitbucket</span>
+                  <h6>Bitbucket</h6>
                 </div>
               </div>
             </div>

@@ -12,14 +12,12 @@
 
     <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/base.css">
 
     <script async src="js/materialize.js"></script>
     <script async src="js/base.js"></script>
-
-    <link rel="stylesheet" href="css/page_experience.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -36,7 +34,7 @@
     <?php include "php/navigation.php" ?>
 
     <div id="header" class="container">
-      <h1 class="center-align">Experience</h1>
+      <h2 class="center-align">Experience</h2>
     </div>
 
     <div id="content" class="container">

@@ -12,14 +12,12 @@
 
     <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/base.css">
 
     <script async src="js/materialize.js"></script>
     <script async src="js/base.js"></script>
-
-    <link rel="stylesheet" href="css/page_blog.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -36,10 +34,10 @@
     <?php include "php/navigation.php" ?>
 
     <div id="header" class="container">
-      <h1 class="center-align">Blog</h1>
+      <h2 class="center-align">Blog</h2>
     </div>
 
-    <div id="content">
+    <div id="content" class="container">
       <?php
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
@@ -50,28 +48,37 @@
         foreach ($json_post_data->items as &$post)
         {
       ?>
-        <div class="post">
-          <div class="post-title">
-            <?=$post->title?>
-          </div>
-          <div class="post-metadata">
-            <div class="post-date">
-              <?php
-                $published = date("j M Y", strtotime($post->published));
-              ?>
-              <?=$published?>
+      <div id="blog" class="section">
+        <div class="row">
+          <div class="col s12 m6 l10 offset-l1">
+            <div class="card">
+              <div class="card-content">
+                <div class="post-title">
+                  <h3><?=$post->title?></h3>
+                </div>
+                <div class="post-metadata">
+                  <div class="post-date grey-text">
+                    <?php
+                      $published = date("j M Y", strtotime($post->published));
+                    ?>
+                    <?=$published?>
+                  </div>
+                </div>
+                <br/>
+                <div class="post-content flow-text">
+                  <?=$post->content?>
+                </div>
+              </div>
+              <div class="card-action">
+                <a href="<?=$post->url?>" target="_blank">Read on Blogger</a>
+              </div>
             </div>
-            <div class="post-link">
-              <a href="<?=$post->url?>" target="_blank">Read on Blogger</a>
-            </div>
-          </div>
-          <div class="post-content">
-            <?=$post->content?>
           </div>
         </div>
-      <?php
-        }
-      ?>
+        <?php
+          }
+        ?>
+      </div>
     </div>
 
     <?php include "php/footer.php" ?>

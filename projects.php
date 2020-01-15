@@ -12,14 +12,14 @@
 
     <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/base.css">
 
     <script async src="js/materialize.js"></script>
     <script async src="js/base.js"></script>
 
-    <link rel="stylesheet" href="css/page_projects.css">
+    <!-- <link rel="stylesheet" href="css/page_projects.css"> -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106748379-3"></script>
@@ -36,121 +36,133 @@
     <?php include "php/navigation.php" ?>
 
     <div id="header" class="container">
-      <h1 class="center-align">Projects</h1>
+      <h2 class="center-align">Projects</h2>
     </div>
 
-    <div id="content">
-        <a class="projects-entry-link" href="projects/flocking.php">
-            <div class="projects-entry">
-                <div class="projects-entry-title">
-                    Flocking
-                </div>
-                <img class="projects-entry-image" src="assets/images/projects/flocking.png" alt="Flocking"/>
-                <div class="projects-entry-content">
-                    <div class="projects-entry-description">
-                        A JavaScript and WebGL powered flocking simulator.
-                    </div>
-                </div>
+    <div id="content" class="container">
+      <div id="projects" class="section">
+        <div class="row">
+          <div class="col s3 m3 l4">
+            <div class="card medium">
+              <div class="card-image">
+                <img src="assets/images/projects/flocking.png" alt="Flocking">
+              </div>
+              <div class="card-content">
+                <span class="card-title">Flocking</span>
+                  A JavaScript and WebGL powered flocking simulator.
+              </div>
+              <div class="card-action">
+                <a class="orange-text text-darken-1" href="projects/flocking.php">Details</a>
+                <a class="orange-text text-darken-1" target="_blank" href="http://flocking.kyle-bignell.co.uk/">View project</a>
+              </div>
             </div>
-        </a>
-
-        <a class="projects-entry-link" href="projects/self-defence-classes-near-me.php">
-            <div class="projects-entry">
-                <div class="projects-entry-title">
-                    Classes Near Me
-                </div>
-                <img class="projects-entry-image" src="assets/images/projects/sdcnm.png" alt="Self Defence Classes Near Me"/>
-                <div class="projects-entry-content">
-                    <div class="projects-entry-description">
-                        Search for self defence classes near you using a distance ordered list or map view.
-                    </div>
-                </div>
+          </div>
+          <div class="col s3 m3 l4">
+            <div class="card medium">
+              <div class="card-image">
+                <img src="assets/images/projects/sdcnm.png" alt="Self Defence Classes Near Me"/>
+              </div>
+              <div class="card-content">
+                <span class="card-title black-text">Classes Near Me</span>
+                  Search for self defence classes near you using a distance ordered list or map view.
+              </div>
+              <div class="card-action">
+                <a class="orange-text text-darken-1" href="projects/self-defence-classes-near-me.php">Details</a>
+                <a class="orange-text text-darken-1" target="_blank" href="http://selfdefenceclassesnearme.co.uk/">View project</a>
+              </div>
             </div>
-        </a>
-
-        <a class="projects-entry-link" href="projects/neston-gardens.php">
-            <div class="projects-entry">
-                <div class="projects-entry-title">
-                    Neston Gardens
-                </div>
-                <img class="projects-entry-image" src="assets/images/projects/neston_gardens.png" alt="Neston Gardens"/>
-                <div class="projects-entry-content">
-                    <div class="projects-entry-description">
-                        Custom website built for a housing development project in Corsham, Wiltshire.
-                    </div>
-                </div>
+          </div>
+          <div class="col s3 m3 l4">
+            <div class="card medium">
+              <div class="card-image">
+                <img src="assets/images/projects/neston_gardens.png" alt="Self Defence Classes Near Me"/>
+              </div>
+              <div class="card-content">
+                <span class="card-title black-text">Neston Gardens</span>
+                    Custom website built for a housing development project in Corsham, Wiltshire.
+              </div>
+              <div class="card-action">
+                <a class="orange-text text-darken-1" href="projects/neston-gardens.php">Details</a>
+                <a class="orange-text text-darken-1" target="_blank" href="http://www.neston-developments.co.uk/">View project</a>
+              </div>
             </div>
-        </a>
-
-        <a class="projects-entry-link" href="projects/qreator.php">
-            <div class="projects-entry">
-                <div class="projects-entry-title">
-                    QReator
-                </div>
-                <img class="projects-entry-image" src="assets/images/projects/qreator.png" alt="QReator"/>
-                <div class="projects-entry-content">
-                    <div class="projects-entry-description">
-                        A URL shortening QR code generator. Avoid typing long URLs on your mobile!
-                    </div>
-                </div>
+          </div>
+          <div class="col s3 m3 l4">
+            <div class="card medium">
+              <div class="card-image">
+                <img src="assets/images/projects/qreator.png" alt="Neston Gardens"/>
+              </div>
+              <div class="card-content">
+                <span class="card-title black-text">QReator</span>
+                    A URL shortening QR code generator. Avoid typing long URLs on your mobile!
+              </div>
+              <div class="card-action">
+                <a class="orange-text text-darken-1" href="projects/qreator.php">Details</a>
+                <a class="orange-text text-darken-1" target="_blank" href="http://qreator.kyle-bignell.co.uk/">View project</a>
+              </div>
             </div>
-        </a>
-
-        <a class="projects-entry-link" href="projects/skype-bot.php">
-            <div class="projects-entry">
-                <div class="projects-entry-title">
-                    Skype Bot
-                </div>
-                <img class="projects-entry-image" src="assets/images/projects/skype.png" alt="Skype Bot"/>
-                <div class="projects-entry-content">
-                    <div class="projects-entry-description">
-                        Facilitates game deployment server management and handles restart announcements.
-                    </div>
-                </div>
+          </div>
+          <div class="col s3 m3 l4">
+            <div class="card medium">
+              <div class="card-image">
+                <img src="assets/images/projects/skype.png" alt="Skype Bot"/>
+              </div>
+              <div class="card-content">
+                <span class="card-title black-text">Skype Bot</span>
+                    Facilitates game deployment server management and handles restart announcements.
+              </div>
+              <div class="card-action">
+                <a class="orange-text text-darken-1" href="projects/skype-bot.php">Details</a>
+                <a class="orange-text text-darken-1" target="_blank" href="http://skype-bot.kyle-bignell.co.uk/">View project</a>
+              </div>
             </div>
-        </a>
-
-        <a class="projects-entry-link" href="projects/wernies-big-adventure.php">
-            <div class="projects-entry">
-                <div class="projects-entry-title">
-                    Wernie's Big Adventure
-                </div>
-                <img class="projects-entry-image" src="assets/images/projects/wba.png" alt="Wernie's Big Adventure"/>
-                <div class="projects-entry-content">
-                    <div class="projects-entry-description">
-                        A Unity powered adventure built over the course of a weekend for an Itch.io game jam.
-                    </div>
-                </div>
+          </div>
+          <div class="col s3 m3 l4">
+            <div class="card medium">
+              <div class="card-image">
+                <img src="assets/images/projects/wba.png" alt="Wernie's Big Adventure"/>
+              </div>
+              <div class="card-content">
+                <span class="card-title black-text">Wernie's Big Adventure</span>
+                    A Unity powered adventure built over the course of a weekend for an Itch.io game jam.
+              </div>
+              <div class="card-action">
+                <a class="orange-text text-darken-1" href="projects/wernies-big-adventure.php">Details</a>
+                <a class="orange-text text-darken-1" target="_blank" href="https://kyle-bignell.itch.io/wernies-big-adventure">View project</a>
+              </div>
             </div>
-        </a>
-
-        <a class="projects-entry-link" href="projects/astavoid.php">
-            <div class="projects-entry">
-                <div class="projects-entry-title">
-                    Astavoid
-                </div>
-                <img class="projects-entry-image" src="assets/images/projects/astavoid.png" alt="Astavoid"/>
-                <div class="projects-entry-content">
-                    <div class="projects-entry-description">
-                        A Unity powered infinite runner built over the course of a week for the Search For a Star game jam.
-                    </div>
-                </div>
+          </div>
+          <div class="col s3 m3 l4">
+            <div class="card medium">
+              <div class="card-image">
+                <img src="assets/images/projects/astavoid.png" alt="Astavoid"/>
+              </div>
+              <div class="card-content">
+                <span class="card-title black-text">Astavoid</span>
+                    A Unity powered infinite runner built over the course of a week for the Search For a Star game jam.
+              </div>
+              <div class="card-action">
+                <a class="orange-text text-darken-1" href="projects/astavoid.php">Details</a>
+                <a class="orange-text text-darken-1" target="_blank" href="https://play.google.com/store/apps/details?id=com.KyleBignell.Astavoid&hl=en_GB">View project</a>
+              </div>
             </div>
-        </a>
-
-        <a class="projects-entry-link" href="projects/starcraft-ai.php">
-            <div class="projects-entry">
-                <div class="projects-entry-title">
-                    StarCraft AI
-                </div>
-                <img class="projects-entry-image" src="assets/images/projects/starcraft_ai.png" alt="StarCraft AI"/>
-                <div class="projects-entry-content">
-                    <div class="projects-entry-description">
-                        My final year university project to produce an AI that can play the original StarCraft.
-                    </div>
-                </div>
+          </div>
+          <div class="col s3 m3 l4">
+            <div class="card medium">
+              <div class="card-image">
+                <img src="assets/images/projects/starcraft_ai.png" alt="StarCraft AI"/>
+              </div>
+              <div class="card-content">
+                <span class="card-title black-text">StarCraft AI</span>
+                    My final year university project to produce an AI that can play the original StarCraft.
+              </div>
+              <div class="card-action">
+                <a class="orange-text text-darken-1" href="projects/starcraft-ai.php">Details</a>
+              </div>
             </div>
-        </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <?php include "php/footer.php" ?>
