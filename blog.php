@@ -13,10 +13,10 @@
     <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/base.css">
 
-    <script async src="js/materialize.js"></script>
+    <script async src="js/materialize.min.js"></script>
     <script async src="js/base.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
