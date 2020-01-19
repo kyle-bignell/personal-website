@@ -103,7 +103,7 @@
                   <img src="assets/images/experience/red7_logo.png" alt="Red7 Logo" style="max-width:100%; padding:20px 20px;">
                 </div>
                 <span class="card-title bold">Red7</span>
-                <p>Technical Lead - Game Development</p>
+                <p>Games Developer</p>
                 <p>May 2015 - December 2016</p>
                 <hr/>
                 <p>
