@@ -66,3 +66,13 @@ main
 .card.horizontal .card-image img {
   max-width: 250px !important;
 }
+
+div.post-content {
+  overflow-wrap: break-word;
+}
+
+div.post-content img {
+  height: auto;
+  max-width: 80%;
+  object-fit: contain;
+}

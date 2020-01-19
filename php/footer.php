@@ -13,7 +13,7 @@
 <footer class="page-footer grey lighten-3">
   <div class="container">
     <div class="row">
-      <div class="col l6 s12">
+      <div class="col s6 m6 l6">
         <h5 class="grey-text text-darken-1">Pages</h5>
         <ul>
           <li>
@@ -38,7 +38,7 @@
           </li>
         </ul>
       </div>
-      <div class="col l4 offset-l2 s12">
+      <div class="col s6 m4 offset-m2 l4 offset-l2">
         <h5 class="grey-text text-darken-1">Links</h5>
         <ul>
           <li>

@@ -50,7 +50,7 @@
       ?>
       <div id="blog" class="section">
         <div class="row">
-          <div class="col s12 m6 l10 offset-l1">
+          <div class="col s12 m12 l10 offset-l1">
             <div class="card">
               <div class="card-content">
                 <div class="post-title">

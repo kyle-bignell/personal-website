@@ -42,7 +42,7 @@
     <div id="content" class="container">
       <div id="projects" class="section">
         <div class="row">
-          <div class="col s3 m3 l4">
+          <div class="col s12 m4 l4">
             <div class="card medium">
               <div class="card-image">
                 <img src="assets/images/projects/flocking.png" alt="Flocking">
@@ -52,12 +52,12 @@
                   A JavaScript and WebGL powered flocking simulator.
               </div>
               <div class="card-action">
-                <a class="orange-text text-darken-1" href="projects/flocking.php">Details</a>
-                <a class="orange-text text-darken-1" target="_blank" href="http://flocking.kyle-bignell.co.uk/">View project</a>
+                <a class="orange-text text-darken-1 truncate" href="projects/flocking.php">Details</a>
+                <a class="orange-text text-darken-1 truncate" target="_blank" href="http://flocking.kyle-bignell.co.uk/">View project</a>
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l4">
+          <div class="col s12 m4 l4">
             <div class="card medium">
               <div class="card-image">
                 <img src="assets/images/projects/sdcnm.png" alt="Self Defence Classes Near Me"/>
@@ -67,12 +67,12 @@
                   Search for self defence classes near you using a distance ordered list or map view.
               </div>
               <div class="card-action">
-                <a class="orange-text text-darken-1" href="projects/self-defence-classes-near-me.php">Details</a>
-                <a class="orange-text text-darken-1" target="_blank" href="http://selfdefenceclassesnearme.co.uk/">View project</a>
+                <a class="orange-text text-darken-1 truncate" href="projects/self-defence-classes-near-me.php">Details</a>
+                <a class="orange-text text-darken-1 truncate" target="_blank" href="http://selfdefenceclassesnearme.co.uk/">View project</a>
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l4">
+          <div class="col s12 m4 l4">
             <div class="card medium">
               <div class="card-image">
                 <img src="assets/images/projects/neston_gardens.png" alt="Self Defence Classes Near Me"/>
@@ -82,12 +82,12 @@
                     Custom website built for a housing development project in Corsham, Wiltshire.
               </div>
               <div class="card-action">
-                <a class="orange-text text-darken-1" href="projects/neston-gardens.php">Details</a>
-                <a class="orange-text text-darken-1" target="_blank" href="http://www.neston-developments.co.uk/">View project</a>
+                <a class="orange-text text-darken-1 truncate" href="projects/neston-gardens.php">Details</a>
+                <a class="orange-text text-darken-1 truncate" target="_blank" href="http://www.neston-developments.co.uk/">View project</a>
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l4">
+          <div class="col s12 m4 l4">
             <div class="card medium">
               <div class="card-image">
                 <img src="assets/images/projects/qreator.png" alt="Neston Gardens"/>
@@ -97,12 +97,12 @@
                     A URL shortening QR code generator. Avoid typing long URLs on your mobile!
               </div>
               <div class="card-action">
-                <a class="orange-text text-darken-1" href="projects/qreator.php">Details</a>
-                <a class="orange-text text-darken-1" target="_blank" href="http://qreator.kyle-bignell.co.uk/">View project</a>
+                <a class="orange-text text-darken-1 truncate" href="projects/qreator.php">Details</a>
+                <a class="orange-text text-darken-1 truncate" target="_blank" href="http://qreator.kyle-bignell.co.uk/">View project</a>
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l4">
+          <div class="col s12 m4 l4">
             <div class="card medium">
               <div class="card-image">
                 <img src="assets/images/projects/skype.png" alt="Skype Bot"/>
@@ -112,12 +112,12 @@
                     Facilitates game deployment server management and handles restart announcements.
               </div>
               <div class="card-action">
-                <a class="orange-text text-darken-1" href="projects/skype-bot.php">Details</a>
-                <a class="orange-text text-darken-1" target="_blank" href="http://skype-bot.kyle-bignell.co.uk/">View project</a>
+                <a class="orange-text text-darken-1 truncate" href="projects/skype-bot.php">Details</a>
+                <a class="orange-text text-darken-1 truncate" target="_blank" href="http://skype-bot.kyle-bignell.co.uk/">View project</a>
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l4">
+          <div class="col s12 m4 l4">
             <div class="card medium">
               <div class="card-image">
                 <img src="assets/images/projects/wba.png" alt="Wernie's Big Adventure"/>
@@ -127,12 +127,12 @@
                     A Unity powered adventure built over the course of a weekend for an Itch.io game jam.
               </div>
               <div class="card-action">
-                <a class="orange-text text-darken-1" href="projects/wernies-big-adventure.php">Details</a>
-                <a class="orange-text text-darken-1" target="_blank" href="https://kyle-bignell.itch.io/wernies-big-adventure">View project</a>
+                <a class="orange-text text-darken-1 truncate" href="projects/wernies-big-adventure.php">Details</a>
+                <a class="orange-text text-darken-1 truncate" target="_blank" href="https://kyle-bignell.itch.io/wernies-big-adventure">View project</a>
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l4">
+          <div class="col s12 m4 l4">
             <div class="card medium">
               <div class="card-image">
                 <img src="assets/images/projects/astavoid.png" alt="Astavoid"/>
@@ -142,12 +142,12 @@
                     A Unity powered infinite runner built over the course of a week for the Search For a Star game jam.
               </div>
               <div class="card-action">
-                <a class="orange-text text-darken-1" href="projects/astavoid.php">Details</a>
-                <a class="orange-text text-darken-1" target="_blank" href="https://play.google.com/store/apps/details?id=com.KyleBignell.Astavoid&hl=en_GB">View project</a>
+                <a class="orange-text text-darken-1 truncate" href="projects/astavoid.php">Details</a>
+                <a class="orange-text text-darken-1 truncate" target="_blank" href="https://play.google.com/store/apps/details?id=com.KyleBignell.Astavoid&hl=en_GB">View project</a>
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l4">
+          <div class="col s12 m4 l4">
             <div class="card medium">
               <div class="card-image">
                 <img src="assets/images/projects/starcraft_ai.png" alt="StarCraft AI"/>
@@ -157,7 +157,7 @@
                     My final year university project to produce an AI that can play the original StarCraft.
               </div>
               <div class="card-action">
-                <a class="orange-text text-darken-1" href="projects/starcraft-ai.php">Details</a>
+                <a class="orange-text text-darken-1 truncate" href="projects/starcraft-ai.php">Details</a>
               </div>
             </div>
           </div>

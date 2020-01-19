@@ -40,12 +40,15 @@
     <div id="content" class="container">
       <div id="experience" class="section">
         <div class="row">
-          <div class="col s3 m3 l10 offset-l1">
+          <div class="col s12 m12 l10 offset-l1">
             <div class="card horizontal">
-              <div class="card-image valign-wrapper">
+              <div class="card-image valign-wrapper hide-on-small-only">
                 <img src="assets/images/experience/future_logo.png" alt="Future Logo" style="padding:0 20px;">
               </div>
               <div class="card-content">
+                <div class="hide-on-med-and-up">
+                  <img src="assets/images/experience/future_logo.png" alt="Future Logo" style="max-width:100%; padding:20px 20px;">
+                </div>
                 <span class="card-title bold">Future</span>
                 <p>Technical Lead - Ad Technology</p>
                 <p>May 2018 - Present</p>
@@ -64,12 +67,15 @@
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l10 offset-l1">
+          <div class="col s12 m12 l10 offset-l1">
             <div class="card horizontal">
-              <div class="card-image valign-wrapper">
+              <div class="card-image valign-wrapper hide-on-small-only">
                 <img src="assets/images/experience/red7_logo.png" alt="Red7 Logo" style="padding:0 20px;">
               </div>
               <div class="card-content">
+                <div class="hide-on-med-and-up">
+                  <img src="assets/images/experience/red7_logo.png" alt="Red7 Logo" style="max-width:100%; padding:20px 20px;">
+                </div>
                 <span class="card-title bold">Red7</span>
                 <p>Technical Lead - Game Development</p>
                 <p>January 2017 - May 2018</p>
@@ -87,12 +93,15 @@
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l10 offset-l1">
+          <div class="col s12 m12 l10 offset-l1">
             <div class="card horizontal">
-              <div class="card-image valign-wrapper">
+              <div class="card-image valign-wrapper hide-on-small-only">
                 <img src="assets/images/experience/red7_logo.png" alt="Red7 Logo" style="padding:0 20px;">
               </div>
               <div class="card-content">
+                <div class="hide-on-med-and-up">
+                  <img src="assets/images/experience/red7_logo.png" alt="Red7 Logo" style="max-width:100%; padding:20px 20px;">
+                </div>
                 <span class="card-title bold">Red7</span>
                 <p>Technical Lead - Game Development</p>
                 <p>May 2015 - December 2016</p>
@@ -110,12 +119,15 @@
               </div>
             </div>
           </div>
-          <div class="col s3 m3 l10 offset-l1">
+          <div class="col s12 m12 l10 offset-l1">
             <div class="card horizontal">
-              <div class="card-image valign-wrapper">
+              <div class="card-image valign-wrapper hide-on-small-only">
                 <img src="assets/images/experience/ccfe_logo.png" alt="CCFE Logo" style="padding:0 20px;">
               </div>
               <div class="card-content">
+                <div class="hide-on-med-and-up">
+                  <img src="assets/images/experience/ccfe_logo.png" alt="CCFE Logo" style="max-width:100%; padding:20px 20px;">
+                </div>
                 <span class="card-title bold">Culham Centre for Fusion Energy</span>
                 <p>Junior Developer</p>
                 <p>July 2013 - June 2014</p>
