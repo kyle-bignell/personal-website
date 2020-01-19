@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" CONTENT="Kyle Bignell technical lead portfolio">
 
-    <title>Kyle Bignell - Technical Lead</title>
+    <title>Kyle Bignell - Software Engineer - Technical Lead</title>
 
     <link rel="canonical" href="http://www.kyle-bignell.co.uk/"/>
 
@@ -36,7 +36,9 @@
   <main>
     <div id="header" class="container">
       <h1 class="center-align">Kyle Bignell</h1>
-      <h5 class="center-align">Software Engineer - Technical Lead</h5>
+      <h5 class="center-align hide-on-small-only">Software Engineer - Technical Lead</h5>
+      <h5 class="center-align hide-on-med-and-up">Software Engineer</h5>
+      <h5 class="center-align hide-on-med-and-up">Technical Lead</h5>
     </div>
 
     <div id="content" class="container">
@@ -48,8 +50,8 @@
           <div class="col s12 m12 l12">
             <p class="flow-text center-align">
               Hi there, thank you for visiting my little corner of the internet. I'm a software engineer
-              based in the UK. In my current role I work as a technical lead for a bespoke JavaScript framework
-              to manage advertisements on publisher websites. Take a look around to find out more about my experience,
+              based in the UK. I currently work as a technical lead on a bespoke JavaScript advertisement framework
+              that operates on publisher websites. Take a look around to find out more about my projects, experience,
               skills, and thoughts on software development.
             </p>
           </div>
