@@ -6,111 +6,411 @@
   <link href="/output.css" rel="stylesheet">
 </head>
 <body>
-  <div>Navbar</div>
-<!-- This example requires Tailwind CSS v2.0+ -->
-<div class="relative bg-white overflow-hidden">
-  <div class="max-w-7xl mx-auto">
-    <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-      <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <polygon points="50,0 100,0 50,100 0,100" />
-      </svg>
+  <nav class="bg-gray-600">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-12">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button-->
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!--
+            Icon when menu is closed.
 
-      <div>
-        <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
-          <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
-            <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-              <div class="flex items-center justify-between w-full md:w-auto">
-                <a href="#">
-                  <span class="sr-only">Workflow</span>
-                  <img alt="Workflow" class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg">
-                </a>
-                <div class="-mr-2 flex items-center md:hidden">
-                  <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <!-- Heroicon name: outline/menu -->
-                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-              <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Product</a>
+            Heroicon name: outline/menu
 
-              <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Features</a>
+            Menu open: "hidden", Menu closed: "block"
+          -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!--
+            Icon when menu is open.
 
-              <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Marketplace</a>
+            Heroicon name: outline/x
 
-              <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Company</a>
+            Menu open: "block", Menu closed: "hidden"
+          -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="hidden sm:block sm:ml-1">
+          <div class="flex space-x-4">
+            <a href="#services" class="text-gray-300 hover:underline hover:text-white px-2 py-1 text-sm font-medium">Services</a>
 
-              <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Log in</a>
-            </div>
-          </nav>
-        </div>
+            <a href="#skills" class="text-gray-300 hover:underline hover:text-white px-2 py-1 text-sm font-medium">Skills</a>
 
-        <!--
-          Mobile menu, show/hide based on menu open state.
+            <a href="#experience" class="text-gray-300 hover:underline hover:text-white px-2 py-1 text-sm font-medium">Expereince</a>
 
-          Entering: "duration-150 ease-out"
-            From: "opacity-0 scale-95"
-            To: "opacity-100 scale-100"
-          Leaving: "duration-100 ease-in"
-            From: "opacity-100 scale-100"
-            To: "opacity-0 scale-95"
-        -->
-        <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-          <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-            <div class="px-5 pt-4 flex items-center justify-between">
-              <div>
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
-              </div>
-              <div class="-mr-2">
-                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                  <span class="sr-only">Close main menu</span>
-                  <!-- Heroicon name: outline/x -->
-                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="px-2 pt-2 pb-3 space-y-1">
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Product</a>
-
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Features</a>
-
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Marketplace</a>
-
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Company</a>
-            </div>
-            <a href="#" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"> Log in </a>
+            <a href="#interests" class="text-gray-300 hover:underline hover:text-white px-2 py-1 text-sm font-medium">Interests</a>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+    </div>
+  </div>
+</nav>
+
+  <div class="relative max-w-6xl mx-auto bg-white overflow-hidden">
+    <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-3xl lg:w-full lg:pb-28 xl:pb-32">
+      <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <polygon points="0,0 50,0 80,100 50,100" />
+      </svg>
+
+      <main class="mt-0 w-20xl sm:pt-12 sm:px-6 md:pt-16 lg:pt-20 lg:px-8 xl:pt-28">
         <div class="sm:text-center lg:text-left">
-          <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-            <span class="block xl:inline">Data to enrich your</span>
-            <span class="block text-indigo-600 xl:inline">online business</span>
+          <h1 class="text-6xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="block">Kyle Bignell</span>
+            <span class="block text-indigo-600">Front End Development</span>
           </h1>
-          <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+          <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">UK based software engineer specialising in front end development with leadership experience.</p>
           <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div class="rounded-md shadow">
-              <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"> Get started </a>
+              <a href="mailto:kyle.bignell@gmail.com" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"> Contact </a>
             </div>
             <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"> Live demo </a>
+              <a href="https://www.linkedin.com/in/kyle-bignell/" target="_blank" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"> LinkedIn </a>
             </div>
           </div>
         </div>
       </main>
     </div>
-  </div>
-  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="">
+
+    <div class="lg:absolute lg:inset-y-0 lg:right-0">
+      <img class="h-56 w-full object-contain sm:h-72 md:h-96 lg:w-full lg:h-full" src="/images/me.jpg" alt="">
+    </div>
+</div>
+  <div id="services" class="mt-40 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-indigo-600 sm:text-4xl">Services</p>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.</p>
+    </div>
+
+    <div class="mt-10">
+      <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-20 w-20 rounded-md bg-gray-500 text-white">
+              <svg class="h-12 w-12"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <p class="ml-24 text-xl leading-6 font-medium text-indigo-600">JavaScript / TypeScript development</p>
+          </dt>
+          <dd class="mt-2 ml-24 text-base text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          </dd>
+        </div>
+
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-20 w-20 rounded-md bg-gray-500 text-white">
+              <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+            </div>
+            <p class="ml-24 text-xl leading-6 font-medium text-indigo-600">Website production</p>
+          </dt>
+          <dd class="mt-2 ml-24 text-base text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          </dd>
+        </div>
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-20 w-20 rounded-md bg-gray-500 text-white">
+              <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <p class="ml-24 text-xl leading-6 font-medium text-indigo-600">React applications</p>
+          </dt>
+          <dd class="mt-2 ml-24 text-base text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          </dd>
+        </div>
+
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-20 w-20 rounded-md bg-gray-500 text-white">
+              <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p class="ml-24 text-xl leading-6 font-medium text-indigo-600">Google Publisher Tag Integrations</p>
+          </dt>
+          <dd class="mt-2 ml-24 text-base text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          </dd>
+        </div>
+      </dl>
+    </div>
   </div>
 </div>
+
+  <div id="skills" class="mt-40 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-indigo-600 sm:text-4xl">Skills</p>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.</p>
+    </div>
+
+    <div class="mt-10">
+      <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12">
+              <img class="h-12 w-12 object-contain grayscale" src="/images/logos/js_logo.png" alt="">
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-indigo-600">JavaScript</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+        </div>
+
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12">
+              <img class="h-12 w-12 object-contain grayscale" src="/images/logos/ts_logo.png" alt="">
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-indigo-600">TypeScript</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+        </div>
+
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12">
+              <img class="h-12 w-12 object-contain grayscale" src="/images/logos/node_logo.png" alt="">
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-indigo-600">Node.js</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+        </div>
+
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12">
+              <img class="h-12 w-12 object-contain grayscale" src="/images/logos/html_logo.png" alt="">
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-indigo-600">HTML / CSS</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+        </div>
+
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12">
+              <img class="h-12 w-12 object-contain grayscale" src="/images/logos/react_logo.png" alt="">
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-indigo-600">React</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+        </div>
+
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12">
+              <img class="h-12 w-12 object-contain grayscale" src="/images/logos/kubernetes_logo.png" alt="">
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-indigo-600">Kubernetes</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+  <div id="experience" class="mt-40 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-indigo-600 sm:text-4xl">Experience</p>
+      <p class="mt-4 max-w-3xl text-xl text-gray-500 lg:mx-auto">Across 4 roles I have over 8 years of front end development experience. Within that time I have spent over 5 years leading teams to the completion of many projects.</p>
+    </div>
+
+    <div class="mt-20">
+      <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-10">
+        <ol class="relative left-2/4 w-1/2 border-l-2 border-indigo-600">
+          <li>
+            <div class="flex flex-start items-center">
+              <div class="bg-indigo-600 w-4 h-4 flex items-center justify-center rounded-full -ml-2 mr-3 -mt-2"></div>
+              <h4 class="relative -left-full text-gray-800 font-semibold text-xl -mt-2"><span class="text-indigo-600">Technical Lead</span> at Future PLC</h4>
+            </div>
+            <div class="relative -left-full ml-6 mb-6 pb-6">
+              <a href="#!" class="text-indigo-600 hover:text-indigo-700 focus:text-indigo-800 duration-300 transition ease-in-out text-sm">May 2018 - Present</a>
+              <p class="text-gray-700 mt-2 mb-4 mr-4">
+                Future is a British media company founded in 1985. They publish magazines, operate websites, and run events in order to connect over 120 million people worldwide with their passions.
+                In my role as technical lead of the advertisement team I help to manage communications with external parties, set out our technical goals, and ensure operations run smoothly so that our website content can be effectively monetised.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="flex flex-start items-center">
+              <div class="bg-indigo-600 w-4 h-4 flex items-center justify-center rounded-full -ml-2 mr-3 -mt-2"></div>
+              <h4 class="text-gray-800 font-semibold text-xl -mt-2"><span class="text-indigo-600">Technical Lead</span> at Red7Mobile</h4>
+            </div>
+            <div class="ml-6 mb-6 pb-6">
+              <a href="#!" class="text-indigo-600 hover:text-indigo-700 focus:text-indigo-800 duration-300 transition ease-in-out text-sm">Jan 2017 - May 2018</a>
+              <p class="text-gray-700 mt-2 mb-4">
+                Working as a technical leader alongside game development responsibilities, helping to lead 15+ developers to produce high quality HTML5/JavaScript games while supporting management and encouraging growth in team members.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="flex flex-start items-center">
+              <div class="bg-indigo-600 w-4 h-4 flex items-center justify-center rounded-full -ml-2 mr-3 -mt-2"></div>
+              <h4 class="relative -left-full text-gray-800 font-semibold text-xl -mt-2"><span class="text-indigo-600">Web Games Developer</span> at Red7Mobile</h4>
+            </div>
+            <div class="relative -left-full ml-6 mb-6 pb-6">
+              <a href="#!" class="text-indigo-600 hover:text-indigo-700 focus:text-indigo-800 duration-300 transition ease-in-out text-sm">May 2015 - Dec 2016</a>
+              <p class="text-gray-700 mt-2 mb-4 mr-4">
+                Developing HTML5/JavaScript games for the gambling industry, predominantly slot and table games. Alongside my development responsibilities I also led initiatives to improve development processes at the company.
+                The first of these was the automation of game builds within our development tools, this eliminated mistakes that occurred frequently due the need for manual edits to build files before submissions.
+                Secondly I pushed to make pull requests (change control) a standard for all framework and games development, helping to reduce the risk of errors being inadvertently introduced.
+                Thirdly, I championed the introduction of a centralised knowledge base for game developers, serving as its architect and sole administrator.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="flex flex-start items-center">
+              <div class="bg-indigo-600 w-4 h-4 flex items-center justify-center rounded-full -ml-2 mr-3 -mt-2"></div>
+              <h4 class="text-gray-800 font-semibold text-xl -mt-2"><span class="text-indigo-600">Software Developer</span> at CCFE</h4>
+            </div>
+            <div class="ml-6 mb-6 pb-6">
+              <a href="#!" class="text-indigo-600 hover:text-indigo-700 focus:text-indigo-800 duration-300 transition ease-in-out text-sm">Jul 2013 - Jun 2014</a>
+              <p class="text-gray-700 mt-2 mb-4">
+                Helping to maintain and develop software that supports the research of scientists working both at the site and remotely around the world.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </dl>
+    </div>
+  </div>
+</div>
+
+  <div id="interests" class="mt-40 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-indigo-600 sm:text-4xl">Interests</p>
+    </div>
+
+    <div class="mt-10">
+      <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+        <div class="flex justify-center">
+          <div class="rounded-lg shadow-lg bg-white max-w-sm">
+            <a href="#!">
+              <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+            </a>
+            <div class="p-6">
+              <h5 class="text-gray-900 text-xl font-medium mb-2">Woodworking</h5>
+              <p class="text-gray-700 text-base mb-4">
+                Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+              <button type="button" class="inline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-700 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-800 active:shadow-lg transition duration-150 ease-in-out">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <div class="rounded-lg shadow-lg bg-white max-w-sm">
+            <a href="#!">
+              <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+            </a>
+            <div class="p-6">
+              <h5 class="text-gray-900 text-xl font-medium mb-2">Recipes</h5>
+              <p class="text-gray-700 text-base mb-4">
+                Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+              <button type="button" class="inline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-700 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-800 active:shadow-lg transition duration-150 ease-in-out">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <div class="rounded-lg shadow-lg bg-white max-w-sm">
+            <a href="#!">
+              <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+            </a>
+            <div class="p-6">
+              <h5 class="text-gray-900 text-xl font-medium mb-2">Game Development</h5>
+              <p class="text-gray-700 text-base mb-4">
+                Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+              <button type="button" class="inline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-700 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-800 active:shadow-lg transition duration-150 ease-in-out">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+  <footer class="text-center text-white bg-gray-400 mt-20">
+  <div class="pt-3">
+    <div class="flex justify-center mb-3">
+      <a href="https://www.linkedin.com/in/kyle-bignell" class="mr-9 text-gray-800">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fab"
+          data-icon="linkedin-in"
+          class="svg-inline--fa fa-linkedin-in w-3.5"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+          ></path>
+        </svg>
+      </a>
+      <a href="https://github.com/kyle-bignell" class="text-gray-800">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fab"
+          data-icon="github"
+          class="svg-inline--fa fa-github w-4"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 496 512"
+        >
+          <path
+            fill="currentColor"
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="text-center text-gray-400 p-4 bg-gray-600">
+    © 2022 Copyright: Kyle Bignell
+  </div>
+</footer>
 </body>
 </html>
