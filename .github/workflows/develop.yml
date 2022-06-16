@@ -33,11 +33,11 @@ jobs:
         with:
           name: dist
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        uses: Creepios/sftp-action@v1.0.3
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          dry-run: true
+          localPath: './dist'
+          remotePath: 'dev.kylebignell.co.uk/'
 
