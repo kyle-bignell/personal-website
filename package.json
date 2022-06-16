@@ -2,10 +2,10 @@
   "name": "personal-website",
   "version": "3.0.0",
   "scripts": {
-    "build:assets": "node .\\build\\assets.js",
-    "build:html": "node .\\build\\html.js",
-    "build:css": "npx tailwindcss -i .\\src\\css\\input.css -o .\\dist\\output.css",
-    "build:server": "node .\\build\\server.js",
+    "build:assets": "node build-assets.js",
+    "build:css": "node build-css.js",
+    "build:html": "node build-html.js",
+    "build:server": "node build-server.js",
     "start": "nodemon --exec \"npm run build:assets && npm run build:html && npm run build:css && npm run build:server\""
   },
   "devDependencies": {
