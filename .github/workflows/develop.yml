@@ -28,6 +28,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist
       - name: deploy files
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
