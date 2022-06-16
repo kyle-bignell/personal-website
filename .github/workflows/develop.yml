@@ -34,9 +34,9 @@ jobs:
       - name: deploy files
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          local-dir: dist
-          server-dir: dev.kylebignell.co.uk
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          ftp-port: 22
+          ftp-local-dir: dist
+          ftp-server-dir: dev.kylebignell.co.uk
