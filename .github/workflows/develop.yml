@@ -32,11 +32,4 @@ jobs:
         with:
           name: dist
       - name: deploy files
-        uses: Creepios/sftp-action@v1.0.3
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          localPath: dist
-          remotePath: dev.kylebignell.co.uk/
+        run: lftp -u "${{ secrets.FTP_USERNAME }}","${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" -p 22 ./dist dev.kylebignell.co.uk/
