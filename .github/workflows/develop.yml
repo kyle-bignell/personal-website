@@ -31,5 +31,13 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: dist
-      - name: deploy files
-        run: lftp -u "${{ secrets.FTP_USERNAME }}","${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" -p 22 ./dist dev.kylebignell.co.uk/
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FRP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 22
+          dry-run: true
+
