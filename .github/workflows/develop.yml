@@ -33,5 +33,5 @@ jobs:
         with:
           name: dist
       - name: Deploy
-        run: npm run deploy -- ${{FTP_SERVER} ${{FTP_PORT}} ${{FTP_USERNAME}} ${{FTP_PASSWORD}} 
+        run: npm run deploy -- ${{FTP_SERVER}} ${{FTP_PORT}} ${{FTP_USERNAME}} ${{FTP_PASSWORD}} 
 
