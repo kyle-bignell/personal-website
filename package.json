@@ -6,6 +6,7 @@
     "build:css": "node build-css.js",
     "build:html": "node build-html.js",
     "build:server": "node build-server.js",
+    "deploy": "node deploy.js",
     "start": "nodemon --exec \"npm run build:assets && npm run build:html && npm run build:css && npm run build:server\""
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "fs-extra": "^10.1.0",
     "nodemon": "^2.0.16",
     "prettier": "^2.6.2",
+    "ssh2-sftp-client": "^9.0.0",
     "tailwindcss": "^3.0.24"
   },
   "nodemonConfig": {
