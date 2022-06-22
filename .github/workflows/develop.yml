@@ -32,12 +32,6 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: dist
-      - name: 📂 Sync files
-        uses: Creepios/sftp-action@v1.0.3
-        with:
-          host: home673856203.1and1-data.host
-          username: u88657763
-          password: test
-          localPath: './dist'
-          remotePath: 'dev.kylebignell.co.uk/'
+      - name: Deploy
+        run: npm run deploy -- ${{FTP_SERVER} ${{FTP_PORT}} ${{FTP_USERNAME}} ${{FTP_PASSWORD}} 
 
