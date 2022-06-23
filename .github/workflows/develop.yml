@@ -38,8 +38,8 @@ jobs:
       - name: Deploy
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_PORT: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_SERVER }}
-          FTP_PASSWORD: ${{ secrets.FTP_SERVER }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: npm run deploy
 
