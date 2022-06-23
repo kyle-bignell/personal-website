@@ -41,5 +41,5 @@ jobs:
           FTP_PORT: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_SERVER }}
           FTP_PASSWORD: ${{ secrets.FTP_SERVER }}
-        run: npm run deploy -- "$FTP_SERVER" "$FTP_PORT" "$FTP_USERNAME" "$FTP_PASSWORD"
+        run: npm run deploy
 
