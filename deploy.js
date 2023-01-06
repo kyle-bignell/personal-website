@@ -8,7 +8,7 @@ const username = process.env.FTP_USERNAME;
 const password = process.env.FTP_PASSWORD;
 
 const srcDir = path.posix.resolve('./dist/');
-const targetDir = '/dev.kylebignell.co.uk/';
+const targetDir = process.argv[2];
 
 sftp.connect({
   host,
