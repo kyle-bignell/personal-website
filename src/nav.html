@@ -1,30 +1,27 @@
-<nav class="sticky top-0 bg-white z-50">
+<script>
+  function toggleMobileMenu() {
+    var mobileMenuElement = window.document.getElementById("mobile-menu");
+
+    if (mobileMenuElement.classList.contains("hidden")) {
+      mobileMenuElement.classList.remove("hidden");
+    } else {
+      mobileMenuElement.classList.add("hidden");
+    }
+  }
+</script>
+
+<nav class="sticky top-0 bg-white z-50 drop-shadow-md	">
   <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-12">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
         <button type="button"
           class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-          aria-controls="mobile-menu" aria-expanded="false">
+          aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu();">
           <span class="sr-only">Open main menu</span>
-          <!--
-            Icon when menu is closed.
-
-            Heroicon name: outline/menu
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
             stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <!--
-            Icon when menu is open.
-
-            Heroicon name: outline/x
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
           <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
             stroke-width="2" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -43,21 +40,16 @@
           <div class="flex space-x-4">
             <a href="#services"
               class="text-gray-800 hover:underline hover:text-black px-2 py-1 text-md font-medium">Services</a>
-
             <a href="#skills"
               class="text-gray-800 hover:underline hover:text-black px-2 py-1 text-md font-medium">Skills</a>
-
             <a href="#experience"
               class="text-gray-800 hover:underline hover:text-black px-2 py-1 text-md font-medium">Experience</a>
-
-            <a href="#interests"
-              class="text-gray-800 hover:underline hover:text-black px-2 py-1 text-md font-medium">Interests</a>
           </div>
         </div>
       </div>
 
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-        <a href="https://www.linkedin.com/in/kyle-bignell" class="mr-9 text-gray-700">
+        <a href="https://www.linkedin.com/in/kyle-bignell" target="_blank" class="mr-9 text-gray-700">
           <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
             class="svg-inline--fa fa-linkedin-in w-3.5" role="img" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512">
@@ -66,7 +58,7 @@
             </path>
           </svg>
         </a>
-        <a href="https://github.com/kyle-bignell" class="text-gray-700">
+        <a href="https://github.com/kyle-bignell" target="_blank" class="text-gray-700">
           <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
             class="svg-inline--fa fa-github w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
             <path fill="currentColor"
@@ -78,21 +70,17 @@
     </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden" id="mobile-menu">
+  <div class="hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-        aria-current="page">Dashboard</a>
-
-      <a href="#"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
-
-      <a href="#"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-
-      <a href="#"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+      <a href="#services"
+        class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        onclick="toggleMobileMenu();">Services</a>
+      <a href="#skills"
+        class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        onclick="toggleMobileMenu();">Skills</a>
+      <a href="#experience"
+        class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        onclick="toggleMobileMenu();">Experience</a>
     </div>
   </div>
 </nav>
