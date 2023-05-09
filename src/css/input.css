@@ -4,6 +4,7 @@
 
 .profile-image {
     width: 360px;
+    max-width: 90vw;
     height: 450px;
 }
 
