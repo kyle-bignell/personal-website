@@ -1,31 +1,34 @@
-<button type="button" id="btn-scroll-to-top"
-  class="fixed bottom-5 right-5 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 md:py-4 md:text-lg md:px-10 uppercase drop-shadow">
-  Scroll to top
+<button
+    type="button"
+    id="btn-scroll-to-top"
+    class="fixed bottom-5 right-5 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 md:py-4 md:text-lg md:px-10 uppercase drop-shadow"
+>
+    Scroll to top
 </button>
 
 <script>
-  var scrollButton = document.getElementById("btn-scroll-to-top");
-  scrollButton.addEventListener("click", scrollToTop);
+    var scrollButton = document.getElementById('btn-scroll-to-top')
+    scrollButton.addEventListener('click', scrollToTop)
 
-  window.onscroll = function () {
-    scrollDisplayFunction();
-  };
-
-  scrollDisplayFunction();
-
-  function scrollDisplayFunction() {
-    var displayDistance = 200;
-    if (
-      document.body.scrollTop > displayDistance ||
-      document.documentElement.scrollTop > displayDistance
-    ) {
-      scrollButton.style.display = "block";
-    } else {
-      scrollButton.style.display = "none";
+    window.onscroll = function () {
+        scrollDisplayFunction()
     }
-  }
 
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+    scrollDisplayFunction()
+
+    function scrollDisplayFunction() {
+        var displayDistance = 200
+        if (
+            document.body.scrollTop > displayDistance ||
+            document.documentElement.scrollTop > displayDistance
+        ) {
+            scrollButton.style.display = 'block'
+        } else {
+            scrollButton.style.display = 'none'
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
 </script>

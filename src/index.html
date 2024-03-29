@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Kyle Bignell - Front-End Developer - JavaScript | TypeScript |
+            Node.js
+        </title>
+        <link rel="canonical" href="https://kylebignell.co.uk" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link href="/output.css" rel="stylesheet" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kyle Bignell - Front-End Developer - JavaScript | TypeScript | Node.js</title>
-  <link rel="canonical" href="https://kylebignell.co.uk" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link href="/output.css" rel="stylesheet" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "image": ["https://kylebignell.co.uk/images/me.jpg"],
+                "name": "Kyle Bignell - Front End Developer",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Bath",
+                    "addressRegion": "Somerset",
+                    "addressCountry": "UK"
+                },
+                "url": "https://kylebignell.co.uk/",
+                "logo": "https://kylebignell.co.uk/images/logo.png"
+            }
+        </script>
+    </head>
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "image": [
-        "https://kylebignell.co.uk/images/me.jpg"
-       ],
-      "name": "Kyle Bignell - Front End Developer",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bath",
-        "addressRegion": "Somerset",
-        "addressCountry": "UK"
-      },
-      "url": "https://kylebignell.co.uk/",
-      "logo": "https://kylebignell.co.uk/images/logo.png"
-    }
-    </script>
-</head>
-
-<body>
-  <%- include('./nav.html') %>
-    <%- include('./hero.html') %>
-      <%- include('./services.html') %>
-        <%- include('./skills.html') %>
-          <%- include('./experience.html') %>
-            <%- include('./projects.html') %>
-              <%- include('./showcase.html') %>
-                <%- include('./scroll-to-top.html') %>
-                  <%- include('./footer.html') %>
-</body>
-
+    <body>
+        <%- include('./nav.html') %> <%- include('./hero.html') %> <%-
+        include('./services.html') %> <%- include('./skills.html') %> <%-
+        include('./experience.html') %> <%- include('./projects.html') %> <%-
+        include('./showcase.html') %> <%- include('./scroll-to-top.html') %> <%-
+        include('./footer.html') %>
+    </body>
 </html>
