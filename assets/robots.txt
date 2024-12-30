@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://kylebignell.co.uk/sitemap.xml
